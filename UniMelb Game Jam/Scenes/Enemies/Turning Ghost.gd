@@ -13,10 +13,10 @@ var ghost_state : state = state.ROAMING
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	if ghost_state == state.ROAMING:
 		var direction = (position - roam_target).normalized()
-		var speed = lerp(speed, ROAM_SPEED, 0.5)
+		speed = lerp(speed, ROAM_SPEED, 0.5)
 		velocity = direction * speed
 	elif ghost_state == state.RUNNING:
 		velocity.x = run_direction.x * MAX_SPEED
@@ -30,7 +30,7 @@ func _on_detection_area_body_entered(body):
 		run_direction = -(Global.player.global_position - position).normalized()
 		run_direction = run_direction.rotated(PI/2)
 
-func _on_detection_area_body_exited(body):
+func _on_detection_area_body_exited(_body):
 	$RunningTimer.start()
 
 func _on_running_timer_timeout():

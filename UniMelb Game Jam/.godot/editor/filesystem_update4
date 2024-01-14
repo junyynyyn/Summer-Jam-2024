@@ -1,8 +1,8 @@
 res://Level.tscn
+res://Scenes/Enemies/Running Ghost.tscn
 res://Scenes/Player.tscn
 res://Scenes/main_menu.tscn
 res://Scenes/main.tscn
 res://Scenes/Enemies/Turning Ghost.tscn
-res://Scenes/Enemies/Running Ghost.tscn
 res://Scenes/Enemies/Ghost.tscn
-res://Scripts/Running Ghost.gd
+res://Scenes/Enemies/Turning Ghost.gd

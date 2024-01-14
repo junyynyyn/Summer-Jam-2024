@@ -1,27 +1,28 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705215712
+::res://::1705216130
 icon.svg::CompressedTexture2D::6898933307114045714::1705215609::1705215609::1::::<><>::
-Level.tscn::PackedScene::5838593922247775361::1705215609::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png<>uid://bumy4g8cy1waj::::res://Scenes/Player.tscn<>uid://ii8dc3g05ti5::::res://Scenes/Enemies/Turning Ghost.tscn
-::res://Scenes/::1705215609
+Level.tscn::PackedScene::5838593922247775361::1705216130::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png<>uid://cguvwquhnifu3::::res://Scenes/Enemies/Running Ghost.tscn<>uid://ii8dc3g05ti5::::res://Scenes/Enemies/Turning Ghost.tscn
+::res://Scenes/::1705216130
 Level.tscn::PackedScene::5838593922247775361::1705215609::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png<>uid://bumy4g8cy1waj::::res://Scenes/Player.tscn<>uid://b7uh2ruux20ic::::res://Scenes/Running Ghost.tscn
-main.tscn::PackedScene::8792369021715770250::1705215609::0::1::::<><>::uid://cpgi1260u2e1f::::res://Level.tscn<>uid://ns785h1yrp2p::::res://Scenes/main_menu.tscn
-main_menu.tscn::PackedScene::951617229563100137::1705215609::0::1::::<><>::res://Scripts/main_menu.gd
-Player.tscn::PackedScene::3816479451594740017::1705215609::0::1::::<><>::res://Scripts/Player.gd<>uid://c5j5onyar25fi::::res://icon.svg
-::res://Scenes/Enemies/::1705215609
+main.tscn::PackedScene::8792369021715770250::1705216130::0::1::::<><>::uid://cpgi1260u2e1f::::res://Level.tscn<>uid://ns785h1yrp2p::::res://Scenes/main_menu.tscn<>uid://bumy4g8cy1waj::::res://Scenes/Player.tscn
+main_menu.tscn::PackedScene::951617229563100137::1705216130::0::1::::<><>::res://Scripts/main_menu.gd
+Player.tscn::PackedScene::3816479451594740017::1705216130::0::1::::<><>::res://Scripts/Player.gd<>uid://c5j5onyar25fi::::res://icon.svg
+::res://Scenes/Enemies/::1705216131
 Ghost.gd::GDScript::-1::1705215609::0::1::::<>CharacterBody2D<>::
-Ghost.tscn::PackedScene::191512025753462449::1705215609::0::1::::<><>::uid://c5j5onyar25fi::::res://icon.svg<>res://Scenes/Enemies/Ghost.gd
-Running Ghost.tscn::PackedScene::5236577200215027272::1705215609::0::1::::<><>::res://Scripts/Running Ghost.gd<>uid://c5j5onyar25fi::::res://icon.svg
+Ghost.tscn::PackedScene::191512025753462449::1705216131::0::1::::<><>::uid://c5j5onyar25fi::::res://icon.svg<>res://Scenes/Enemies/Ghost.gd
+Running Ghost.tscn::PackedScene::5236577200215027272::1705216131::0::1::::<><>::res://Scripts/Running Ghost.gd<>uid://c5j5onyar25fi::::res://icon.svg
 Turning Ghost.gd::GDScript::-1::1705215609::0::1::::<>CharacterBody2D<>::
-Turning Ghost.tscn::PackedScene::580034937888191546::1705215609::0::1::::<><>::res://Scenes/Enemies/Turning Ghost.gd<>uid://c5j5onyar25fi::::res://icon.svg
-::res://Scripts/::1705215609
+Turning Ghost.tscn::PackedScene::580034937888191546::1705216131::0::1::::<><>::res://Scenes/Enemies/Turning Ghost.gd<>uid://c5j5onyar25fi::::res://icon.svg
+::res://Scripts/::1705215870
 Global.gd::GDScript::-1::1705215609::0::1::::<>Node<>::
 main_menu.gd::GDScript::-1::1705215609::0::1::::<>Control<>::
 Player.gd::GDScript::-1::1705215609::0::1::::<>CharacterBody2D<>::
-Running Ghost.gd::GDScript::-1::1705215609::0::1::::<>CharacterBody2D<>::
-::res://Sprites/::1705215609
+Running Ghost.gd::GDScript::-1::1705215870::0::1::::<>CharacterBody2D<>::
+::res://Sprites/::1705216410
 AnimationSheet_Items.png::CompressedTexture2D::7925167081140525460::1705215609::1705215609::1::::<><>::
 AssetSheet_UI.png::CompressedTexture2D::1661226758057016488::1705215609::1705215609::1::::<><>::
 ItemSheet_Items.png::CompressedTexture2D::3224484480824177885::1705215609::1705215609::1::::<><>::
+SPR_Tileset.png::CompressedTexture2D::5451575703676198570::1705216410::1705216410::1::::<><>::
 TileSheet_DungeonGreen.png::CompressedTexture2D::1115828838683250080::1705215609::1705215609::1::::<><>::
 TileSheet_DungeonPink.png::CompressedTexture2D::3985099199508386572::1705215609::1705215609::1::::<><>::
 TileSheet_DungeonPurple.png::CompressedTexture2D::3732607459398959007::1705215609::1705215609::1::::<><>::
