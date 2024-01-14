@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1705208442
+icon.svg::CompressedTexture2D::6898933307114045714::1705207654::1705207687::1::::<><>::
+Level.tscn::PackedScene::5838593922247775361::1705207654::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png
+::res://Scenes/::1705208442
+::res://Sprites/::1705207687
+AnimationSheet_Items.png::CompressedTexture2D::7925167081140525460::1705207654::1705207687::1::::<><>::
+AssetSheet_UI.png::CompressedTexture2D::1661226758057016488::1705207654::1705207687::1::::<><>::
+ItemSheet_Items.png::CompressedTexture2D::3224484480824177885::1705207654::1705207687::1::::<><>::
+TileSheet_DungeonGreen.png::CompressedTexture2D::1115828838683250080::1705207654::1705207687::1::::<><>::
+TileSheet_DungeonPink.png::CompressedTexture2D::3985099199508386572::1705207654::1705207687::1::::<><>::
+TileSheet_DungeonPurple.png::CompressedTexture2D::3732607459398959007::1705207654::1705207687::1::::<><>::
+TileSheet_DungeonYellow.png::CompressedTexture2D::780501754340392940::1705207654::1705207687::1::::<><>::

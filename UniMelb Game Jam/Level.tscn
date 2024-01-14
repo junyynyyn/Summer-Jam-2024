@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpgi1260u2e1f"]
+[gd_scene load_steps=11 format=3 uid="uid://cpgi1260u2e1f"]
 
 [ext_resource type="Texture2D" uid="uid://p5rsj4r6i1qi" path="res://Sprites/TileSheet_DungeonGreen.png" id="1_jx7qt"]
 [ext_resource type="Texture2D" uid="uid://bw1oab3k6qens" path="res://Sprites/TileSheet_DungeonPink.png" id="2_3qmgq"]
 [ext_resource type="Texture2D" uid="uid://btgdq8o7tytoh" path="res://Sprites/TileSheet_DungeonPurple.png" id="3_a7ytd"]
 [ext_resource type="Texture2D" uid="uid://lec0q3st71pw" path="res://Sprites/TileSheet_DungeonYellow.png" id="4_iafs0"]
+[ext_resource type="PackedScene" uid="uid://bumy4g8cy1waj" path="res://Scenes/Player.tscn" id="5_lawwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mea05"]
 texture = ExtResource("1_jx7qt")
@@ -258,3 +259,8 @@ layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(-524302, 65538, 0, -524301, 131074, 0, -524300, 131074, 0, -524299, 131074, 0, -524298, 131074, 0, -524297, 131074, 0, -524296, 131074, 0, -524295, 131074, 0, -524294, 131074, 0, -524293, 131074, 0, -524292, 131074, 0, -524291, 131074, 0, -524290, 131074, 0, -524289, 131074, 0, -589824, 131074, 0, -589823, 131074, 0, -589822, 131074, 0, -589821, 131074, 0, -589820, 131074, 0, -589819, 131074, 0, -589818, 131074, 0, -589817, 131074, 0, -589816, 131074, 0, -589815, 131074, 0, -589814, 131074, 0, -589813, 131074, 0, -589812, 131074, 0, -589811, 131074, 0, -589810, 327682, 0, -524274, 393218, 3, -458738, 393218, 3, -393202, 393218, 3, -327666, 393218, 3, -262130, 393218, 3, -196594, 393218, 3, -131058, 393218, 3, -65522, 393218, 3, 14, 393218, 3, 65550, 393218, 3, -458766, 2, 3, -393230, 2, 3, -327694, 2, 3, -262158, 2, 3, -196622, 2, 3, -131086, 2, 3, -65550, 2, 3, -14, 2, 3, 65522, 2, 3, 131058, 2, 3, 196594, 2, 3, 262130, 2, 3, 327666, 2, 3, 393202, 2, 3, 458738, 2, 3)
 layer_2/name = "Obstacles"
 layer_2/tile_data = PackedInt32Array()
+
+[node name="Player" parent="." instance=ExtResource("5_lawwb")]
+position = Vector2(176, 133)
+SPEED = null
+DECELERATION = null
