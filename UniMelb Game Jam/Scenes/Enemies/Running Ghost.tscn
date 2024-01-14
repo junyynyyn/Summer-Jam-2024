@@ -1,46 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://cguvwquhnifu3"]
+[gd_scene load_steps=4 format=3 uid="uid://cguvwquhnifu3"]
 
 [ext_resource type="Script" path="res://Scripts/Running Ghost.gd" id="1_hagdo"]
-[ext_resource type="Texture2D" uid="uid://l8xw8lo48f43" path="res://Sprites/ghost.png" id="2_a1vii"]
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_ssb10"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cgwto"]
-radius = 19.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eed8i"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ey6go"]
 radius = 76.7919
 
-[node name="Running Ghost" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 4
-motion_mode = 1
+[node name="Ghost" instance=ExtResource("1_ssb10")]
 script = ExtResource("1_hagdo")
+speed = 3000
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.796078, 0.352941, 0.129412, 1)
-texture = ExtResource("2_a1vii")
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.776471, 0.294118, 0.211765, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cgwto")
-debug_color = Color(0, 0.6, 0.701961, 0.0705882)
+[node name="Aggro" type="Node2D" parent="." index="3"]
 
-[node name="Aggro" type="Node2D" parent="."]
-
-[node name="Aggro Range" type="Area2D" parent="Aggro"]
+[node name="Aggro Range" type="Area2D" parent="Aggro" index="0"]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro/Aggro Range"]
-shape = SubResource("CircleShape2D_eed8i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro/Aggro Range" index="0"]
+shape = SubResource("CircleShape2D_ey6go")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." index="4"]
 
-[node name="PathRecalc" type="Timer" parent="Node2D"]
+[node name="PathRecalc" type="Timer" parent="Node2D" index="0"]
 wait_time = 0.2
 autostart = true
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Node2D"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Node2D" index="1"]
 debug_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 [connection signal="area_entered" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_entered"]
 [connection signal="area_exited" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_exited"]

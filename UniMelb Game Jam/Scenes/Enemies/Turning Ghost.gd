@@ -1,15 +1,10 @@
-extends Ghost
+class_name Turning_Ghost extends Ghost
 
 var run_direction : Vector2 = Vector2(0,0)
 @export var MAX_SPEED : float = 150.0
 @export var ROAM_SPEED : float = 50.0
 var speed : float = 20.0
 var roam_target : Vector2 = Vector2(0,0)
-
-var ghost_state : state = state.ROAMING
-
-func _ready():
-	pass # Replace with function body.
 
 func _process(_delta):
 	if ghost_state == state.ROAMING:

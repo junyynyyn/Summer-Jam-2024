@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Ghost
 
 var health = 200
 var damage = 5

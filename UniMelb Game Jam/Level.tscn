@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cpgi1260u2e1f"]
+[gd_scene load_steps=25 format=3 uid="uid://cpgi1260u2e1f"]
 
 [ext_resource type="Texture2D" uid="uid://bw1oab3k6qens" path="res://Sprites/TileSheet_DungeonPink.png" id="2_3qmgq"]
 [ext_resource type="Texture2D" uid="uid://cjw1wjubvu06y" path="res://Sprites/SPR_Tileset.png" id="2_rc78l"]
-[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="4_1fxsf"]
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="5_14j5v"]
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="6_1u6x3"]
 
@@ -395,13 +394,4 @@ layer_3/tile_data = PackedInt32Array()
 [node name="Running Ghost" parent="." instance=ExtResource("6_1u6x3")]
 position = Vector2(127, -35)
 
-[node name="Ghost" parent="." instance=ExtResource("4_1fxsf")]
-position = Vector2(-85, 53)
-
-[node name="Ghost2" parent="." instance=ExtResource("4_1fxsf")]
-position = Vector2(-11, -50)
-
-[node name="Ghost3" parent="." instance=ExtResource("4_1fxsf")]
-position = Vector2(-79, -52)
-
-[node name="TurningGhost" parent="." instance=ExtResource("5_14j5v")]
+[node name="Turning Ghost" parent="." instance=ExtResource("5_14j5v")]

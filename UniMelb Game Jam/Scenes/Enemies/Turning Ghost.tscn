@@ -1,37 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ii8dc3g05ti5"]
+[gd_scene load_steps=4 format=3 uid="uid://ii8dc3g05ti5"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/Turning Ghost.gd" id="1_6hgvg"]
-[ext_resource type="Texture2D" uid="uid://l8xw8lo48f43" path="res://Sprites/ghost.png" id="2_s8gm1"]
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_w4dml"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6qdtj"]
-radius = 19.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2a75o"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_86ot8"]
 radius = 66.0
 
-[node name="TurningGhost" type="CharacterBody2D" groups=["Ghost"]]
-collision_layer = 2
-collision_mask = 4
+[node name="Turning Ghost" instance=ExtResource("1_w4dml")]
 script = ExtResource("1_6hgvg")
+MAX_SPEED = 150.0
+ROAM_SPEED = 50.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.298039, 0.45098, 0.980392, 1)
-texture = ExtResource("2_s8gm1")
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.317647, 0.529412, 0.909804, 1)
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6qdtj")
-debug_color = Color(0, 0.6, 0.701961, 0.0705882)
-
-[node name="DetectionArea" type="Area2D" parent="." groups=["Enemy"]]
+[node name="DetectionArea" type="Area2D" parent="." index="3" groups=["Enemy"]]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("CircleShape2D_2a75o")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0"]
+shape = SubResource("CircleShape2D_86ot8")
 
-[node name="RunningTimer" type="Timer" parent="."]
+[node name="RunningTimer" type="Timer" parent="." index="4"]
 one_shot = true
 
-[node name="RoamTimer" type="Timer" parent="."]
+[node name="RoamTimer" type="Timer" parent="." index="5"]
 wait_time = 2.0
 autostart = true
 
