@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumy4g8cy1waj"]
+[gd_scene load_steps=6 format=3 uid="uid://bumy4g8cy1waj"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6yj8r"]
 [ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="1_ta44o"]
@@ -8,8 +8,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_iv5yw"]
 radius = 19.8494
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_6yj8r")
+[sub_resource type="CircleShape2D" id="CircleShape2D_u66a0"]
+radius = 56.0089
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kemms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4a6i0")
@@ -26,3 +29,10 @@ texture = ExtResource("1_ta44o")
 shape = SubResource("CircleShape2D_iv5yw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Ghost Aggro Range" type="Area2D" parent="."]
+visible = false
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost Aggro Range"]
+shape = SubResource("CircleShape2D_u66a0")
