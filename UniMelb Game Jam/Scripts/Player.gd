@@ -3,29 +3,43 @@ extends CharacterBody2D
 @export var SPEED : float = 75.0
 @export var DECELERATION : float = 25.0
 
+@onready var timer = %ReleaseTimer
+
 var ghosts_collected = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.player = self
-	
-func _input(_event):
-	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	# Movement Code
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.y = direction.y * SPEED
+		velocity = direction * SPEED
 	else:
-		velocity = Vector2(0,0)
+		velocity = Vector2.ZERO
+		
+	# If ghosts are collected then drag them along with the player
+	if (ghosts_collected):
+		for ghost in ghosts_collected:
+			ghost.position = position
 		
 	move_and_slide()
 
+# Collect ghosts if they enter the collection area
 func _on_ghost_collection_area_body_entered(body):
 	if (body.is_in_group("Ghost")):
-		body.capture()
+		var ghost = body
+		if (ghost not in ghosts_collected):
+			ghost.capture()
+			ghosts_collected.append(ghost)
+			#Restart timer 
+			timer.start()
+
+# When timer is over release all the ghosts
+func _on_release_timer_timeout():
+	for ghost in ghosts_collected:
+		ghost.release()
+	ghosts_collected.clear()

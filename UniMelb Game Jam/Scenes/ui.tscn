@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dk8igy0qx447g"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 36.0
+offset_right = -45.0
+offset_bottom = 108.0
+grow_horizontal = 0
+text = "Timer Go Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1112.0
+offset_top = 26.0
+offset_right = -898.0
+offset_bottom = 98.0
+grow_horizontal = 0
+text = "Ghost Capture Info Go Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -692.0
+offset_top = 506.0
+offset_right = -478.0
+offset_bottom = 578.0
+grow_horizontal = 0
+text = "Alternate Info Location"
+horizontal_alignment = 1
+vertical_alignment = 1

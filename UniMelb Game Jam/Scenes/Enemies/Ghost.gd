@@ -15,18 +15,14 @@ func _process(delta):
 func capture():
 	if (not capture_cooldown):
 		visible = false
-		print("Captured")
-		$ReleaseTimer.start()
 	
+
 func release():
 	capture_cooldown = true
 	$CaptureCooldownTimer.start()
 	position = Global.player.position
 	visible = true
 	print("Released")
-
-func _on_release_timer_timeout():
-	release()
 
 func _on_capture_cooldown_timer_timeout():
 	capture_cooldown = false

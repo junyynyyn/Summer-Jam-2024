@@ -394,3 +394,9 @@ position = Vector2(127, -35)
 
 [node name="Ghost" parent="." instance=ExtResource("4_1fxsf")]
 position = Vector2(-85, 53)
+
+[node name="Ghost2" parent="." instance=ExtResource("4_1fxsf")]
+position = Vector2(-11, -50)
+
+[node name="Ghost3" parent="." instance=ExtResource("4_1fxsf")]
+position = Vector2(-79, -52)

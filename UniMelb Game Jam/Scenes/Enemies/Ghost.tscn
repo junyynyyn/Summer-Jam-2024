@@ -20,13 +20,8 @@ texture = ExtResource("1_aoe3p")
 shape = SubResource("CircleShape2D_barfr")
 debug_color = Color(0, 0.6, 0.701961, 0.0705882)
 
-[node name="ReleaseTimer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
 [node name="CaptureCooldownTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="timeout" from="ReleaseTimer" to="." method="_on_release_timer_timeout"]
 [connection signal="timeout" from="CaptureCooldownTimer" to="." method="_on_capture_cooldown_timer_timeout"]
