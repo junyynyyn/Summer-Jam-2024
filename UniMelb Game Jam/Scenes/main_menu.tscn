@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ns785h1yrp2p"]
+[gd_scene load_steps=2 format=3 uid="uid://ns785h1yrp2p"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_qper5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,8 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qper5")
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 303.0
@@ -16,7 +19,7 @@ offset_right = 697.0
 offset_bottom = 348.0
 text = "Play"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 446.0
 offset_top = 371.0

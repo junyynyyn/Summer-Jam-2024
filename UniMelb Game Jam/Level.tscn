@@ -261,6 +261,4 @@ layer_2/name = "Obstacles"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("5_lawwb")]
-position = Vector2(176, 133)
-SPEED = null
-DECELERATION = null
+position = Vector2(482, 355)

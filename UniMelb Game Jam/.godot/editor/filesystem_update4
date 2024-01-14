@@ -2,3 +2,5 @@ res://Scenes/Player.tscn
 res://Level.tscn
 res://Scenes/Player.gd
 res://Scenes/main_menu.tscn
+res://Scripts/Global.gd
+res://Scenes/main_menu.gd
