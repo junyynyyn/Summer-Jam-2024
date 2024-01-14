@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cguvwquhnifu3"]
+[gd_scene load_steps=5 format=3 uid="uid://b7uh2ruux20ic"]
 
-[ext_resource type="Script" path="res://Scripts/Running Ghost.gd" id="1_bd015"]
-[ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="2_1n7qx"]
+[ext_resource type="Script" path="res://Scripts/Running Ghost.gd" id="1_hagdo"]
+[ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="2_du6iw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgwto"]
 radius = 19.0
@@ -12,13 +12,13 @@ radius = 76.7919
 [node name="Running Ghost" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("1_bd015")
-nav_agent = NodePath("Navigation/NavigationAgent2D")
+script = ExtResource("1_hagdo")
+nav_agent = NodePath("Node2D/NavigationAgent2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.796078, 0.352941, 0.129412, 1)
 scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("2_1n7qx")
+texture = ExtResource("2_du6iw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cgwto")
@@ -32,12 +32,17 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro/Aggro Range"]
 shape = SubResource("CircleShape2D_eed8i")
 
-[node name="Navigation" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation"]
+[node name="PathRecalc" type="Timer" parent="Node2D"]
+wait_time = 0.2
+autostart = true
 
-[node name="PathRecalc" type="Timer" parent="Navigation"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Node2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[connection signal="timeout" from="Navigation/PathRecalc" to="." method="_on_path_recalc_timeout"]
+[connection signal="area_entered" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_entered"]
+[connection signal="area_exited" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_exited"]
+[connection signal="timeout" from="Node2D/PathRecalc" to="." method="_on_path_recalc_timeout"]
+[connection signal="velocity_computed" from="Node2D/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
