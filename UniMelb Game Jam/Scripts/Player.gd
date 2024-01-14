@@ -25,3 +25,7 @@ func _process(_delta):
 		velocity = Vector2(0,0)
 		
 	move_and_slide()
+
+func _on_ghost_collection_area_body_entered(body):
+	if (body.is_in_group("Ghost")):
+		body.capture()

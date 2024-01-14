@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bw1oab3k6qens" path="res://Sprites/TileSheet_DungeonPink.png" id="2_3qmgq"]
 [ext_resource type="Texture2D" uid="uid://cjw1wjubvu06y" path="res://Sprites/SPR_Tileset.png" id="2_rc78l"]
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="4_1fxsf"]
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="6_1u6x3"]
-[ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="6_evqrc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjn56"]
 texture = ExtResource("2_3qmgq")
@@ -389,8 +389,8 @@ layer_1/tile_data = PackedInt32Array(-524302, 65538, 0, -524301, 131074, 0, -524
 layer_2/name = "Obstacles"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="TurningGhost" parent="." instance=ExtResource("6_evqrc")]
-position = Vector2(-91, 16)
-
 [node name="Running Ghost" parent="." instance=ExtResource("6_1u6x3")]
 position = Vector2(127, -35)
+
+[node name="Ghost" parent="." instance=ExtResource("4_1fxsf")]
+position = Vector2(-85, 53)

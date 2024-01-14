@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6i0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iv5yw"]
-radius = 19.8494
+radius = 14.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 5
@@ -22,6 +22,7 @@ scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_ta44o")
 
 [node name="GhostCollectionArea" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostCollectionArea"]
 shape = SubResource("CircleShape2D_iv5yw")
@@ -29,4 +30,6 @@ shape = SubResource("CircleShape2D_iv5yw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
+
+[connection signal="body_entered" from="GhostCollectionArea" to="." method="_on_ghost_collection_area_body_entered"]

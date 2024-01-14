@@ -1,12 +1,10 @@
-extends CharacterBody2D
+extends Ghost
 
 var run_direction : Vector2 = Vector2(0,0)
 @export var MAX_SPEED : float = 150.0
 @export var ROAM_SPEED : float = 50.0
 var speed : float = 20.0
 var roam_target : Vector2 = Vector2(0,0)
-
-enum state {ROAMING, RUNNING}
 
 var ghost_state : state = state.ROAMING
 
@@ -19,8 +17,7 @@ func _process(_delta):
 		speed = lerp(speed, ROAM_SPEED, 0.5)
 		velocity = direction * speed
 	elif ghost_state == state.RUNNING:
-		velocity.x = run_direction.x * MAX_SPEED
-		velocity.y = run_direction.y * MAX_SPEED
+		velocity = run_direction * MAX_SPEED
 	move_and_slide()
 
 func _on_detection_area_body_entered(body):
