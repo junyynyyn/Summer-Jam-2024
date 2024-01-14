@@ -8,7 +8,7 @@ var health_bar: TextureProgressBar
 var is_dead = false
 #var home_pos = Vector2.ZERO
 var target_node = null
-@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+@onready var nav_agent := $Node2D/NavigationAgent2D as NavigationAgent2D
 
 #func _enter_tree():
 	#home_pos = self.global_position

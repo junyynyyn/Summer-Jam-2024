@@ -26,3 +26,6 @@ texture = ExtResource("1_ta44o")
 shape = SubResource("CircleShape2D_iv5yw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
