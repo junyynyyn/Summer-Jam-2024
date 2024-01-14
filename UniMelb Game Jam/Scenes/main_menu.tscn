@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ns785h1yrp2p"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_qper5"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_qper5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,3 +36,6 @@ offset_bottom = 217.0
 text = "Legally Distinct Luigi's Mansion"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

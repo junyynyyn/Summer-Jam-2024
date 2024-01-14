@@ -1,13 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705210610
+::res://::1705211178
 icon.svg::CompressedTexture2D::6898933307114045714::1705207654::1705207687::1::::<><>::
-Level.tscn::PackedScene::5838593922247775361::1705210460::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png<>uid://bumy4g8cy1waj::::res://Scenes/Player.tscn
-::res://Scenes/::1705210626
-Player.tscn::PackedScene::3816479451594740017::1705209804::0::1::::<><>::res://Scenes/Player.gd<>uid://c5j5onyar25fi::::res://icon.svg
-Player.gd::GDScript::-1::1705209804::0::1::::<>CharacterBody2D<>::
-main_menu.tscn::PackedScene::951617229563100137::1705210646::0::1::::<><>::
-::res://Scripts/::1705210626
+Level.tscn::PackedScene::5838593922247775361::1705211178::0::1::::<><>::uid://p5rsj4r6i1qi::::res://Sprites/TileSheet_DungeonGreen.png<>uid://bw1oab3k6qens::::res://Sprites/TileSheet_DungeonPink.png<>uid://btgdq8o7tytoh::::res://Sprites/TileSheet_DungeonPurple.png<>uid://lec0q3st71pw::::res://Sprites/TileSheet_DungeonYellow.png<>uid://bumy4g8cy1waj::::res://Scenes/Player.tscn
+::res://Scenes/::1705211183
+Level.tscn::PackedScene::-1::1705210958::0::1::::<><>::
+main.tscn::PackedScene::8792369021715770250::1705211183::0::1::::<><>::uid://cpgi1260u2e1f::::res://Level.tscn<>uid://ns785h1yrp2p::::res://Scenes/main_menu.tscn
+main_menu.tscn::PackedScene::951617229563100137::1705211178::0::1::::<><>::res://Scripts/main_menu.gd
+Player.tscn::PackedScene::3816479451594740017::1705211178::0::1::::<><>::res://Scripts/Player.gd<>uid://c5j5onyar25fi::::res://icon.svg
+Running Ghost.tscn::PackedScene::-1::1705210958::0::1::::<><>::
+::res://Scenes/Enemies/::1705210666
+::res://Scripts/::1705211156
 Global.gd::GDScript::-1::1705210626::0::1::::<>Node<>::
+main_menu.gd::GDScript::-1::1705211156::0::1::::<>Control<>::
+Player.gd::GDScript::-1::1705210958::0::1::::<>CharacterBody2D<>::
+Running Ghost.gd::GDScript::-1::1705210958::0::1::::<>CharacterBody2D<>::
 ::res://Sprites/::1705207687
 AnimationSheet_Items.png::CompressedTexture2D::7925167081140525460::1705207654::1705207687::1::::<><>::
 AssetSheet_UI.png::CompressedTexture2D::1661226758057016488::1705207654::1705207687::1::::<><>::

@@ -4,3 +4,9 @@ res://Scenes/Player.gd
 res://Scenes/main_menu.tscn
 res://Scripts/Global.gd
 res://Scenes/main_menu.gd
+res://Scripts/main_menu.gd
+res://Scenes/main.tscn
+res://Scenes/Enemies/Turning Ghost.tscn
+res://Scenes/Enemies/Turning Ghost.gd
+res://Scripts/Player.gd
+res://Scenes/Enemies/Running Ghost.tscn
