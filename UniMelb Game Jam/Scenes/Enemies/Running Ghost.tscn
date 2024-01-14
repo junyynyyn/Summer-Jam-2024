@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cguvwquhnifu3"]
 
-[ext_resource type="Script" path="res://Scripts/Running Ghost.gd" id="1_hagdo"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Running Ghost.gd" id="1_hagdo"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_ssb10"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ey6go"]

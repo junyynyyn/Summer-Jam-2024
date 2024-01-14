@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy1f7nq6lt4d"]
+[gd_scene load_steps=5 format=3 uid="uid://cy1f7nq6lt4d"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies/Ghost.gd" id="1_rn8eo"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Ghost.gd" id="1_hnbmp"]
 [ext_resource type="Texture2D" uid="uid://l8xw8lo48f43" path="res://Sprites/ghost.png" id="2_yihjj"]
+[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_sp3pq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_barfr"]
 radius = 19.0
@@ -9,10 +10,15 @@ radius = 19.0
 [node name="Ghost" type="CharacterBody2D" groups=["Ghost"]]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_rn8eo")
+script = ExtResource("1_hnbmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yihjj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+energy = 0.25
+texture = ExtResource("3_sp3pq")
+texture_scale = 0.2
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_barfr")

@@ -39,7 +39,6 @@ func recalc_path():
 		#nav_agent.target_position = home_pos
 		pass
 
-
 func _on_path_recalc_timeout():
 	recalc_path()
 

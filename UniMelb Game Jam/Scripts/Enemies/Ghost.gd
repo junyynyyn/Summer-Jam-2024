@@ -5,12 +5,15 @@ var ghost_state : state = state.ROAMING
 
 var capture_cooldown = false
 
+# Base function to capture ghosts
 func capture():
 	if (not capture_cooldown):
 		visible = false
 		ghost_state = state.CAPTURED
 
+# Base function to release ghosts from player captivity
 func release():
+	# Grants ghost 2 seconds of invulnerability to being captured again
 	capture_cooldown = true
 	$CaptureCooldownTimer.start()
 	position = Global.player.position

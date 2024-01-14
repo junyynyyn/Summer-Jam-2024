@@ -30,7 +30,9 @@ func _on_running_timer_timeout():
 	velocity = Vector2(0,0)
 
 func _on_roam_timer_timeout():
+	#Reset speed
 	speed = ROAM_SPEED
+	#Randomize a target location for ghost to wander to during roam state
 	var rng = RandomNumberGenerator.new()
 	roam_target.x = position.x + rng.randf_range(-10.0, 10.0)
 	roam_target.y = position.y + rng.randf_range(-10.0, 10.0)

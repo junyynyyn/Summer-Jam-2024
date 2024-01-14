@@ -1,19 +1,18 @@
 extends CharacterBody2D
 
 @export var SPEED : float = 75.0
-@export var DECELERATION : float = 25.0
 
 @onready var timer = %ReleaseTimer
 
 var ghosts_collected = []
 
 func _ready():
+	#Allow global access to the player as a singleton
 	Global.player = self
 
 func _process(_delta):
 	# Movement Code
 	var input_dir = Input.get_vector("left", "right", "up", "down")
-	
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	if direction:
@@ -32,7 +31,7 @@ func _process(_delta):
 func _on_ghost_collection_area_body_entered(body):
 	if (body.is_in_group("Ghost")):
 		var ghost = body
-		if (ghost not in ghosts_collected):
+		if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
 			ghost.capture()
 			ghosts_collected.append(ghost)
 			#Restart timer 

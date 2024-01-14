@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumy4g8cy1waj"]
+[gd_scene load_steps=6 format=3 uid="uid://bumy4g8cy1waj"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6yj8r"]
 [ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="1_ta44o"]
+[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_cb5bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6i0"]
 
@@ -35,6 +36,11 @@ zoom = Vector2(2, 2)
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.2
+texture = ExtResource("3_cb5bc")
+texture_scale = 0.2
 
 [connection signal="body_entered" from="GhostCollectionArea" to="." method="_on_ghost_collection_area_body_entered"]
 [connection signal="timeout" from="ReleaseTimer" to="." method="_on_release_timer_timeout"]
