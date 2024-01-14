@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cguvwquhnifu3"]
 
 [ext_resource type="Script" path="res://Scripts/Running Ghost.gd" id="1_hagdo"]
-[ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="2_du6iw"]
+[ext_resource type="Texture2D" uid="uid://l8xw8lo48f43" path="res://Sprites/ghost.png" id="2_a1vii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgwto"]
 radius = 19.0
@@ -17,8 +17,7 @@ script = ExtResource("1_hagdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.796078, 0.352941, 0.129412, 1)
-scale = Vector2(0.28125, 0.28125)
-texture = ExtResource("2_du6iw")
+texture = ExtResource("2_a1vii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cgwto")
