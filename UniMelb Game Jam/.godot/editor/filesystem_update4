@@ -10,3 +10,6 @@ res://Scenes/Enemies/Turning Ghost.tscn
 res://Scenes/Enemies/Turning Ghost.gd
 res://Scripts/Player.gd
 res://Scenes/Enemies/Running Ghost.tscn
+res://Scenes/Enemies/Ghost.tscn
+res://Scenes/Enemies/Ghost.gd
+res://Scripts/Running Ghost.gd
