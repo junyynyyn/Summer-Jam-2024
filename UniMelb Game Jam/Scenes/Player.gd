@@ -9,11 +9,11 @@ var ghosts_collected = []
 func _ready():
 	pass # Replace with function body.
 	
-func _input(event):
+func _input(_event):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
