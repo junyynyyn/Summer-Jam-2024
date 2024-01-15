@@ -32,6 +32,7 @@ func start_timer():
 	
 func complete_level():
 	$UI.display_finish(timer)
+	$"UI/Timer Grid".visible = false
 	get_tree().paused = true
 	
 func _on_ui_next_scene():

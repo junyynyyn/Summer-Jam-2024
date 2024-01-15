@@ -1,29 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=14 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="PackedScene" uid="uid://cclnarqbd0g5u" path="res://Scenes/Menus/Level Select.tscn" id="2_i2ltq"]
+[ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/Ghost Bar Background.png" id="3_x4nxy"]
+[ext_resource type="Texture2D" uid="uid://ba6se6q8b8u2b" path="res://Sprites/Ghost Bar Bar.png" id="4_epncs"]
+[ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
+[ext_resource type="FontFile" uid="uid://5jcjgbxbe1ym" path="res://Sprites/UI/Tektur-Regular.ttf" id="6_6gca8"]
+[ext_resource type="Texture2D" uid="uid://bql70b6duuls4" path="res://Sprites/UI/Big Panel.png" id="6_sf4o1"]
+[ext_resource type="Texture2D" uid="uid://w5mb6ekb46bu" path="res://Sprites/UI/Repeat Default.png" id="7_troe8"]
+[ext_resource type="Texture2D" uid="uid://c6kjrtk16bh1l" path="res://Sprites/UI/Repeat Hover.png" id="8_f1c3p"]
+[ext_resource type="Texture2D" uid="uid://bre4vgj82gtgm" path="res://Sprites/UI/Play Default.png" id="9_a5vpm"]
+[ext_resource type="Texture2D" uid="uid://se6wode3qk17" path="res://Sprites/UI/Play Hover.png" id="10_w6o0m"]
+[ext_resource type="Texture2D" uid="uid://byo6cps0yfjw8" path="res://Sprites/UI/Levels Default.png" id="11_pgclx"]
+[ext_resource type="Texture2D" uid="uid://cf637kjgnbabi" path="res://Sprites/UI/Levels Hover.png" id="12_krtlu"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_fexbs")
 level_select_scene = ExtResource("2_i2ltq")
 
-[node name="Timer" type="Label" parent="."]
+[node name="GhostCounter" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -250.0
-offset_top = 36.0
-offset_right = -45.0
-offset_bottom = 108.0
-grow_horizontal = 0
-text = "Timer"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 512.0
+offset_top = 478.0
+offset_right = 640.0
+offset_bottom = 606.0
+max_value = 5.0
+fill_mode = 4
+texture_under = ExtResource("3_x4nxy")
+texture_progress = ExtResource("4_epncs")
 
-[node name="GhostCounter" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="GhostCounterOLD" type="Label" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -44,6 +52,20 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("5_d3wue")
+
+[node name="TextureRect" type="TextureRect" parent="FinishScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.05
+anchor_top = 4.025
+anchor_right = 20.0
+anchor_bottom = 11.325
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sf4o1")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="FinishScreen"]
 layout_mode = 1
@@ -52,50 +74,98 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 474.0
-offset_top = 122.0
-offset_right = 653.0
-offset_bottom = 186.0
+offset_left = 398.0
+offset_top = 125.0
+offset_right = 730.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level Finished!"
+theme_override_font_sizes/font_size = 26
+text = "Level Complete
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimeDisplay" type="Label" parent="FinishScreen"]
-layout_mode = 0
-offset_left = 557.0
-offset_top = 241.0
-offset_right = 597.0
-offset_bottom = 264.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.475
+anchor_top = 6.231
+anchor_right = 14.475
+anchor_bottom = 6.231
+offset_left = -25.0
+offset_top = -9.24002
+offset_right = 25.0
+offset_bottom = 8.75998
+grow_horizontal = 2
+grow_vertical = 2
 text = "Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ReplayButton" type="Button" parent="FinishScreen"]
+[node name="GridContainer" type="GridContainer" parent="FinishScreen"]
 layout_mode = 0
-offset_left = 421.0
-offset_top = 325.0
-offset_right = 481.0
-offset_bottom = 356.0
-text = "Replay"
-
-[node name="NextLevelButton" type="Button" parent="FinishScreen"]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 326.0
-offset_right = 620.0
-offset_bottom = 357.0
-text = "Next Level"
-
-[node name="LevelSelectButton" type="Button" parent="FinishScreen"]
-layout_mode = 0
-offset_left = 668.0
-offset_top = 326.0
+offset_left = 403.0
+offset_top = 292.0
 offset_right = 767.0
-offset_bottom = 357.0
-text = "Level Select"
+offset_bottom = 427.0
+theme_override_constants/h_separation = 50
+columns = 3
 
-[connection signal="pressed" from="FinishScreen/ReplayButton" to="." method="_on_replay_button_pressed"]
-[connection signal="pressed" from="FinishScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="FinishScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[node name="ReplayButton" type="TextureButton" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_troe8")
+texture_hover = ExtResource("8_f1c3p")
+
+[node name="NextLevelButton" type="TextureButton" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_a5vpm")
+texture_hover = ExtResource("10_w6o0m")
+
+[node name="LevelSelectButton" type="TextureButton" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_pgclx")
+texture_hover = ExtResource("12_krtlu")
+
+[node name="Label" type="Label" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+text = "Repeat"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+text = "Next 
+Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="FinishScreen/GridContainer"]
+layout_mode = 2
+text = "Level
+Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer Grid" type="GridContainer" parent="."]
+offset_left = 540.0
+offset_top = 15.0
+offset_right = 629.0
+offset_bottom = 55.0
+columns = 2
+
+[node name="Label" type="Label" parent="Timer Grid"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_6gca8")
+text = "Time:"
+
+[node name="Timer" type="Label" parent="Timer Grid"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_6gca8")
+text = "Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="FinishScreen/GridContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="FinishScreen/GridContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="FinishScreen/GridContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]

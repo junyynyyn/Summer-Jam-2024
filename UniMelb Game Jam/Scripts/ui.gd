@@ -8,14 +8,15 @@ func _ready():
 	update_ghost_count(0)
 
 func update_ghost_count(count: int):
-	%GhostCounter.text = "Ghosts Collected: " + str(count)
+	%GhostCounter.value += count
+	# Doesnt work, needs to increase by one for each ghost collected and update when they're released
 
 func update_timer(time: float):
-	%Timer.text = ("Time: %.2f" % time)
+	%Timer.text = ("%.2f" % time)
 
 func display_finish(time: float):
 	%FinishScreen.visible = true
-	%FinishScreen/TimeDisplay.text = "Final Time: %.2f" % time
+	%FinishScreen/TimeDisplay.text = "Final Time: %.2f seconds" % time
 	print("Finished Level!")
 
 func _on_replay_button_pressed():
