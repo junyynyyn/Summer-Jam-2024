@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b57eg072fpn3b"]
+[gd_scene load_steps=3 format=3 uid="uid://ddtqkme5jcwp6"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_hiwya"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Mirrored Ghost.gd" id="2_qaixr"]

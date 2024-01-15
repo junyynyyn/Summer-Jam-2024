@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="3_oftie"]
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_g7nq5"]
-[ext_resource type="PackedScene" uid="uid://b57eg072fpn3b" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_nwqoa"]
-[ext_resource type="PackedScene" uid="uid://g4rxcfrn4qo7" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="6_pp1iq"]
+[ext_resource type="PackedScene" uid="uid://ddtqkme5jcwp6" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_nwqoa"]
+[ext_resource type="PackedScene" uid="uid://cdrqjrhwbo643" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="6_pp1iq"]
 
 [node name="Level" instance=ExtResource("1_48off")]
 

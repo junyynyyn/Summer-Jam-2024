@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://g4rxcfrn4qo7"]
+[gd_scene load_steps=3 format=3 uid="uid://cdrqjrhwbo643"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_4e10c"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Vanishing Ghost.gd" id="2_fhwha"]
