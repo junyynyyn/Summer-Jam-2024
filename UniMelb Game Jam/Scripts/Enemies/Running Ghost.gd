@@ -11,7 +11,6 @@ var target_node = null
 
 @onready var nav_agent := $Node2D/NavigationAgent2D as NavigationAgent2D
 @onready var sprite = $Sprite2D
-@onready var player = get_node("/root/Main/Player")
 
 #func _enter_tree():
 	#home_pos = self.global_position
@@ -39,10 +38,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func update_sprite_orientation():
-	if player.global_position.x < global_position.x:
-		sprite.flip_h = true  # Player is to the left, flip sprite
-	else:
-		sprite.flip_h = false  # Player is to the right, don't flip
+	if (Global.player):
+		if Global.player.global_position.x < global_position.x:
+			sprite.flip_h = true  # Player is to the left, flip sprite
+		else:
+			sprite.flip_h = false  # Player is to the right, don't flip
 
 
 func recalc_path():

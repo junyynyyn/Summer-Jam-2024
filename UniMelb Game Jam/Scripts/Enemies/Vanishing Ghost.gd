@@ -7,8 +7,6 @@ var roam_target : Vector2 = Vector2(0,0)
 
 @onready var sprite = $Sprite2D
 @onready var light = $Sprite2D/PointLight2D
-@onready var player = get_node("/root/Main/Player")
-
 
 func _process(_delta):
 	if ghost_state == state.ROAMING:

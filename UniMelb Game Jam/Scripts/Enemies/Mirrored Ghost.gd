@@ -2,7 +2,6 @@ class_name MirroredGhost extends Ghost
 
 var speed: float = 150
 
-@onready var player = get_node("/root/Main/Player")
 @onready var sprite = $Sprite2D
 
 func _ready():
@@ -24,7 +23,7 @@ func _process(_delta):
 	move_and_slide()
 
 func update_sprite_orientation():
-	if player.global_position.x < global_position.x:
+	if Global.player.global_position.x < global_position.x:
 		sprite.flip_h = false  # Player is to the left, flip sprite
 	else:
 		sprite.flip_h = true  # Player is to the right, don't flip

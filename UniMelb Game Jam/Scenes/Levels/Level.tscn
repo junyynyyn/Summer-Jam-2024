@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dubob17g2sofp"]
+[gd_scene load_steps=5 format=3 uid="uid://dubob17g2sofp"]
 
 [ext_resource type="TileSet" uid="uid://boeyacwn3tnje" path="res://Scenes/Levels/TileSet.tres" id="1_2h1ej"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_hmm30"]
+[ext_resource type="PackedScene" uid="uid://bumy4g8cy1waj" path="res://Scenes/Player.tscn" id="2_fce32"]
+[ext_resource type="PackedScene" uid="uid://dk8igy0qx447g" path="res://Scenes/ui.tscn" id="3_ch5gh"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_hmm30")
+
+[node name="UI" parent="." instance=ExtResource("3_ch5gh")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_2h1ej")
@@ -16,5 +22,14 @@ layer_3/name = "Obstacles"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="Ghosts" type="Node2D" parent="."]
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_fce32")]
+position = Vector2(277, 270)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

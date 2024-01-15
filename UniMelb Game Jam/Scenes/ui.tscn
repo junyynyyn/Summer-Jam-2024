@@ -33,3 +33,66 @@ text = "Ghost Counter
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FinishScreen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="FinishScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 474.0
+offset_top = 122.0
+offset_right = 653.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level Finished!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeDisplay" type="Label" parent="FinishScreen"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 241.0
+offset_right = 597.0
+offset_bottom = 264.0
+text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReplayButton" type="Button" parent="FinishScreen"]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 325.0
+offset_right = 481.0
+offset_bottom = 356.0
+text = "Replay"
+
+[node name="NextLevelButton" type="Button" parent="FinishScreen"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 326.0
+offset_right = 620.0
+offset_bottom = 357.0
+text = "Next Level"
+
+[node name="LevelSelectButton" type="Button" parent="FinishScreen"]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 326.0
+offset_right = 767.0
+offset_bottom = 357.0
+text = "Level Select"
+
+[connection signal="pressed" from="FinishScreen/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="FinishScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="FinishScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]

@@ -7,7 +7,6 @@ var speed : float = 20.0
 var roam_target : Vector2 = Vector2(0,0)
 
 @onready var sprite = $Sprite2D
-@onready var player = get_node("/root/Main/Player")
 
 func _process(_delta):
 	if ghost_state == state.ROAMING:
@@ -22,10 +21,11 @@ func _process(_delta):
 	move_and_slide()
 
 func update_sprite_orientation():
-	if player.global_position.x < global_position.x:
-		sprite.flip_h = true  # Player is to the left, flip sprite
-	else:
-		sprite.flip_h = false  # Player is to the right, don't flip
+	if (Global.player):
+		if Global.player.global_position.x < global_position.x:
+			sprite.flip_h = true  # Player is to the left, flip sprite
+		else:
+			sprite.flip_h = false  # Player is to the right, don't flip
 
 
 func _on_detection_area_body_entered(body):
