@@ -6,9 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ey6go"]
 radius = 76.7919
 
-[node name="Ghost" instance=ExtResource("1_ssb10")]
+[node name="Running Ghost" instance=ExtResource("1_ssb10")]
 script = ExtResource("1_hagdo")
-speed = 3000
+speed = 75
 
 [node name="Sprite2D" parent="." index="0"]
 modulate = Color(0.776471, 0.294118, 0.211765, 1)

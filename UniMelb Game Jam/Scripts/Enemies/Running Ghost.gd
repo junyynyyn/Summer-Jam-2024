@@ -2,13 +2,16 @@ extends Ghost
 
 var health = 200
 var damage = 5
-@export var speed = 3000
+@export var speed = 75
 
 var health_bar: TextureProgressBar
 var is_dead = false
 #var home_pos = Vector2.ZERO
 var target_node = null
+
 @onready var nav_agent := $Node2D/NavigationAgent2D as NavigationAgent2D
+@onready var sprite = $Sprite2D
+@onready var player = get_node("/root/Main/Player")
 
 #func _enter_tree():
 	#home_pos = self.global_position
@@ -19,7 +22,7 @@ func _ready():
 	nav_agent.target_desired_distance = 4
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if nav_agent.is_navigation_finished():
 		return
 	if target_node:
@@ -28,9 +31,19 @@ func _physics_process(delta: float) -> void:
 		var new_target_position = self.global_position + direction * distance
 		nav_agent.target_position = new_target_position
 	var axis = to_local(nav_agent.get_next_path_position()).normalized()
-	var intended_velocity = axis * speed * delta
+	var intended_velocity = axis * speed
 	velocity = intended_velocity
+	
+	update_sprite_orientation()
+	
 	move_and_slide()
+
+func update_sprite_orientation():
+	if player.global_position.x < global_position.x:
+		sprite.flip_h = true  # Player is to the left, flip sprite
+	else:
+		sprite.flip_h = false  # Player is to the right, don't flip
+
 
 func recalc_path():
 	if target_node:
@@ -49,16 +62,16 @@ func _on_aggro_range_area_entered(area):
 	var distance = 50  # Adjust this value to control how far the enemy runs
 	var new_target_position = self.global_position + direction * distance
 	nav_agent.target_position = new_target_position
-	print("target acquired")
-	print(target_node)
+	#print("target acquired")
+	#print(target_node)
 
 func _on_aggro_range_area_exited(area):
 	if area.owner == target_node:
 		target_node = null
-		print("target left")
+		#print("target left")
 
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 	velocity = safe_velocity
 	move_and_slide()
-	print("computed")
+	#print("computed")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57eg072fpn3b"]
+
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_hiwya"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Mirrored Ghost.gd" id="2_qaixr"]
+
+[node name="Mirrored Ghost" instance=ExtResource("1_hiwya")]
+script = ExtResource("2_qaixr")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.14902, 0.47451, 0.298039, 1)
