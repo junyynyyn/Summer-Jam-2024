@@ -33,3 +33,5 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[connection signal="next_scene" from="UI" to="." method="_on_ui_next_scene"]

@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @export var level_select_scene : PackedScene
 
+signal next_scene
+
 func _ready():
 	update_ghost_count(0)
 
@@ -22,7 +24,10 @@ func _on_replay_button_pressed():
 	get_tree().reload_current_scene()
 
 func _on_next_level_button_pressed():
-	pass # Replace with function body.
+	get_tree().paused = false
+	%FinishScreen.visible = false
+	emit_signal("next_scene")
 
 func _on_level_select_button_pressed():
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(level_select_scene)

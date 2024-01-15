@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var ghost_quota : int
+@export var next_level : PackedScene
 
 var ghost_total : int
 
@@ -32,3 +33,7 @@ func start_timer():
 func complete_level():
 	$UI.display_finish(timer)
 	get_tree().paused = true
+	
+func _on_ui_next_scene():
+	if next_level:
+		get_tree().change_scene_to_packed(next_level)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=3 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
+[ext_resource type="PackedScene" uid="uid://cclnarqbd0g5u" path="res://Scenes/Menus/Level Select.tscn" id="2_i2ltq"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_fexbs")
+level_select_scene = ExtResource("2_i2ltq")
 
 [node name="Timer" type="Label" parent="."]
 unique_name_in_owner = true

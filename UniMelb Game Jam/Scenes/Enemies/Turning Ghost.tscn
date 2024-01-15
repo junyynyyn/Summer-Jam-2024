@@ -15,6 +15,7 @@ ROAM_SPEED = 50.0
 modulate = Color(0.317647, 0.529412, 0.909804, 1)
 
 [node name="DetectionArea" type="Area2D" parent="." index="3" groups=["Enemy"]]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0"]
