@@ -36,18 +36,9 @@ texture_progress = ExtResource("4_epncs")
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -598.0
-offset_top = -305.0
-offset_right = -558.0
-offset_bottom = -265.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 theme = ExtResource("5_d3wue")
 
 [node name="TextureRect" type="TextureRect" parent="FinishScreen"]

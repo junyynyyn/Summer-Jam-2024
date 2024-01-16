@@ -9,7 +9,6 @@
 script = ExtResource("1_hmm30")
 
 [node name="UI" parent="." instance=ExtResource("3_ch5gh")]
-unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_2h1ej")

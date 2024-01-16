@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED : float = 75.0
+@export var SPEED : float = 100.0
 
 @onready var timer = %ReleaseTimer
 

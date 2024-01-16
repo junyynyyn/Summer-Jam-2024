@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cclnarqbd0g5u"]
+[gd_scene load_steps=17 format=3 uid="uid://cclnarqbd0g5u"]
 
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_tbwsb"]
 [ext_resource type="Texture2D" uid="uid://c1d0ct5hsubc8" path="res://Sprites/UI/Unlocked Level Icon.png" id="2_sgbkr"]
@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://b2o4hsfmm4ml0" path="res://Sprites/UI/Left Arrow.png" id="11_1penf"]
 [ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="12_5uoml"]
 [ext_resource type="Script" path="res://Scripts/HomeButton.gd" id="15_vjbok"]
-
-[sub_resource type="Theme" id="Theme_kp5m0"]
-Button/font_sizes/font_size = 25
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -88,7 +85,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 disabled = true
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
@@ -130,7 +126,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -172,7 +167,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -214,7 +208,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -256,7 +249,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -298,7 +290,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -340,7 +331,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -382,7 +372,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
@@ -424,7 +413,6 @@ layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
-theme = SubResource("Theme_kp5m0")
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
