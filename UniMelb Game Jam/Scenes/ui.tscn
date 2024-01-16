@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=16 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
-[ext_resource type="PackedScene" uid="uid://cclnarqbd0g5u" path="res://Scenes/Menus/Level Select.tscn" id="2_i2ltq"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/Ghost Bar Background.png" id="3_x4nxy"]
 [ext_resource type="Texture2D" uid="uid://ba6se6q8b8u2b" path="res://Sprites/Ghost Bar Bar.png" id="4_epncs"]
 [ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
@@ -20,7 +19,6 @@
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_fexbs")
-level_select_scene = ExtResource("2_i2ltq")
 
 [node name="GhostCounter" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
@@ -32,21 +30,6 @@ max_value = 5.0
 fill_mode = 4
 texture_under = ExtResource("3_x4nxy")
 texture_progress = ExtResource("4_epncs")
-
-[node name="GhostCounterOLD" type="Label" parent="."]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1112.0
-offset_top = 26.0
-offset_right = -898.0
-offset_bottom = 98.0
-grow_horizontal = 0
-text = "Ghost Counter
-"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
