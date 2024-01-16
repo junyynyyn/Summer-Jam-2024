@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2u7wqp6rd42h"]
+[gd_scene load_steps=9 format=3 uid="uid://b2u7wqp6rd42h"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_48off"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddtqkme5jcwp6" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_nwqoa"]
 [ext_resource type="PackedScene" uid="uid://cdrqjrhwbo643" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="6_pp1iq"]
 [ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
+[ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
 
 [node name="Level2" instance=ExtResource("1_48off")]
 ghost_quota = 5
@@ -25,7 +26,7 @@ position = Vector2(336, 211)
 position = Vector2(66, 263)
 
 [node name="Turning Ghost" parent="Ghosts" index="3" instance=ExtResource("4_g7nq5")]
-position = Vector2(287, 185)
+position = Vector2(297, 177)
 
 [node name="Mirrored Ghost" parent="Ghosts" index="4" instance=ExtResource("5_nwqoa")]
 position = Vector2(239, 208)
@@ -43,3 +44,6 @@ color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [node name="Slow Torch" parent="." index="8" instance=ExtResource("7_pnl67")]
 position = Vector2(221, 119)
+
+[node name="Speed Torch" parent="." index="9" instance=ExtResource("8_5jwi7")]
+position = Vector2(344, 123)
