@@ -12,9 +12,9 @@ func _process(_delta):
 	if ghost_state == state.ROAMING:
 		var direction = (position - roam_target).normalized()
 		speed = lerp(speed, ROAM_SPEED, 0.5)
-		velocity = direction * speed
+		velocity = direction * speed * speed_multiplier
 	elif ghost_state == state.RUNNING:
-		velocity = run_direction * MAX_SPEED
+		velocity = run_direction * MAX_SPEED * speed_multiplier
 	
 	update_sprite_orientation()
 	

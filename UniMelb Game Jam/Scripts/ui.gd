@@ -45,7 +45,6 @@ func unpause_game():
 	if can_pause == true:
 		get_tree().paused = false
 		$"Pause Menu".visible = false
-	
 
 func _on_replay_button_pressed():
 	get_tree().paused = false

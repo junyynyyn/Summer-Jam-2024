@@ -13,7 +13,7 @@ func _process(_delta):
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	if direction:
-		velocity = direction * speed
+		velocity = direction * speed * speed_multiplier
 	else:
 		velocity = Vector2.ZERO
 

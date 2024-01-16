@@ -3,6 +3,8 @@ class_name Ghost extends CharacterBody2D
 enum state {ROAMING, RUNNING, CAPTURED, ESCAPING}
 var ghost_state : state = state.ROAMING
 
+var speed_multiplier : float = 1.0
+
 var capture_cooldown = false
 
 # Base function to capture ghosts
@@ -22,3 +24,6 @@ func release():
 
 func _on_capture_cooldown_timer_timeout():
 	capture_cooldown = false
+	
+func edit_speed(multiplier: float):
+	speed_multiplier = multiplier

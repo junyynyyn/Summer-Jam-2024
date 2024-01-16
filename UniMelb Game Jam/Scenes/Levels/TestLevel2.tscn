@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2u7wqp6rd42h"]
+[gd_scene load_steps=8 format=3 uid="uid://b2u7wqp6rd42h"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_48off"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_g7nq5"]
 [ext_resource type="PackedScene" uid="uid://ddtqkme5jcwp6" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_nwqoa"]
 [ext_resource type="PackedScene" uid="uid://cdrqjrhwbo643" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="6_pp1iq"]
+[ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
 
 [node name="Level2" instance=ExtResource("1_48off")]
 ghost_quota = 5
@@ -32,10 +33,13 @@ position = Vector2(239, 208)
 [node name="Vanishing Ghost" parent="Ghosts" index="5" instance=ExtResource("6_pp1iq")]
 position = Vector2(333, 265)
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2(285, 237)
 
-[node name="CanvasModulate" parent="." index="5"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="6"]
+
+[node name="CanvasModulate" parent="." index="7"]
 color = Color(0.313726, 0.313726, 0.313726, 1)
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="6"]
+[node name="Slow Torch" parent="." index="8" instance=ExtResource("7_pnl67")]
+position = Vector2(221, 119)

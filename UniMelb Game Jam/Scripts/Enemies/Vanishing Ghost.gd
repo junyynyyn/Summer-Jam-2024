@@ -13,12 +13,12 @@ func _process(_delta):
 		var direction = (roam_target - position).normalized()
 		#print("Roam Target: ", roam_target, ", Direction: ", direction)  # Debugging print
 		speed = lerp(speed, ROAM_SPEED, 0.5)
-		velocity = direction * speed
+		velocity = direction * speed * speed_multiplier
 	elif ghost_state == state.RUNNING:
 		var direction = (roam_target - position).normalized()
 		#print("Roam Target: ", roam_target, ", Direction: ", direction)  # Debugging print
 		speed = lerp(speed, ROAM_SPEED, 0.5)
-		velocity = direction * speed
+		velocity = direction * speed * speed_multiplier
 
 	update_sprite_orientation()
 	move_and_slide()

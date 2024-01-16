@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 		var new_target_position = self.global_position + direction * distance
 		nav_agent.target_position = new_target_position
 	var axis = to_local(nav_agent.get_next_path_position()).normalized()
-	var intended_velocity = axis * speed
+	var intended_velocity = axis * speed * speed_multiplier
 	velocity = intended_velocity
 	
 	update_sprite_orientation()
