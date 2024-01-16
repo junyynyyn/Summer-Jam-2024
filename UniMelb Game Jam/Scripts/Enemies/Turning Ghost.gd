@@ -1,34 +1,13 @@
 class_name Turning_Ghost extends Ghost
 
+# Only code for turning and running required in here
 var run_direction : Vector2 = Vector2(0,0)
-@export var MAX_SPEED : float = 150.0
-@export var ROAM_SPEED : float = 50.0
-var speed : float = 20.0
-var roam_target : Vector2 = Vector2(0,0)
 
-@onready var sprite = $Sprite2D
-
-func _process(_delta):
-	if ghost_state == state.ROAMING:
-		var direction = (position - roam_target).normalized()
-		speed = lerp(speed, ROAM_SPEED, 0.5)
-		velocity = direction * speed * speed_multiplier
-	elif ghost_state == state.RUNNING:
-		velocity = run_direction * MAX_SPEED * speed_multiplier
-	
-	update_sprite_orientation()
-	
-	move_and_slide()
-
-func update_sprite_orientation():
-	if (Global.player):
-		if Global.player.global_position.x < global_position.x:
-			sprite.flip_h = true  # Player is to the left, flip sprite
-		else:
-			sprite.flip_h = false  # Player is to the right, don't flip
-
+func run():
+	velocity = run_direction * RUN_SPEED * speed_multiplier
 
 func _on_detection_area_body_entered(body):
+	print("Running")
 	ghost_state = state.RUNNING
 	# Get player direction in relation to ghost, normalize and rotate by 90 degrees
 	if (body.is_in_group("Player")):
@@ -41,11 +20,3 @@ func _on_detection_area_body_exited(_body):
 func _on_running_timer_timeout():
 	ghost_state = state.ROAMING
 	velocity = Vector2(0,0)
-
-func _on_roam_timer_timeout():
-	#Reset speed
-	speed = ROAM_SPEED
-	#Randomize a target location for ghost to wander to during roam state
-	var rng = RandomNumberGenerator.new()
-	roam_target.x = position.x + rng.randf_range(-10.0, 10.0)
-	roam_target.y = position.y + rng.randf_range(-10.0, 10.0)

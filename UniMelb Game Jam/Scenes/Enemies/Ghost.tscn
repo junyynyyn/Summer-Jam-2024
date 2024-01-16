@@ -28,4 +28,9 @@ debug_color = Color(0, 0.6, 0.701961, 0.0705882)
 wait_time = 2.0
 one_shot = true
 
+[node name="RoamTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="CaptureCooldownTimer" to="." method="_on_capture_cooldown_timer_timeout"]
+[connection signal="timeout" from="RoamTimer" to="." method="_on_roam_timer_timeout"]
