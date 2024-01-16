@@ -16,7 +16,8 @@ func update_timer(time: float):
 
 func display_finish(time: float):
 	%FinishScreen.visible = true
-	%FinishScreen/TimeDisplay.text = "Final Time: %.2f seconds" % time
+	#%FinishScreen/TimeDisplay.text = "Final Time: %.2f seconds" % time
+	%FinishScreen/TimeDisplay.text = "%.2f seconds" % time
 	print("Finished Level!")
 
 func _on_replay_button_pressed():

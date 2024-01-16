@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=17 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="PackedScene" uid="uid://cclnarqbd0g5u" path="res://Scenes/Menus/Level Select.tscn" id="2_i2ltq"]
@@ -7,12 +7,15 @@
 [ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
 [ext_resource type="FontFile" uid="uid://5jcjgbxbe1ym" path="res://Sprites/UI/Tektur-Regular.ttf" id="6_6gca8"]
 [ext_resource type="Texture2D" uid="uid://bql70b6duuls4" path="res://Sprites/UI/Big Panel.png" id="6_sf4o1"]
+[ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="7_8nccg"]
 [ext_resource type="Texture2D" uid="uid://w5mb6ekb46bu" path="res://Sprites/UI/Repeat Default.png" id="7_troe8"]
 [ext_resource type="Texture2D" uid="uid://c6kjrtk16bh1l" path="res://Sprites/UI/Repeat Hover.png" id="8_f1c3p"]
 [ext_resource type="Texture2D" uid="uid://bre4vgj82gtgm" path="res://Sprites/UI/Play Default.png" id="9_a5vpm"]
 [ext_resource type="Texture2D" uid="uid://se6wode3qk17" path="res://Sprites/UI/Play Hover.png" id="10_w6o0m"]
 [ext_resource type="Texture2D" uid="uid://byo6cps0yfjw8" path="res://Sprites/UI/Levels Default.png" id="11_pgclx"]
 [ext_resource type="Texture2D" uid="uid://cf637kjgnbabi" path="res://Sprites/UI/Levels Hover.png" id="12_krtlu"]
+[ext_resource type="Texture2D" uid="uid://ka11uxut75q5" path="res://Sprites/UI/3 stars background.png" id="14_jbiib"]
+[ext_resource type="Texture2D" uid="uid://bmf80iakp0h52" path="res://Sprites/UI/Active@2x.png" id="15_c7l13"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -21,10 +24,10 @@ level_select_scene = ExtResource("2_i2ltq")
 
 [node name="GhostCounter" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 512.0
-offset_top = 478.0
-offset_right = 640.0
-offset_bottom = 606.0
+offset_left = 24.0
+offset_top = 494.0
+offset_right = 152.0
+offset_bottom = 622.0
 max_value = 5.0
 fill_mode = 4
 texture_under = ExtResource("3_x4nxy")
@@ -61,7 +64,9 @@ anchor_left = 9.05
 anchor_top = 4.025
 anchor_right = 20.0
 anchor_bottom = 11.325
-offset_bottom = -3.05176e-05
+offset_top = -32.0
+offset_right = 35.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_sf4o1")
@@ -74,12 +79,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 398.0
-offset_top = 125.0
-offset_right = 730.0
-offset_bottom = 225.0
+offset_left = 407.0
+offset_top = 100.0
+offset_right = 739.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_8nccg")
 theme_override_font_sizes/font_size = 26
 text = "Level Complete
 "
@@ -88,27 +94,29 @@ vertical_alignment = 1
 
 [node name="TimeDisplay" type="Label" parent="FinishScreen"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 14.475
-anchor_top = 6.231
-anchor_right = 14.475
-anchor_bottom = 6.231
-offset_left = -25.0
-offset_top = -9.24002
-offset_right = 25.0
-offset_bottom = 8.75998
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 556.0
+offset_top = 272.0
+offset_right = 606.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_6gca8")
+theme_override_font_sizes/font_size = 31
 text = "Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="FinishScreen"]
 layout_mode = 0
-offset_left = 403.0
-offset_top = 292.0
-offset_right = 767.0
-offset_bottom = 427.0
+offset_left = 419.0
+offset_top = 337.0
+offset_right = 783.0
+offset_bottom = 472.0
 theme_override_constants/h_separation = 50
 columns = 3
 
@@ -117,40 +125,64 @@ layout_mode = 2
 texture_normal = ExtResource("7_troe8")
 texture_hover = ExtResource("8_f1c3p")
 
+[node name="Label" type="Label" parent="FinishScreen/GridContainer/ReplayButton"]
+layout_mode = 2
+offset_top = 101.0
+offset_right = 88.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+text = "Retry"
+horizontal_alignment = 1
+
 [node name="NextLevelButton" type="TextureButton" parent="FinishScreen/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_a5vpm")
 texture_hover = ExtResource("10_w6o0m")
+
+[node name="Label2" type="Label" parent="FinishScreen/GridContainer/NextLevelButton"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 91.0
+offset_right = 89.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+text = "Next 
+Level"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LevelSelectButton" type="TextureButton" parent="FinishScreen/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("11_pgclx")
 texture_hover = ExtResource("12_krtlu")
 
-[node name="Label" type="Label" parent="FinishScreen/GridContainer"]
+[node name="Label3" type="Label" parent="FinishScreen/GridContainer/LevelSelectButton"]
 layout_mode = 2
-text = "Repeat"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="FinishScreen/GridContainer"]
-layout_mode = 2
-text = "Next 
-Level"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="FinishScreen/GridContainer"]
-layout_mode = 2
+offset_left = -2.0
+offset_top = 90.0
+offset_right = 86.0
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("7_8nccg")
 text = "Level
 Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="FinishScreen"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 208.0
+offset_right = 692.0
+offset_bottom = 266.0
+nine_patch_stretch = true
+texture_under = ExtResource("14_jbiib")
+texture_progress = ExtResource("15_c7l13")
+
 [node name="Timer Grid" type="GridContainer" parent="."]
-offset_left = 540.0
-offset_top = 15.0
-offset_right = 629.0
-offset_bottom = 55.0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 103.0
+offset_bottom = 51.0
 columns = 2
 
 [node name="Label" type="Label" parent="Timer Grid"]
