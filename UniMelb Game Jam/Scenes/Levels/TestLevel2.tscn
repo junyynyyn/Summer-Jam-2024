@@ -18,19 +18,22 @@ layer_1/tile_data = PackedInt32Array(65535, 4, 0, 131071, 4, 1, 196607, 4, 1, 26
 position = Vector2(113, 264)
 
 [node name="Running Ghost" parent="Ghosts" index="1" instance=ExtResource("3_oftie")]
-position = Vector2(402, 170)
+position = Vector2(336, 211)
 
 [node name="Ghost3" parent="Ghosts" index="2" instance=ExtResource("2_fjgyx")]
-position = Vector2(112, 200)
+position = Vector2(243, 267)
 
 [node name="Turning Ghost" parent="Ghosts" index="3" instance=ExtResource("4_g7nq5")]
-position = Vector2(247, 110)
+position = Vector2(287, 185)
 
 [node name="Mirrored Ghost" parent="Ghosts" index="4" instance=ExtResource("5_nwqoa")]
-position = Vector2(116, 130)
+position = Vector2(239, 208)
 
 [node name="Vanishing Ghost" parent="Ghosts" index="5" instance=ExtResource("6_pp1iq")]
-position = Vector2(275, 231)
+position = Vector2(333, 265)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(285, 237)
 
 [node name="CanvasModulate" parent="." index="5"]
 color = Color(0.313726, 0.313726, 0.313726, 1)

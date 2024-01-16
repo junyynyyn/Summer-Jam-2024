@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cclnarqbd0g5u"]
+[gd_scene load_steps=18 format=3 uid="uid://cclnarqbd0g5u"]
 
 [ext_resource type="Theme" uid="uid://drdu1mxg7002f" path="res://Scenes/Menus/idktheme.tres" id="1_kv5un"]
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_tbwsb"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="10_n680k"]
 [ext_resource type="Texture2D" uid="uid://b2o4hsfmm4ml0" path="res://Sprites/UI/Left Arrow.png" id="11_1penf"]
 [ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="12_5uoml"]
+[ext_resource type="Script" path="res://Scripts/HomeButton.gd" id="15_vjbok"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -61,6 +62,7 @@ columns = 3
 
 [node name="ButtonLevel1" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -96,15 +98,18 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-disabled = true
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level2"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel2"]
 layout_mode = 0
@@ -134,15 +139,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level3"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel3"]
 layout_mode = 0
@@ -172,15 +181,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level4"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel4"]
 layout_mode = 0
@@ -210,15 +223,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel5" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level5"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel5"]
 layout_mode = 0
@@ -248,15 +265,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel6" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level6"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel6"]
 layout_mode = 0
@@ -286,15 +307,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel7" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level7"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel7"]
 layout_mode = 0
@@ -324,15 +349,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel8" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level8"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel8"]
 layout_mode = 0
@@ -362,15 +391,19 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel9" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "Level9"
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel9"]
 layout_mode = 0
@@ -400,6 +433,7 @@ offset_left = -4.28571
 offset_top = 162.857
 offset_right = 176.714
 offset_bottom = 221.857
+mouse_filter = 2
 nine_patch_stretch = true
 texture_under = ExtResource("5_lmmvt")
 texture_progress = ExtResource("6_hwob2")
@@ -425,24 +459,26 @@ expand_mode = 1
 
 [node name="HomeButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1042.0
-offset_top = 547.0
-offset_right = 1120.0
-offset_bottom = 625.0
+offset_left = 30.0
+offset_top = 542.0
+offset_right = 108.0
+offset_bottom = 620.0
 texture_normal = ExtResource("9_mm0s3")
 texture_hover = ExtResource("10_n680k")
 ignore_texture_size = true
 stretch_mode = 4
+script = ExtResource("15_vjbok")
 
 [node name="BackButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = -102.0
-offset_right = 106.0
-offset_bottom = -24.0
+offset_left = 630.0
+offset_top = -200.0
+offset_right = 708.0
+offset_bottom = -122.0
 grow_vertical = 0
 texture_normal = ExtResource("11_1penf")
 texture_hover = ExtResource("12_5uoml")

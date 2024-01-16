@@ -1,50 +1,118 @@
-[gd_scene load_steps=3 format=3 uid="uid://ns785h1yrp2p"]
+[gd_scene load_steps=7 format=3 uid="uid://ns785h1yrp2p"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ebtdc"]
-[ext_resource type="PackedScene" uid="uid://dxjdbene87ukw" path="res://Scenes/main.tscn" id="2_63jsp"]
+[ext_resource type="Texture2D" uid="uid://5ijbgamv1ggo" path="res://Sprites/UI/diagonal menu.png" id="3_8rotv"]
+[ext_resource type="Texture2D" uid="uid://dsft1ynxge3ic" path="res://Sprites/UI/wide button.png" id="4_t12q5"]
+[ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="6_o6ctq"]
+[ext_resource type="Texture2D" uid="uid://c72cc1v64d1ad" path="res://Sprites/UI/medium button.png" id="7_5pqqc"]
+[ext_resource type="Texture2D" uid="uid://dh81yws4s8h5o" path="res://Sprites/UI/regular button.png" id="8_pishe"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = -4.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ebtdc")
-game_scene = ExtResource("2_63jsp")
 
-[node name="Play" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 445.0
-offset_top = 303.0
-offset_right = 697.0
-offset_bottom = 348.0
-text = "Play"
+offset_left = -415.0
+offset_top = -54.0
+offset_right = 858.0
+offset_bottom = 680.0
+texture = ExtResource("3_8rotv")
+expand_mode = 1
+flip_v = true
 
-[node name="Settings" type="Button" parent="."]
+[node name="Play" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 447.0
-offset_top = 370.0
-offset_right = 699.0
-offset_bottom = 415.0
+offset_left = 77.0
+offset_top = 308.0
+offset_right = 377.0
+offset_bottom = 396.0
+texture_normal = ExtResource("4_t12q5")
+
+[node name="Label" type="Label" parent="Play"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 297.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 46
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 402.0
+offset_right = 329.0
+offset_bottom = 490.0
+texture_normal = ExtResource("7_5pqqc")
+
+[node name="Label2" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 220.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 46
 text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="."]
+[node name="Exit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 446.0
-offset_top = 436.0
-offset_right = 698.0
-offset_bottom = 481.0
-text = "Exit
+offset_left = 79.0
+offset_top = 498.0
+offset_right = 255.0
+offset_bottom = 674.0
+texture_normal = ExtResource("8_pishe")
+
+[node name="Label3" type="Label" parent="Exit"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 164.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 46
+text = "Quit
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 419.0
-offset_top = 145.0
-offset_right = 721.0
-offset_bottom = 217.0
-text = "Legally Distinct Luigi's Mansion"
+offset_left = 29.0
+offset_top = 43.0
+offset_right = 671.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 80
+text = "Legally Distinct
+Luigi's Mansion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
