@@ -1,7 +1,5 @@
 class_name VanishingGhost extends Ghost
 
-@onready var light = $Sprite2D/PointLight2D
-
 func _ready():
 	super()
 	ROAM_SPEED = 90.0

@@ -1,6 +1,7 @@
 class_name Ghost extends CharacterBody2D
 
 @onready var sprite = $Sprite2D
+@onready var light = $Sprite2D/PointLight2D
 
 enum state {ROAMING, RUNNING, CAPTURED, ESCAPING}
 var ghost_state : state = state.ROAMING

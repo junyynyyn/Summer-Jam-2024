@@ -1,6 +1,5 @@
 class_name Turning_Ghost extends Ghost
 
-# Only code for turning and running required in here
 var run_direction : Vector2 = Vector2(0,0)
 
 func run():

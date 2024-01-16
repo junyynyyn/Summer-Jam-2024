@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://brusfv3prdi2o"]
+
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_8edfu"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Teleporting Ghost.gd" id="2_ark64"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_laccb"]
+radius = 66.0
+
+[node name="Teleporting Ghost" instance=ExtResource("1_8edfu")]
+modulate = Color(0.909804, 0.12549, 0.67451, 1)
+script = ExtResource("2_ark64")
+
+[node name="DetectionArea" type="Area2D" parent="." index="4" groups=["Enemy"]]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0"]
+shape = SubResource("CircleShape2D_laccb")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2u7wqp6rd42h"]
+[gd_scene load_steps=10 format=3 uid="uid://b2u7wqp6rd42h"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_48off"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_g7nq5"]
 [ext_resource type="PackedScene" uid="uid://ddtqkme5jcwp6" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_nwqoa"]
 [ext_resource type="PackedScene" uid="uid://cdrqjrhwbo643" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="6_pp1iq"]
+[ext_resource type="PackedScene" uid="uid://brusfv3prdi2o" path="res://Scenes/Enemies/Teleporting Ghost.tscn" id="7_25adm"]
 [ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
 [ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
 
@@ -17,22 +18,30 @@ layer_0/tile_data = PackedInt32Array(0, 65540, 1, 65536, 65540, 1, 131072, 65540
 layer_1/tile_data = PackedInt32Array(65535, 4, 0, 131071, 4, 1, 196607, 4, 1, 262143, 4, 1, 327679, 4, 1, 393215, 4, 1, 458751, 4, 1, 524287, 4, 1, 589823, 4, 1, 655359, 4, 1, 720895, 4, 1, 786431, 4, 2, 720896, 65540, 2, 720897, 65540, 2, 720898, 65540, 2, 720899, 65540, 2, 720900, 65540, 2, 720901, 65540, 2, 720902, 65540, 2, 720903, 65540, 2, 720904, 65540, 2, 720905, 65540, 2, 720906, 65540, 2, 720907, 65540, 2, 720908, 65540, 2, 720909, 65540, 2, 720910, 65540, 2, 720911, 65540, 2, 720912, 65540, 2, 720913, 65540, 2, 720914, 131076, 2, 18, 131076, 0, 65554, 131076, 1, 131090, 131076, 1, 196626, 131076, 1, 262162, 131076, 1, 327698, 131076, 1, 393234, 131076, 1, 458770, 131076, 1, 524306, 131076, 1, 589842, 131076, 1, 655378, 131076, 1, 14, 65540, 0, 15, 65540, 0, 16, 65540, 0, 17, 65540, 0, 0, 65540, 0, 1, 65540, 0, 2, 65540, 0, 3, 65540, 0, 4, 65540, 0, 5, 65540, 0, 6, 65540, 0, 7, 65540, 0, 8, 65540, 0, 9, 65540, 0, 10, 65540, 0, 11, 65540, 0, 12, 65540, 0, 13, 65540, 0)
 
 [node name="Ghost" parent="Ghosts" index="0" instance=ExtResource("2_fjgyx")]
-position = Vector2(113, 264)
+position = Vector2(57, 311)
 
 [node name="Running Ghost" parent="Ghosts" index="1" instance=ExtResource("3_oftie")]
-position = Vector2(336, 211)
+position = Vector2(515, 216)
 
-[node name="Ghost3" parent="Ghosts" index="2" instance=ExtResource("2_fjgyx")]
-position = Vector2(66, 263)
+[node name="Turning Ghost" parent="Ghosts" index="2" instance=ExtResource("4_g7nq5")]
+position = Vector2(518, 323)
 
-[node name="Turning Ghost" parent="Ghosts" index="3" instance=ExtResource("4_g7nq5")]
-position = Vector2(297, 177)
+[node name="Mirrored Ghost" parent="Ghosts" index="3" instance=ExtResource("5_nwqoa")]
+position = Vector2(119, 310)
 
-[node name="Mirrored Ghost" parent="Ghosts" index="4" instance=ExtResource("5_nwqoa")]
-position = Vector2(239, 208)
+[node name="Vanishing Ghost" parent="Ghosts" index="4" instance=ExtResource("6_pp1iq")]
+position = Vector2(513, 146)
 
-[node name="Vanishing Ghost" parent="Ghosts" index="5" instance=ExtResource("6_pp1iq")]
-position = Vector2(333, 265)
+[node name="Teleporting Ghost" parent="Ghosts" index="5" node_paths=PackedStringArray("teleport_point_1", "teleport_point_2") instance=ExtResource("7_25adm")]
+position = Vector2(142, 191)
+teleport_point_1 = NodePath("../Marker2D")
+teleport_point_2 = NodePath("../Marker2D2")
+
+[node name="Marker2D" type="Marker2D" parent="Ghosts" index="6"]
+position = Vector2(66, 163)
+
+[node name="Marker2D2" type="Marker2D" parent="Ghosts" index="7"]
+position = Vector2(285, 70)
 
 [node name="Player" parent="." index="5"]
 position = Vector2(285, 237)
