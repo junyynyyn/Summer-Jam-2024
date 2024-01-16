@@ -1,13 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cclnarqbd0g5u"]
+[gd_scene load_steps=16 format=3 uid="uid://cclnarqbd0g5u"]
 
 [ext_resource type="Theme" uid="uid://drdu1mxg7002f" path="res://Scenes/Menus/idktheme.tres" id="1_kv5un"]
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_tbwsb"]
 [ext_resource type="Texture2D" uid="uid://c1d0ct5hsubc8" path="res://Sprites/UI/Unlocked Level Icon.png" id="2_sgbkr"]
 [ext_resource type="Texture2D" uid="uid://cyaav2j0cgkjs" path="res://Sprites/UI/Unlocked Level Hover.png" id="3_4ebgy"]
 [ext_resource type="Texture2D" uid="uid://c4reml28o40e0" path="res://Sprites/UI/Locked Level Icon.png" id="3_gc20t"]
-[ext_resource type="Script" path="res://Scenes/Menus/Level Select Button.gd" id="4_d2cgo"]
 [ext_resource type="Texture2D" uid="uid://dhp3hxjq38y2u" path="res://Sprites/UI/Locked Level Hover.png" id="4_ewbqh"]
-[ext_resource type="PackedScene" uid="uid://cmjbjdvhvqpls" path="res://Scenes/Levels/Level1.tscn" id="5_2c311"]
 [ext_resource type="Texture2D" uid="uid://ka11uxut75q5" path="res://Sprites/UI/3 stars background.png" id="5_lmmvt"]
 [ext_resource type="Texture2D" uid="uid://c0m7tia4eab3p" path="res://Sprites/UI/3 stars.png" id="6_hwob2"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="7_5q08h"]
@@ -17,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="10_n680k"]
 [ext_resource type="Texture2D" uid="uid://b2o4hsfmm4ml0" path="res://Sprites/UI/Left Arrow.png" id="11_1penf"]
 [ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="12_5uoml"]
-[ext_resource type="PackedScene" uid="uid://dq5u3limjb855" path="res://Scenes/Levels/Level2.tscn" id="12_8f15r"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -65,8 +62,6 @@ columns = 3
 layout_mode = 2
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
-level_scene = ExtResource("5_2c311")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel1"]
 layout_mode = 0
@@ -104,10 +99,9 @@ texture_progress = ExtResource("6_hwob2")
 
 [node name="ButtonLevel2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
-level_scene = ExtResource("12_8f15r")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel2"]
 layout_mode = 0
@@ -122,7 +116,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel2" type="TextureButton" parent="GridContainer/ButtonLevel2"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -147,7 +140,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel3"]
 layout_mode = 0
@@ -186,7 +178,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel4"]
 layout_mode = 0
@@ -225,7 +216,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel5"]
 layout_mode = 0
@@ -264,7 +254,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel6"]
 layout_mode = 0
@@ -303,7 +292,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel7"]
 layout_mode = 0
@@ -342,7 +330,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel8"]
 layout_mode = 0
@@ -381,7 +368,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_d2cgo")
 
 [node name="Label" type="Label" parent="GridContainer/ButtonLevel9"]
 layout_mode = 0
