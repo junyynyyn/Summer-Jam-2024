@@ -60,7 +60,6 @@ columns = 3
 
 [node name="ButtonLevel1" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 
@@ -83,6 +82,7 @@ offset_right = 176.0
 offset_bottom = 176.0
 size_flags_horizontal = 4
 theme = ExtResource("1_kv5un")
+disabled = true
 texture_normal = ExtResource("3_gc20t")
 texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
