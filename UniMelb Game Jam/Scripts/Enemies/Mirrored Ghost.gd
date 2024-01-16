@@ -5,7 +5,7 @@ func _ready():
 
 func run():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
+	direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	if direction:
 		velocity = direction * RUN_SPEED * speed_multiplier
