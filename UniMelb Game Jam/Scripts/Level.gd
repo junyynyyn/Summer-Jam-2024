@@ -5,6 +5,7 @@ extends Node2D
 
 var ghost_total : int
 
+
 var timer : float = 0.0
 var timer_active : bool = true
 var goal : bool = false
@@ -13,6 +14,7 @@ func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
 	$UI.set_ghost_count_max(ghost_total)
+
 
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
@@ -24,6 +26,8 @@ func _process(delta):
 	# Check if player has hit the ghost collected to finish the level
 	if (Global.player.ghosts_collected.size() >= ghost_quota):
 		complete_level()
+
+
 	
 func reset_timer():
 	timer = 0

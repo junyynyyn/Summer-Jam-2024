@@ -21,7 +21,7 @@ position = Vector2(113, 264)
 position = Vector2(336, 211)
 
 [node name="Ghost3" parent="Ghosts" index="2" instance=ExtResource("2_fjgyx")]
-position = Vector2(243, 267)
+position = Vector2(66, 263)
 
 [node name="Turning Ghost" parent="Ghosts" index="3" instance=ExtResource("4_g7nq5")]
 position = Vector2(287, 185)
@@ -37,3 +37,5 @@ position = Vector2(285, 237)
 
 [node name="CanvasModulate" parent="." index="5"]
 color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="6"]
