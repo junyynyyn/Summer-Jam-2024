@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://w03s8oyae64k"]
+[gd_scene load_steps=7 format=3 uid="uid://w03s8oyae64k"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Hook.gd" id="1_8cx1b"]
 [ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="2_ks5wo"]
+[ext_resource type="Texture2D" uid="uid://bhnnr6hg3dx32" path="res://Sprites/Light.png" id="3_d0nsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gr35c"]
 radius = 3.0
@@ -40,6 +41,10 @@ texture = ExtResource("2_ks5wo")
 [node name="HookTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.2
+texture = ExtResource("3_d0nsb")
 
 [connection signal="body_entered" from="HookHitbox" to="." method="_on_hook_hitbox_body_entered"]
 [connection signal="body_entered" from="DetachHitbox" to="." method="_on_detach_hitbox_body_entered"]

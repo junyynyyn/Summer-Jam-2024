@@ -37,10 +37,10 @@ func fire(direction: Vector2):
 
 func _on_hook_hitbox_body_entered(body):
 	if (hook_state == state.FIRED):
-		velocity = Vector2.ZERO
-		hook_state = state.GRAPPLING
 		if (body.is_in_group("Ghost")):
 			if (body.grappleable == true):
+				velocity = Vector2.ZERO
+				hook_state = state.GRAPPLING
 				grappled_ghost = body
 				body.grappleable = false
 
