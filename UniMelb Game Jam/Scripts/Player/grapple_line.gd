@@ -7,6 +7,10 @@ func _ready():
 	add_point(Global.player.global_position)
 	
 func _process(_delta):
+	if (Global.hook.visible == false):
+		visible = false
+	else:
+		visible = true
 	if points:
 		set_point_position(0, Global.player.global_position)
 		set_point_position(1, Global.hook.global_position)

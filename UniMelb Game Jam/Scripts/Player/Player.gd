@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var timer = %ReleaseTimer
 
 var ghosts_collected = []
+var can_fire_hook = true
 
 func _ready():
 	#Allow global access to the player as a singleton
@@ -29,6 +30,7 @@ func _process(_delta):
 		var mouse_pos = get_global_mouse_position()
 		var mouse_direction = global_position.direction_to(mouse_pos)
 		Global.hook.fire(mouse_direction)
+		can_fire_hook = false
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
@@ -41,10 +43,16 @@ func _process(_delta):
 		
 	move_and_slide()
 	
+func set_hook_fire():
+	can_fire_hook = true
+
 func yeet():
 	var hook_position = Global.hook.global_position
 	var direction = position.direction_to(hook_position)
 	velocity = direction * GRAPPLE_SPEED
+	
+func reverse_yeet():
+	velocity = -velocity.normalized() * 250.0
 
 # Collect ghosts if they enter the collection area
 func _on_ghost_collection_area_body_entered(body):
@@ -57,7 +65,7 @@ func capture_ghost(ghost):
 	if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
 		ghost.capture()
 		ghosts_collected.append(ghost)
-		#Restart timer 
+		
 		timer.start()
 
 # When timer is over release all the ghosts
