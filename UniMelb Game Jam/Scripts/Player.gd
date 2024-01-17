@@ -23,8 +23,8 @@ func _process(_delta):
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
-		for ghost in ghosts_collected:
-			ghost.position = position
+		for ghosts in ghosts_collected:
+			ghosts.position = position
 		
 	move_and_slide()
 

@@ -19,3 +19,4 @@ func _on_detection_area_body_exited(_body):
 func _on_running_timer_timeout():
 	ghost_state = state.ROAMING
 	velocity = Vector2(0,0)
+	

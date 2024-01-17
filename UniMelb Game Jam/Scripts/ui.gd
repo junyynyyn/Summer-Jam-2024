@@ -4,6 +4,7 @@ var level_select_screen = "res://Scenes/Menus/Level Select.tscn"
 var game_paused = false
 var can_pause = true
 
+@onready var stardisplay = $"FinishScreen/Star Display"
 signal next_scene
 
 func _ready():
@@ -59,3 +60,9 @@ func _on_next_level_button_pressed():
 func _on_level_select_button_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file(level_select_screen)
+
+func reward_stars(stars):
+	stardisplay.value = stars
+	if stars >= 4:
+		stardisplay.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
+	print(stars)

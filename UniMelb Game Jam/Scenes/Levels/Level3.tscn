@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_i2vhg"]
 [ext_resource type="PackedScene" uid="uid://ddtqkme5jcwp6" path="res://Scenes/Enemies/Mirrored Ghost.tscn" id="5_oqogs"]
 
-[node name="Level" instance=ExtResource("1_w2kxf")]
+[node name="Level" groups=["Level3"] instance=ExtResource("1_w2kxf")]
 ghost_quota = 3
 next_level = ExtResource("2_gko7p")
 

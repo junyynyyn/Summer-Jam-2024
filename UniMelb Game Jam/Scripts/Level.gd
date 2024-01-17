@@ -3,6 +3,11 @@ extends Node2D
 @export var ghost_quota : int
 @export var next_level : PackedScene
 
+@export var OneStar : float = 0
+@export var TwoStar : float = 0 
+@export var ThreeStar : float = 0
+@export var Gold : float = 0
+
 var ghost_total : int
 
 var timer : float = 0.0
@@ -10,11 +15,16 @@ var timer_active : bool = true
 var goal : bool = false
 
 var can_teleport = true
+var stars = 0
 
 func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
 	$UI.set_ghost_count_max(ghost_total)
+
+	#if get_tree().get_current_scene().is_in_group("Level1"):
+		#print("You are on Level 1")
+
 
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
@@ -38,10 +48,23 @@ func start_timer():
 
 # Show end screen UI and pause game functionaltiy besides UI
 func complete_level():
+	reward_stars()
 	$UI.display_finish(timer)
 	$"UI/Timer Grid".visible = false
+	$"UI".reward_stars(stars)
 	get_tree().paused = true
-	
+
+func reward_stars():
+	if timer <= Gold:
+		stars = 4
+	elif (Gold < timer and timer <= ThreeStar):
+		stars = 3
+	elif ThreeStar < timer and timer <= TwoStar:
+		stars = 2
+	elif TwoStar < timer and timer <= OneStar:
+		stars = 1
+	return stars
+
 func _on_ui_next_scene():
 	if next_level:
 		get_tree().change_scene_to_packed(next_level)
@@ -60,7 +83,7 @@ func _on_teleport_cooldown_timeout():
 	can_teleport = true
 	if $Player in $"Teleporters/Tele A 1".get_overlapping_bodies():
 		tp_to_b()
-		
+	
 	if $Player in $"Teleporters/Tele A 2".get_overlapping_bodies():
 		tp_to_a()
 

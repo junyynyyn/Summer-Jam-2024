@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_dkpeg"]
 [ext_resource type="PackedScene" uid="uid://cdrqjrhwbo643" path="res://Scenes/Enemies/Vanishing Ghost.tscn" id="2_wu3yv"]
 
-[node name="Level" instance=ExtResource("1_dkpeg")]
+[node name="Level" groups=["Level6"] instance=ExtResource("1_dkpeg")]
 ghost_quota = 4
 
 [node name="TileMap" parent="." index="1"]
