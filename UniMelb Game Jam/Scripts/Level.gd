@@ -39,6 +39,7 @@ func _process(delta):
 	if (Global.player.ghosts_collected.size() >= ghost_quota):
 		complete_level()
 	
+
 func reset_timer():
 	timer = 0
 
@@ -59,9 +60,9 @@ func complete_level():
 	$"UI".reward_stars(stars)
 	update_best_score()
 	Global.save_scores()
-	print(stars)
+	#print(stars)
 	#print(Global.level_scores)
-	print("You completed ", level_name, " in ", timer, " seconds")
+	#print("You completed ", level_name, " in ", timer, " seconds")
 
 func update_best_score():
 	# Check if the level already has a score

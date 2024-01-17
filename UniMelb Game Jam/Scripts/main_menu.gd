@@ -2,10 +2,16 @@ extends Control
 
 var levelselect: PackedScene = preload("res://Scenes/Menus/Level Select.tscn")
 #var settings: PackedScene = preload("settings")
-
+var allowed_username = false
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	if Global.username == null:
+		request_username()
+
+func request_username():
+	$UsernameRequest.visible = true
+	$Menu.visible = false
 
 func _on_play_pressed():
 	get_tree().change_scene_to_packed(levelselect)
@@ -15,4 +21,49 @@ func _on_quit_pressed():
 
 
 func _on_reset_pressed():
+	prompt_reset_name()
+
+func prompt_reset_name():
+	$ResetConfirmation.visible = true
+
+
+func _on_line_edit_text_submitted(new_text):
+	var allowed_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+	var is_valid = true
+
+	for chars in new_text:
+		if chars not in allowed_chars:
+			#print("Your username must only contain letters or numbers")
+			$UsernameRequest/CharacterError.visible = true
+			is_valid = false
+			break
+
+	if is_valid:
+		Global.username = new_text
+		#print(Global.username)
+		$UsernameRequest.visible = false
+		$Menu.visible = true
+		Global.save_scores()
+
+
+func _on_scores_pressed():
+	pass # Replace with function body.
+
+
+func _on_scores_reset_pressed():
+	var temp_username = Global.username
 	Global.clear_scores()
+	Global.username = temp_username
+	#print("Username set to: " + temp_username)
+	$ResetConfirmation.visible = false
+	
+
+
+func _on_everything_reset_pressed():
+	Global.clear_scores()
+	request_username()
+	$ResetConfirmation.visible = false
+
+
+func _on_cancel_reset_pressed():
+	$ResetConfirmation.visible = false
