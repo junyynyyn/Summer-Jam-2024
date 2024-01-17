@@ -21,7 +21,10 @@ func _on_quit_pressed():
 
 
 func _on_reset_pressed():
-	Global.clear_scores()
+	prompt_reset_name()
+
+func prompt_reset_name():
+	$ResetConfirmation.visible = true
 
 
 func _on_line_edit_text_submitted(new_text):
@@ -30,14 +33,37 @@ func _on_line_edit_text_submitted(new_text):
 
 	for chars in new_text:
 		if chars not in allowed_chars:
-			print("Your username must only contain letters or numbers")
+			#print("Your username must only contain letters or numbers")
 			$UsernameRequest/CharacterError.visible = true
 			is_valid = false
 			break
 
 	if is_valid:
 		Global.username = new_text
-		print(Global.username)
+		#print(Global.username)
 		$UsernameRequest.visible = false
 		$Menu.visible = true
 		Global.save_scores()
+
+
+func _on_scores_pressed():
+	pass # Replace with function body.
+
+
+func _on_scores_reset_pressed():
+	var temp_username = Global.username
+	Global.clear_scores()
+	Global.username = temp_username
+	#print("Username set to: " + temp_username)
+	$ResetConfirmation.visible = false
+	
+
+
+func _on_everything_reset_pressed():
+	Global.clear_scores()
+	request_username()
+	$ResetConfirmation.visible = false
+
+
+func _on_cancel_reset_pressed():
+	$ResetConfirmation.visible = false

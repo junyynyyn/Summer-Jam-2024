@@ -16,10 +16,6 @@ radius = 9.0
 collision_mask = 4
 script = ExtResource("1_8cx1b")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_ks5wo")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gr35c")
 
@@ -36,6 +32,10 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetachHitbox"]
 shape = SubResource("CircleShape2D_jvdeu")
 debug_color = Color(0.254902, 0.635294, 0.0588235, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="DetachHitbox"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ks5wo")
 
 [connection signal="body_entered" from="HookHitbox" to="." method="_on_hook_hitbox_body_entered"]
 [connection signal="body_entered" from="DetachHitbox" to="." method="_on_detach_hitbox_body_entered"]

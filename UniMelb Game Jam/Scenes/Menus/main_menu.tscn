@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ns785h1yrp2p"]
+[gd_scene load_steps=11 format=3 uid="uid://ns785h1yrp2p"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ebtdc"]
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="2_1ujow"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="6_o6ctq"]
 [ext_resource type="Texture2D" uid="uid://c72cc1v64d1ad" path="res://Sprites/UI/medium button.png" id="7_5pqqc"]
 [ext_resource type="Texture2D" uid="uid://dh81yws4s8h5o" path="res://Sprites/UI/regular button.png" id="8_pishe"]
+[ext_resource type="Texture2D" uid="uid://bql70b6duuls4" path="res://Sprites/UI/Big Panel.png" id="9_24k5j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0av67"]
 content_margin_bottom = 8.0
@@ -27,6 +28,7 @@ grow_vertical = 2
 script = ExtResource("1_ebtdc")
 
 [node name="UsernameRequest" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,10 +96,12 @@ grow_vertical = 2
 text = "Your username may only consist of letters and numbers."
 
 [node name="Menu" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Menu"]
 layout_mode = 0
@@ -218,8 +222,151 @@ Luigi's Mansion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResetConfirmation" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResetConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -204.0
+offset_right = 271.5
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_24k5j")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ResetConfirmation/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 24.0
+offset_right = 114.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 36
+text = "What would you like to reset?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoresReset" type="TextureButton" parent="ResetConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -108.0
+offset_right = 150.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_t12q5")
+
+[node name="Label2" type="Label" parent="ResetConfirmation/ScoresReset"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 27.0
+offset_right = 239.5
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 36
+text = "Level Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EverythingReset" type="TextureButton" parent="ResetConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -12.0
+offset_right = 150.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_t12q5")
+
+[node name="Label3" type="Label" parent="ResetConfirmation/EverythingReset"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 27.0
+offset_right = 239.5
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 36
+text = "Everything"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelReset" type="TextureButton" parent="ResetConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 116.0
+offset_right = 147.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("7_5pqqc")
+
+[node name="Label3" type="Label" parent="ResetConfirmation/CancelReset"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 27.0
+offset_right = 239.5
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 36
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="text_submitted" from="UsernameRequest/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/Settings" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/Exit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="ResetConfirmation/ScoresReset" to="." method="_on_scores_reset_pressed"]
+[connection signal="pressed" from="ResetConfirmation/EverythingReset" to="." method="_on_everything_reset_pressed"]
+[connection signal="pressed" from="ResetConfirmation/CancelReset" to="." method="_on_cancel_reset_pressed"]

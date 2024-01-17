@@ -38,6 +38,11 @@ func _input(event):
 			elif game_paused == false:
 				pause_game()
 				game_paused = true
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_R:
+			get_tree().paused = false
+			%FinishScreen.visible = false
+			get_tree().reload_current_scene()
 
 func pause_game():
 	if can_pause == true:
