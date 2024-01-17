@@ -22,6 +22,7 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_ey6go")
 
 [node name="Node2D" type="Node2D" parent="." index="4"]
+visible = false
 
 [node name="PathRecalc" type="Timer" parent="Node2D" index="0"]
 wait_time = 0.2

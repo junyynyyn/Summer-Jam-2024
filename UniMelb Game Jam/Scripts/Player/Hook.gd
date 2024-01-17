@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var HOOK_SPEED : float = 500.0
-var GRAPPLE_LENGTH : float = 200.0
+var GRAPPLE_LENGTH : float = 250.0
 var fired : bool = false
 enum state {UNFIRED, FIRED, GRAPPLING}
 var hook_state : state
@@ -25,8 +25,9 @@ func _process(_delta):
 			hook_state = state.UNFIRED
 	elif hook_state == state.GRAPPLING:
 		if (grappled_ghost):
-			position = grappled_ghost.position
-			Global.player.yeet()
+			if (grappled_ghost.grappleable == true):
+				position = grappled_ghost.position
+				Global.player.yeet()
 		else:
 			hook_state = state.UNFIRED
 	move_and_slide()
@@ -43,18 +44,16 @@ func _on_hook_hitbox_body_entered(body):
 				velocity = Vector2.ZERO
 				hook_state = state.GRAPPLING
 				grappled_ghost = body
-				body.grappleable = false
 
 func _on_detach_hitbox_body_entered(body):
 	if (hook_state == state.GRAPPLING):
 		if (body.is_in_group("Player")):
 			hook_state = state.UNFIRED
+			grappled_ghost.grappleable = false
 			grappled_ghost = null
 			Global.player.reverse_yeet()
-		
 
 func _on_hook_timer_timeout():
 	if (hook_state == state.FIRED):
 		hook_state = state.UNFIRED
 		Global.player.set_hook_fire()
-	

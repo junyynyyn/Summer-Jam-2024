@@ -7,6 +7,7 @@ var teleport_cooldown = false
 
 func _on_detection_area_body_entered(_body):
 	if (not teleport_cooldown):
+		grappleable = false
 		teleport_cooldown = true
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
@@ -23,6 +24,7 @@ func _on_detection_area_body_entered(_body):
 			teleport(teleport_point_1)
 		else:
 			teleport(teleport_point_2)
+		grappleable = true
 		
 		tween = get_tree().create_tween()
 		tween.set_parallel(true)
