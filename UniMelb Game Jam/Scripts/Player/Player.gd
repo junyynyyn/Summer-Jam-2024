@@ -60,6 +60,6 @@ func capture_ghost(ghost):
 
 # When timer is over release all the ghosts
 func _on_release_timer_timeout():
-	for ghost in ghosts_collected:
-		ghost.release()
+	for ghosts in ghosts_collected:
+		ghosts.release()
 	ghosts_collected.clear()

@@ -97,6 +97,29 @@ text = "Quit
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Reset" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 963.0
+offset_top = 546.0
+offset_right = 1139.0
+offset_bottom = 722.0
+texture_normal = ExtResource("8_pishe")
+
+[node name="Label3" type="Label" parent="Reset"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 164.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_o6ctq")
+theme_override_font_sizes/font_size = 46
+text = "Reset
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 29.0
@@ -119,3 +142,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

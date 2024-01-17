@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="12_5uoml"]
 [ext_resource type="Script" path="res://Scripts/HomeButton.gd" id="15_vjbok"]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" groups=["Level Select"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
