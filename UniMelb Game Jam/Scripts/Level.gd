@@ -57,8 +57,8 @@ func complete_level():
 	get_tree().paused = true
 	Global.level_scores[level_name] = stars
 	Global.save_scores()
-	print(Global.level_scores)
-	print(timer)
+	#print(Global.level_scores)
+	print("You completed ", level_name, " in ", timer, " seconds")
 
 func reward_stars():
 	if timer <= Gold:
