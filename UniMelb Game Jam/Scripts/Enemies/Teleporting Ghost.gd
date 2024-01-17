@@ -19,7 +19,7 @@ func _on_detection_area_body_entered(_body):
 		teleport(teleport_point_1)
 	else:
 		teleport(teleport_point_2)
-		
+	
 	tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	#tween.bind_node(self)

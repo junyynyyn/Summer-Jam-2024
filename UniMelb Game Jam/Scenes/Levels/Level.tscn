@@ -10,6 +10,12 @@
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hmm30")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0, 0, 0, 1)
+energy = 0.6
+blend_mode = 2
+height = 1.0
+
 [node name="UI" parent="." instance=ExtResource("3_ch5gh")]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -43,5 +49,6 @@ position_smoothing_enabled = true
 [node name="GrappleLine" parent="PlayerResources" instance=ExtResource("6_xetmb")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 
 [connection signal="next_scene" from="UI" to="." method="_on_ui_next_scene"]
