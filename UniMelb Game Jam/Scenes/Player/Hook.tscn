@@ -48,5 +48,4 @@ texture = ExtResource("3_d0nsb")
 
 [connection signal="body_entered" from="HookHitbox" to="." method="_on_hook_hitbox_body_entered"]
 [connection signal="body_exited" from="HookHitbox" to="." method="_on_hook_hitbox_body_exited"]
-[connection signal="body_entered" from="DetachHitbox" to="." method="_on_detach_hitbox_body_entered"]
 [connection signal="timeout" from="HookTimer" to="." method="_on_hook_timer_timeout"]

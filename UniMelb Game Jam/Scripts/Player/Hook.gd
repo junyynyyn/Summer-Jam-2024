@@ -20,12 +20,18 @@ func _process(_delta):
 		Global.player.set_collision_mask_value(6, true)
 	elif hook_state == state.FIRED:
 		visible = true
-		Global.player.set_collision_mask_value(6, true)
 		if is_on_wall() or is_on_ceiling() or is_on_floor():
 			hook_state = state.UNFIRED
 		if (position - Global.player.global_position).length() >= GRAPPLE_LENGTH:
 			hook_state = state.UNFIRED
 	elif hook_state == state.GRAPPLING:
+		var bodies = $DetachHitbox.get_overlapping_bodies()
+		for body in bodies:
+			if (body.is_in_group("Player")):
+				hook_state = state.UNFIRED
+				grappled_ghost.grappleable = false
+				grappled_ghost = null
+				Global.player.reverse_yeet()
 		if (grappled_ghost):
 			if (grappled_ghost.grappleable == true):
 				position = grappled_ghost.position
@@ -46,14 +52,6 @@ func _on_hook_hitbox_body_entered(body):
 				velocity = Vector2.ZERO
 				hook_state = state.GRAPPLING
 				grappled_ghost = body
-
-func _on_detach_hitbox_body_entered(body):
-	if (hook_state == state.GRAPPLING):
-		if (body.is_in_group("Player")):
-			hook_state = state.UNFIRED
-			grappled_ghost.grappleable = false
-			grappled_ghost = null
-			Global.player.reverse_yeet()
 
 func _on_hook_timer_timeout():
 	if (hook_state == state.FIRED):
