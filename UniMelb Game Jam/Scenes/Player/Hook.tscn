@@ -34,11 +34,9 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_jvdeu")
 debug_color = Color(0.254902, 0.635294, 0.0588235, 0.419608)
 
-<<<<<<< HEAD
 [node name="HookTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
-=======
 [node name="Sprite2D" type="Sprite2D" parent="DetachHitbox"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_ks5wo")
@@ -46,7 +44,6 @@ texture = ExtResource("2_ks5wo")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.2
 texture = ExtResource("3_d0nsb")
->>>>>>> 82ffb53a18bd3e4f7cb1cf8d4a7190df08faf122
 
 [connection signal="body_entered" from="HookHitbox" to="." method="_on_hook_hitbox_body_entered"]
 [connection signal="body_entered" from="DetachHitbox" to="." method="_on_detach_hitbox_body_entered"]
