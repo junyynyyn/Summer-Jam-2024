@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c15ai7m52mkbj"]
+[gd_scene load_steps=9 format=3 uid="uid://c15ai7m52mkbj"]
 
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_f1mqe"]
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_inrhc"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="2_4mm67"]
 [ext_resource type="Texture2D" uid="uid://dsft1ynxge3ic" path="res://Sprites/UI/wide button.png" id="3_nsh44"]
+[ext_resource type="Texture2D" uid="uid://w5mb6ekb46bu" path="res://Sprites/UI/Repeat Default.png" id="4_nr443"]
+[ext_resource type="Texture2D" uid="uid://c6kjrtk16bh1l" path="res://Sprites/UI/Repeat Hover.png" id="5_ua0qb"]
+[ext_resource type="Texture2D" uid="uid://c66fu2ywu4ms2" path="res://Sprites/UI/Home Button.png" id="6_qf21i"]
+[ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="7_k5xbh"]
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -57,13 +61,60 @@ text = "Paused
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Restart" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 401.0
+offset_top = 159.0
+offset_right = 463.0
+offset_bottom = 221.0
+texture_normal = ExtResource("4_nr443")
+texture_hover = ExtResource("5_ua0qb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Home" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 689.0
+offset_top = 159.0
+offset_right = 751.0
+offset_bottom = 221.0
+texture_normal = ExtResource("6_qf21i")
+texture_hover = ExtResource("7_k5xbh")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 313.0
-offset_right = 765.0
-offset_bottom = 585.0
+offset_left = 461.0
+offset_top = 234.0
+offset_right = 761.0
+offset_bottom = 506.0
 scale = Vector2(0.75, 0.75)
+
+[node name="Continue" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_nsh44")
+
+[node name="Label2" type="Label" parent="GridContainer/Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -36.0
+offset_right = 147.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4mm67")
+theme_override_font_sizes/font_size = 45
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Level Select" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -142,38 +193,9 @@ text = "Quit
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Continue" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 465.0
-offset_top = 236.0
-offset_right = 690.0
-offset_bottom = 302.0
-texture_normal = ExtResource("3_nsh44")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label2" type="Label" parent="Continue"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -36.0
-offset_right = 147.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4mm67")
-theme_override_font_sizes/font_size = 45
-text = "Continue"
-horizontal_alignment = 1
-vertical_alignment = 1
-
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="GridContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GridContainer/Level Select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="GridContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

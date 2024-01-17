@@ -55,10 +55,20 @@ func complete_level():
 	$"UI/Timer Grid".visible = false
 	$"UI".reward_stars(stars)
 	get_tree().paused = true
-	Global.level_scores[level_name] = stars
+	update_best_score()
 	Global.save_scores()
 	#print(Global.level_scores)
 	print("You completed ", level_name, " in ", timer, " seconds")
+
+func update_best_score():
+	# Check if the level already has a score
+	if level_name in Global.level_scores:
+		# Update only if the new score is better
+		if stars > Global.level_scores[level_name]:
+			Global.level_scores[level_name] = stars
+	else:
+		# If the level has no score yet, set the new score
+		Global.level_scores[level_name] = stars
 
 func reward_stars():
 	if timer <= Gold:

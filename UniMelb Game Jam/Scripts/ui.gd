@@ -8,6 +8,8 @@ var can_pause = true
 signal next_scene
 
 func _ready():
+	%FinishScreen.visible = false
+	%"FinishScreen/Star Display/StarParticles".emitting = false
 	update_ghost_count(0)
 
 func set_ghost_count_max(count: int):
@@ -65,4 +67,5 @@ func reward_stars(stars):
 	stardisplay.value = stars
 	if stars >= 4:
 		stardisplay.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
+		$"FinishScreen/Star Display/StarParticles".emitting = true
 	#print(stars)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=27 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/Ghost Bar Background.png" id="3_x4nxy"]
@@ -15,7 +15,69 @@
 [ext_resource type="Texture2D" uid="uid://cf637kjgnbabi" path="res://Sprites/UI/Levels Hover.png" id="12_krtlu"]
 [ext_resource type="Texture2D" uid="uid://ka11uxut75q5" path="res://Sprites/UI/3 stars background.png" id="14_jbiib"]
 [ext_resource type="Texture2D" uid="uid://c0m7tia4eab3p" path="res://Sprites/UI/3 stars.png" id="15_y0qby"]
+[ext_resource type="Texture2D" uid="uid://bv8m2ojx42n2q" path="res://Sprites/UI/single gold star.png" id="16_eglw8"]
 [ext_resource type="PackedScene" uid="uid://c15ai7m52mkbj" path="res://Scenes/Menus/pause_menu.tscn" id="16_xwc3m"]
+
+[sub_resource type="Curve" id="Curve_ss43x"]
+_data = [Vector2(0.0028169, 1), 0.0, 0.0, 0, 0, Vector2(0.639437, 0.564764), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_476cr"]
+curve = SubResource("Curve_ss43x")
+
+[sub_resource type="Curve" id="Curve_4xah0"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ijffs"]
+curve = SubResource("Curve_4xah0")
+
+[sub_resource type="Curve" id="Curve_hq3ek"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_y5ra4"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_nd83g"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_2ujsy"]
+curve_x = SubResource("Curve_hq3ek")
+curve_y = SubResource("Curve_y5ra4")
+curve_z = SubResource("Curve_nd83g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lcorl"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 40, 1)
+angle_min = -620.0
+angle_max = 126.0
+angle_curve = SubResource("CurveTexture_ijffs")
+spread = 94.615
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+angular_velocity_min = 10.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, -10, 0)
+radial_accel_min = 11.0
+radial_accel_max = 11.0
+tangential_accel_min = 22.75
+tangential_accel_max = 55.65
+scale_min = 0.1
+scale_max = 0.3
+scale_over_velocity_curve = SubResource("CurveXYZTexture_2ujsy")
+alpha_curve = SubResource("CurveTexture_476cr")
+hue_variation_min = 0.2
+hue_variation_max = 0.2
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -34,6 +96,7 @@ texture_progress = ExtResource("4_epncs")
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -162,6 +225,15 @@ allow_greater = true
 nine_patch_stretch = true
 texture_under = ExtResource("14_jbiib")
 texture_progress = ExtResource("15_y0qby")
+
+[node name="StarParticles" type="GPUParticles2D" parent="FinishScreen/Star Display"]
+show_behind_parent = true
+position = Vector2(91, 26)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_lcorl")
+texture = ExtResource("16_eglw8")
+lifetime = 3.0
+randomness = 0.1
 
 [node name="Timer Grid" type="GridContainer" parent="."]
 offset_left = 14.0
