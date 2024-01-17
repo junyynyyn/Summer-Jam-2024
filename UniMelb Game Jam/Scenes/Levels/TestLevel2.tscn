@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2u7wqp6rd42h"]
+[gd_scene load_steps=11 format=3 uid="uid://b2u7wqp6rd42h"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_48off"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://brusfv3prdi2o" path="res://Scenes/Enemies/Teleporting Ghost.tscn" id="7_25adm"]
 [ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
 [ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
+
+[sub_resource type="Environment" id="Environment_1cjcg"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.55
 
 [node name="Level" instance=ExtResource("1_48off")]
 level_name = "TestLevel2"
@@ -49,6 +54,11 @@ position = Vector2(285, 70)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." index="6"]
 
+[node name="GrappleLine" parent="PlayerResources" index="2"]
+modulate = Color(2, 2, 2, 1)
+self_modulate = Color(2, 2, 2, 1)
+default_color = Color(0.690196, 0.529412, 0.203922, 1)
+
 [node name="Slow Torch" parent="." index="8" instance=ExtResource("7_pnl67")]
 position = Vector2(221, 119)
 
@@ -56,4 +66,8 @@ position = Vector2(221, 119)
 position = Vector2(344, 123)
 
 [node name="CanvasModulate" parent="." index="10"]
+visible = true
 color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="11"]
+environment = SubResource("Environment_1cjcg")
