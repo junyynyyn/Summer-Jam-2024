@@ -53,10 +53,13 @@ func complete_level():
 	reward_stars()
 	$UI.display_finish(timer)
 	$"UI/Timer Grid".visible = false
-	$"UI".reward_stars(stars)
 	get_tree().paused = true
+	
+	reward_stars()
+	$"UI".reward_stars(stars)
 	update_best_score()
 	Global.save_scores()
+	print(stars)
 	#print(Global.level_scores)
 	print("You completed ", level_name, " in ", timer, " seconds")
 
@@ -75,9 +78,9 @@ func reward_stars():
 		stars = 4
 	elif (Gold < timer and timer <= ThreeStar):
 		stars = 3
-	elif ThreeStar < timer and timer <= TwoStar:
+	elif (ThreeStar < timer and timer <= TwoStar):
 		stars = 2
-	elif TwoStar < timer and timer <= OneStar:
+	elif (TwoStar < timer and timer <= OneStar):
 		stars = 1
 	return stars
 
