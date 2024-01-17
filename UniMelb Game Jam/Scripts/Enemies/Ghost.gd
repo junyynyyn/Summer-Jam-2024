@@ -55,9 +55,6 @@ func release():
 	
 func _on_capture_cooldown_timer_timeout():
 	capture_cooldown = false
-	if self in player_collection_area.get_overlapping_bodies():
-		player.ghost = self
-		player.capture_ghost()
 
 # ======================================================
 # Movement and behaviour code

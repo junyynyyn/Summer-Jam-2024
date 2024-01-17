@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bumy4g8cy1waj"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6yj8r"]
-[ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="1_ta44o"]
-[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_cb5bc"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_dn86b"]
+[ext_resource type="Texture2D" uid="uid://c5j5onyar25fi" path="res://icon.svg" id="2_ytl81"]
+[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_vwfh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6i0"]
 
@@ -10,8 +10,8 @@
 radius = 14.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 5
-script = ExtResource("1_6yj8r")
+collision_mask = 4
+script = ExtResource("1_dn86b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4a6i0")
@@ -19,7 +19,7 @@ shape = SubResource("RectangleShape2D_4a6i0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7.15256e-07, -1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("1_ta44o")
+texture = ExtResource("2_ytl81")
 
 [node name="GhostCollectionArea" type="Area2D" parent="."]
 collision_mask = 2
@@ -36,7 +36,7 @@ one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.2
-texture = ExtResource("3_cb5bc")
+texture = ExtResource("3_vwfh2")
 texture_scale = 0.2
 
 [connection signal="body_entered" from="GhostCollectionArea" to="." method="_on_ghost_collection_area_body_entered"]

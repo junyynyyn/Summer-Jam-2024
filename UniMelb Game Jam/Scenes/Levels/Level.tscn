@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dubob17g2sofp"]
+[gd_scene load_steps=7 format=3 uid="uid://dubob17g2sofp"]
 
 [ext_resource type="TileSet" uid="uid://boeyacwn3tnje" path="res://Scenes/Levels/TileSet.tres" id="1_2h1ej"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_hmm30"]
-[ext_resource type="PackedScene" uid="uid://bumy4g8cy1waj" path="res://Scenes/Player.tscn" id="2_fce32"]
 [ext_resource type="PackedScene" uid="uid://dk8igy0qx447g" path="res://Scenes/ui.tscn" id="3_ch5gh"]
+[ext_resource type="PackedScene" uid="uid://bumy4g8cy1waj" path="res://Scenes/Player/Player.tscn" id="4_bkfh1"]
+[ext_resource type="PackedScene" uid="uid://w03s8oyae64k" path="res://Scenes/Player/Hook.tscn" id="5_2tq4v"]
+[ext_resource type="PackedScene" uid="uid://dfi8iany5trnq" path="res://Scenes/Player/grapple_line.tscn" id="6_xetmb"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hmm30")
@@ -27,12 +29,18 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="Lighting" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_fce32")]
+[node name="PlayerResources" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerResources" instance=ExtResource("4_bkfh1")]
 position = Vector2(277, 270)
 
-[node name="Camera" type="Camera2D" parent="Player"]
+[node name="Camera" type="Camera2D" parent="PlayerResources/Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="Hook" parent="PlayerResources" instance=ExtResource("5_2tq4v")]
+
+[node name="GrappleLine" parent="PlayerResources" instance=ExtResource("6_xetmb")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

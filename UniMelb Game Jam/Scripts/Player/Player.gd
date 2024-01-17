@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @export var SPEED : float = 100.0
+@export var GRAPPLE_SPEED : float = 500.0
+@export var DECELERATION : float = 10.0
 
 @onready var timer = %ReleaseTimer
 
-var ghost = null
 var ghosts_collected = []
 
 func _ready():
@@ -19,29 +20,43 @@ func _process(_delta):
 	if direction:
 		velocity = direction * SPEED
 	else:
-		velocity = Vector2.ZERO
+		velocity.x = move_toward(velocity.x, 0, DECELERATION)
+		velocity.y = move_toward(velocity.y, 0, DECELERATION)
+	
+	if (Input.is_action_just_pressed("fire")):
+		var mouse_pos = get_global_mouse_position()
+		var mouse_direction = global_position.direction_to(mouse_pos)
+		Global.hook.fire(mouse_direction)
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
 		for ghosts in ghosts_collected:
 			ghosts.position = position
+			
+	if ($GhostCollectionArea.has_overlapping_bodies()):
+		for ghost in $GhostCollectionArea.get_overlapping_bodies():
+			capture_ghost(ghost)
 		
 	move_and_slide()
+	
+func yeet():
+	var hook_position = Global.hook.global_position
+	var direction = position.direction_to(hook_position)
+	velocity = direction * GRAPPLE_SPEED
 
 # Collect ghosts if they enter the collection area
 func _on_ghost_collection_area_body_entered(body):
 	if (body.is_in_group("Ghost")):
-		ghost = body
-		capture_ghost()
+		var ghost = body
+		capture_ghost(ghost)
 
 #New Function to allow catching ghosts who dont leave player zone
-func capture_ghost():
+func capture_ghost(ghost):
 	if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
 		ghost.capture()
 		ghosts_collected.append(ghost)
 		#Restart timer 
 		timer.start()
-		ghost = null
 
 # When timer is over release all the ghosts
 func _on_release_timer_timeout():

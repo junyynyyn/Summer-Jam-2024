@@ -6,7 +6,6 @@ func run():
 	velocity = run_direction * RUN_SPEED * speed_multiplier
 
 func _on_detection_area_body_entered(body):
-	print("Turning Ghost Running")
 	ghost_state = state.RUNNING
 	# Get player direction in relation to ghost, normalize and rotate by 90 degrees
 	if (body.is_in_group("Player")):

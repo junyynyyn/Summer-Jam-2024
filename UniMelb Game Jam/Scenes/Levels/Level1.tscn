@@ -26,8 +26,8 @@ energy = 0.5
 texture = ExtResource("3_ysdjt")
 texture_scale = 0.5
 
-[node name="Player" parent="." index="5"]
-position = Vector2(81, 273)
+[node name="Player" parent="PlayerResources" index="0"]
+position = Vector2(81, 249)
 
 [node name="CanvasModulate" parent="." index="6"]
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)

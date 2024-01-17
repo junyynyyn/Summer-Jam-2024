@@ -17,6 +17,3 @@ position = Vector2(159, 62)
 
 [node name="Turning Ghost" parent="Ghosts" index="1" instance=ExtResource("3_i7g1c")]
 position = Vector2(157, 135)
-
-[node name="Player" parent="." index="5"]
-position = Vector2(33, 95)
