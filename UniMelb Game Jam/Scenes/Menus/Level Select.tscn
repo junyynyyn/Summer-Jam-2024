@@ -122,6 +122,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel2" type="TextureButton" parent="GridContainer/ButtonLevel2"]
+visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -144,7 +145,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -163,6 +163,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel3" type="TextureButton" parent="GridContainer/ButtonLevel3"]
+visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -185,7 +186,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -204,6 +204,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel4" type="TextureButton" parent="GridContainer/ButtonLevel4"]
+visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -226,7 +227,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel5" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -267,7 +267,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel6" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -308,7 +307,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel7" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -349,7 +347,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel8" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -390,7 +387,6 @@ texture_progress = ExtResource("6_hwob2")
 [node name="ButtonLevel9" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("2_sgbkr")
 texture_hover = ExtResource("3_4ebgy")
 script = ExtResource("4_iv863")
@@ -418,6 +414,43 @@ texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="GridContainer/ButtonLevel9"]
+layout_mode = 0
+offset_left = -4.28571
+offset_top = 162.857
+offset_right = 176.714
+offset_bottom = 221.857
+mouse_filter = 2
+nine_patch_stretch = true
+texture_under = ExtResource("5_lmmvt")
+texture_progress = ExtResource("6_hwob2")
+
+[node name="ButtonLevel10" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 89.0
+offset_top = 260.0
+offset_right = 265.0
+offset_bottom = 436.0
+scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_sgbkr")
+texture_hover = ExtResource("3_4ebgy")
+script = ExtResource("4_iv863")
+level_scene = "TestLevel2"
+
+[node name="Label" type="Label" parent="ButtonLevel10"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 173.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("7_5q08h")
+theme_override_font_sizes/font_size = 51
+text = "Test
+Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ButtonLevel10"]
 layout_mode = 0
 offset_left = -4.28571
 offset_top = 162.857

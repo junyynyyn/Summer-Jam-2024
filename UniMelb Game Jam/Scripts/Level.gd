@@ -9,6 +9,8 @@ var timer : float = 0.0
 var timer_active : bool = true
 var goal : bool = false
 
+var can_teleport = true
+
 func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
@@ -43,3 +45,33 @@ func complete_level():
 func _on_ui_next_scene():
 	if next_level:
 		get_tree().change_scene_to_packed(next_level)
+
+func _on_tele_a_1_body_entered(body):
+	if body.is_in_group("Player"):
+		if can_teleport == true:
+			tp_to_b()
+
+func _on_tele_a_2_body_entered(body):
+	if body.is_in_group("Player"):
+		if can_teleport == true:
+			tp_to_a()
+
+func _on_teleport_cooldown_timeout():
+	can_teleport = true
+	if $Player in $"Teleporters/Tele A 1".get_overlapping_bodies():
+		tp_to_b()
+		
+	if $Player in $"Teleporters/Tele A 2".get_overlapping_bodies():
+		tp_to_a()
+
+func tp_to_a():
+	var tele_position = $"Teleporters/Tele A 1/Marker2D".global_position
+	$Player.global_position = tele_position
+	$"Teleporters/Teleport Cooldown".start()
+	can_teleport = false
+
+func tp_to_b():
+	var tele_position = $"Teleporters/Tele A 2/Marker2D".global_position
+	$Player.global_position = tele_position
+	$"Teleporters/Teleport Cooldown".start()
+	can_teleport = false

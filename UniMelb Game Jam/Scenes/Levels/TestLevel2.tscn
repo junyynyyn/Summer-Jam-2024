@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
 [ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
 
-[node name="Level2" instance=ExtResource("1_48off")]
+[node name="Level" instance=ExtResource("1_48off")]
 ghost_quota = 5
 
 [node name="TileMap" parent="." index="1"]
