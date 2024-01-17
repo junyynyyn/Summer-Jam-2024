@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
 
 [node name="Level" instance=ExtResource("1_48off")]
+level_name = "TestLevel2"
 ghost_quota = 5
 
 [node name="TileMap" parent="." index="1"]

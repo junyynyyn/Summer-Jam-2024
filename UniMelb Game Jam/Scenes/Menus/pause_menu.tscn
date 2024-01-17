@@ -59,36 +59,11 @@ vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 461.0
-offset_top = 234.0
-offset_right = 761.0
-offset_bottom = 506.0
+offset_left = 465.0
+offset_top = 313.0
+offset_right = 765.0
+offset_bottom = 585.0
 scale = Vector2(0.75, 0.75)
-
-[node name="Continue" type="TextureButton" parent="GridContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_nsh44")
-
-[node name="Label2" type="Label" parent="GridContainer/Continue"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -36.0
-offset_right = 147.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4mm67")
-theme_override_font_sizes/font_size = 45
-text = "Continue"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Level Select" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -167,7 +142,38 @@ text = "Quit
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="GridContainer/Continue" to="." method="_on_continue_pressed"]
+[node name="Continue" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 465.0
+offset_top = 236.0
+offset_right = 690.0
+offset_bottom = 302.0
+texture_normal = ExtResource("3_nsh44")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -36.0
+offset_right = 147.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4mm67")
+theme_override_font_sizes/font_size = 45
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="GridContainer/Level Select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="GridContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

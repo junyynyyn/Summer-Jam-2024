@@ -34,7 +34,6 @@ texture_progress = ExtResource("4_epncs")
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

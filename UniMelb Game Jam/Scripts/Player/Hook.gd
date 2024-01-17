@@ -12,7 +12,7 @@ func _ready():
 	hook_state = state.UNFIRED
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if hook_state == state.UNFIRED:
 		visible = false
 		position = Global.player.position
