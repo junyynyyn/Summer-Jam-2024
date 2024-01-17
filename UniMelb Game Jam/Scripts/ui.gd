@@ -65,4 +65,4 @@ func reward_stars(stars):
 	stardisplay.value = stars
 	if stars >= 4:
 		stardisplay.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
-	print(stars)
+	#print(stars)

@@ -1,9 +1,11 @@
 extends Node2D
 
+@export var level_name = ""
 @export var ghost_quota : int
 @export var next_level : PackedScene
 
-@export var OneStar : float = 0
+
+var OneStar: float = 99999
 @export var TwoStar : float = 0 
 @export var ThreeStar : float = 0
 @export var Gold : float = 0
@@ -53,6 +55,10 @@ func complete_level():
 	$"UI/Timer Grid".visible = false
 	$"UI".reward_stars(stars)
 	get_tree().paused = true
+	Global.level_scores[level_name] = stars
+	Global.save_scores()
+	print(Global.level_scores)
+	print(timer)
 
 func reward_stars():
 	if timer <= Gold:
