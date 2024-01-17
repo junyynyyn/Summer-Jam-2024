@@ -19,6 +19,7 @@ var speed_multiplier : float = 1.0
 var roam_target : Vector2 = Vector2(0,0)
 
 var capture_cooldown = false
+var grappleable = true
 
 func _ready():
 	pass
@@ -30,6 +31,8 @@ func _process(_delta):
 		state.RUNNING:
 			run()
 		state.CAPTURED:
+			pass
+		state.ESCAPING:
 			pass
 	
 	update_sprite_orientation()
@@ -51,10 +54,17 @@ func release():
 	$CaptureCooldownTimer.start()
 	position = Global.player.position
 	visible = true
-	ghost_state = state.RUNNING
+	
+	var rng = RandomNumberGenerator.new()
+	direction = Vector2(rng.randf_range(-1, 1),rng.randf_range(-1, 1))
+	velocity = direction * 200
+	
+	ghost_state = state.ESCAPING
 	
 func _on_capture_cooldown_timer_timeout():
 	capture_cooldown = false
+	ghost_state = state.RUNNING
+	grappleable = true
 
 # ======================================================
 # Movement and behaviour code

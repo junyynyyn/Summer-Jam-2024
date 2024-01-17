@@ -15,6 +15,7 @@ func _on_invisibility_duration_timeout():
 	tween.set_parallel(true)
 	tween.tween_property(sprite, "modulate:a", 1, 1).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(light, "energy", 0.25, 1).set_trans(Tween.TRANS_LINEAR)
+	grappleable = true
 	
 	$VisibilityDuration.start()
 
@@ -23,5 +24,6 @@ func _on_visibility_duration_timeout():
 	tween.set_parallel(true)
 	tween.tween_property(sprite, "modulate:a", 0, 1).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(light, "energy", 0, 1).set_trans(Tween.TRANS_LINEAR)
+	grappleable = false
 	
 	$InvisibilityDuration.start()
