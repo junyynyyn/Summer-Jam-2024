@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var SPEED : float = 100.0
 @export var GRAPPLE_SPEED : float = 500.0
 @export var DECELERATION : float = 10.0
+@export var ACCELERATION : float = 25.0
 
 @onready var timer = %ReleaseTimer
 
@@ -18,7 +19,8 @@ func _process(_delta):
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	if direction:
-		velocity = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
+		velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
 		velocity.y = move_toward(velocity.y, 0, DECELERATION)
