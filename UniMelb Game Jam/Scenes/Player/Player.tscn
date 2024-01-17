@@ -35,7 +35,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.2
+energy = 0.1
 blend_mode = 2
 texture = ExtResource("3_vmks6")
 
