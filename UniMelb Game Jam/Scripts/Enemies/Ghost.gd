@@ -2,6 +2,8 @@ class_name Ghost extends CharacterBody2D
 
 @onready var sprite = $Sprite2D
 @onready var light = $Sprite2D/PointLight2D
+@onready var player_collection_area = get_node("/root/Level/Player/GhostCollectionArea")
+@onready var player = get_node("/root/Level/Player")
 
 enum state {ROAMING, RUNNING, CAPTURED, ESCAPING}
 var ghost_state : state = state.ROAMING
@@ -53,7 +55,10 @@ func release():
 	
 func _on_capture_cooldown_timer_timeout():
 	capture_cooldown = false
-	
+	if self in player_collection_area.get_overlapping_bodies():
+		player.ghost = self
+		player.capture_ghost()
+
 # ======================================================
 # Movement and behaviour code
 # Can be overridden in subclasses if required

@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @onready var timer = %ReleaseTimer
 
+var ghost = null
 var ghosts_collected = []
 
 func _ready():
@@ -30,12 +31,17 @@ func _process(_delta):
 # Collect ghosts if they enter the collection area
 func _on_ghost_collection_area_body_entered(body):
 	if (body.is_in_group("Ghost")):
-		var ghost = body
-		if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
-			ghost.capture()
-			ghosts_collected.append(ghost)
-			#Restart timer 
-			timer.start()
+		ghost = body
+		capture_ghost()
+
+#New Function to allow catching ghosts who dont leave player zone
+func capture_ghost():
+	if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
+		ghost.capture()
+		ghosts_collected.append(ghost)
+		#Restart timer 
+		timer.start()
+		ghost = null
 
 # When timer is over release all the ghosts
 func _on_release_timer_timeout():

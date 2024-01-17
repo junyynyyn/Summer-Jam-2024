@@ -8,6 +8,7 @@ func _ready():
 func update_sprite_orientation():
 	if velocity.x != 0:  # Check if there is horizontal movement
 		sprite.flip_h = velocity.x > 0  # Flip if moving left
+		
 
 func _on_invisibility_duration_timeout():
 	var tween = get_tree().create_tween()
