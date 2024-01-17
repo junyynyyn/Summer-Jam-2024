@@ -38,7 +38,6 @@ func _process(_delta):
 	update_sprite_orientation()
 	
 	move_and_slide()
-
 # ======================================================
 # Capture Code
 # Base function to capture ghosts

@@ -52,9 +52,9 @@ position = Vector2(277, 270)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="Hook" parent="PlayerResources" instance=ExtResource("5_2tq4v")]
-
 [node name="GrappleLine" parent="PlayerResources" instance=ExtResource("6_xetmb")]
+
+[node name="Hook" parent="PlayerResources" instance=ExtResource("5_2tq4v")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

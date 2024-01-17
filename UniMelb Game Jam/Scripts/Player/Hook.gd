@@ -32,6 +32,7 @@ func _process(_delta):
 	move_and_slide()
 	
 func fire(direction: Vector2):
+	rotation = (direction.angle() + PI/2)
 	hook_state = state.FIRED
 	velocity = direction.normalized() * HOOK_SPEED
 
