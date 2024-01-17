@@ -4,7 +4,6 @@ extends Node2D
 @export var ghost_quota : int
 @export var next_level : PackedScene
 
-
 var OneStar: float = 99999
 @export var TwoStar : float = 0 
 @export var ThreeStar : float = 0

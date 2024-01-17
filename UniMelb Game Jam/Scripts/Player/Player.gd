@@ -40,13 +40,14 @@ func _process(_delta):
 	if ($GhostCollectionArea.has_overlapping_bodies()):
 		for ghost in $GhostCollectionArea.get_overlapping_bodies():
 			capture_ghost(ghost)
-		
+	
 	move_and_slide()
 	
 func set_hook_fire():
 	can_fire_hook = true
 
 func yeet():
+	set_collision_mask_value(6, false)
 	var hook_position = Global.hook.global_position
 	var direction = position.direction_to(hook_position)
 	velocity = direction * GRAPPLE_SPEED

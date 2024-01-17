@@ -17,8 +17,10 @@ func _process(_delta):
 	if hook_state == state.UNFIRED:
 		visible = false
 		position = Global.player.position
+		Global.player.set_collision_mask_value(6, true)
 	elif hook_state == state.FIRED:
 		visible = true
+		Global.player.set_collision_mask_value(6, true)
 		if is_on_wall() or is_on_ceiling() or is_on_floor():
 			hook_state = state.UNFIRED
 		if (position - Global.player.global_position).length() >= GRAPPLE_LENGTH:
