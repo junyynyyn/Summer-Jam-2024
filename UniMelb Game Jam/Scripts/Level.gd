@@ -27,7 +27,6 @@ func _ready():
 	#if get_tree().get_current_scene().is_in_group("Level1"):
 		#print("You are on Level 1")
 
-
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
 	$UI.update_ghost_count(Global.player.ghosts_collected.size())
@@ -38,7 +37,6 @@ func _process(delta):
 	# Check if player has hit the ghost collected to finish the level
 	if (Global.player.ghosts_collected.size() >= ghost_quota):
 		complete_level()
-	
 
 func reset_timer():
 	timer = 0
@@ -88,33 +86,3 @@ func reward_stars():
 func _on_ui_next_scene():
 	if next_level:
 		get_tree().change_scene_to_packed(next_level)
-
-func _on_tele_a_1_body_entered(body):
-	if body.is_in_group("Player"):
-		if can_teleport == true:
-			tp_to_b()
-
-func _on_tele_a_2_body_entered(body):
-	if body.is_in_group("Player"):
-		if can_teleport == true:
-			tp_to_a()
-
-func _on_teleport_cooldown_timeout():
-	can_teleport = true
-	if $Player in $"Teleporters/Tele A 1".get_overlapping_bodies():
-		tp_to_b()
-	
-	if $Player in $"Teleporters/Tele A 2".get_overlapping_bodies():
-		tp_to_a()
-
-func tp_to_a():
-	var tele_position = $"Teleporters/Tele A 1/Marker2D".global_position
-	$Player.global_position = tele_position
-	$"Teleporters/Teleport Cooldown".start()
-	can_teleport = false
-
-func tp_to_b():
-	var tele_position = $"Teleporters/Tele A 2/Marker2D".global_position
-	$Player.global_position = tele_position
-	$"Teleporters/Teleport Cooldown".start()
-	can_teleport = false

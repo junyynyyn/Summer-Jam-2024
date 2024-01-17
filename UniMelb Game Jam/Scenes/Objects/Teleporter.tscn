@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://catis6onct7ow"]
+
+[ext_resource type="Texture2D" uid="uid://cx3dq22w7pyee" path="res://Sprites/makeshift teleport pad.png" id="1_ckdtv"]
+[ext_resource type="Script" path="res://Scripts/Objects/Teleporter.gd" id="1_rsb2i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e12sd"]
+radius = 13.0
+height = 54.0
+
+[node name="TeleportPad" type="Area2D"]
+script = ExtResource("1_rsb2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_ckdtv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e12sd")
+
+[node name="TeleportPoint" type="Marker2D" parent="."]
+
+[node name="TeleportCooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TeleportCooldown" to="." method="_on_teleport_cooldown_timeout"]
