@@ -31,7 +31,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 859.605)]
+"values": [Vector2(0, 682.125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1126, 607)]
 }
 
 [sub_resource type="Animation" id="Animation_v3l8w"]
@@ -48,6 +60,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 664.155), Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1126, 607)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pwt4g"]
 _data = {
@@ -57,14 +81,20 @@ _data = {
 
 [node name="LevelSelect" type="Control" groups=["Level Select"]]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 859.605
-offset_bottom = 859.604
+anchor_right = 1.014
+anchor_bottom = 2.031
+offset_top = 682.125
+offset_right = 1126.0
+offset_bottom = 1289.13
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vom47")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwt4g")
+}
+autoplay = "yeet_up"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -74,9 +104,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -605.0
-offset_top = -1017.0
+offset_top = -1016.5
 offset_right = 636.0
-offset_bottom = 355.0
+offset_bottom = 376.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8lf5x")
@@ -591,11 +621,5 @@ texture_normal = ExtResource("11_1penf")
 texture_hover = ExtResource("12_5uoml")
 ignore_texture_size = true
 stretch_mode = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pwt4g")
-}
-autoplay = "yeet_up"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
