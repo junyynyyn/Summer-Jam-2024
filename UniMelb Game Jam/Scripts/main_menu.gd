@@ -43,7 +43,7 @@ func _on_line_edit_text_submitted(new_text):
 		#print(Global.username)
 		$UsernameRequest.visible = false
 		$Menu.visible = true
-		Global.save_scores()
+		Global.save_game_data()
 
 
 func _on_scores_pressed():
@@ -52,7 +52,7 @@ func _on_scores_pressed():
 
 func _on_scores_reset_pressed():
 	var temp_username = Global.username
-	Global.clear_scores()
+	Global.clear_game_data()
 	Global.username = temp_username
 	#print("Username set to: " + temp_username)
 	$ResetConfirmation.visible = false

@@ -8,29 +8,30 @@ var line
 var username = null
 
 func _ready():
-	load_scores()
+	load_game_data()
 
 
-var level_scores = {}
+var level_times = {}
+var level_stars = {}  # New dictionary for star ratings
 
-
-func save_scores():
+func save_game_data():
 	var save_data = {
-		"level_scores": level_scores,
+		"level_times": level_times,
+		"level_stars": level_stars,  # Include star ratings
 		"username": username
 	}
 
-	var save_game = FileAccess.open("user://level_scores.json", FileAccess.WRITE)
+	var save_game = FileAccess.open("user://game_data.json", FileAccess.WRITE)
 	var json_string = JSON.stringify(save_data)
 	save_game.store_string(json_string)
 	save_game.close()
 
 
-func load_scores():
-	if not FileAccess.file_exists("user://level_scores.json"):
+func load_game_data():
+	if not FileAccess.file_exists("user://game_data.json"):
 		return # No save file to load
 
-	var save_game = FileAccess.open("user://level_scores.json", FileAccess.READ)
+	var save_game = FileAccess.open("user://game_data.json", FileAccess.READ)
 	var json_string = save_game.get_as_text()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
@@ -42,29 +43,27 @@ func load_scores():
 	var save_data = json.get_data()
 	save_game.close()
 
-	if "level_scores" in save_data:
-		level_scores = save_data["level_scores"]
-
+	if "level_times" in save_data:
+		level_times = save_data["level_times"]
+	if "level_stars" in save_data:
+		level_stars = save_data["level_stars"]
 	if "username" in save_data:
 		username = save_data["username"]
 
-	#if get_tree().get_current_scene().is_in_group("Level Select"):
-		#get_tree().get_current_scene().update_progress_bars() # Update progress bars with loaded scores
-		#print("Loaded scene information")
 
 
-func clear_scores():
-	# Clear the level scores and username in memory
-	level_scores.clear()
+func clear_game_data():
+	level_times.clear()
+	level_stars.clear()
+	username = null
 
-	# Create a new save data structure
 	var save_data = {
-		"level_scores": level_scores,
+		"level_times": level_times,
+		"level_stars": level_stars,
 		"username": username
 	}
 
-	# Update the save file
-	var save_game = FileAccess.open("user://level_scores.json", FileAccess.WRITE)
+	var save_game = FileAccess.open("user://game_data.json", FileAccess.WRITE)
 	var json_string = JSON.stringify(save_data)
 	save_game.store_string(json_string)
 	save_game.close()

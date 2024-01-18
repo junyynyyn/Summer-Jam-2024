@@ -49,27 +49,28 @@ func start_timer():
 # Show end screen UI and pause game functionaltiy besides UI
 func complete_level():
 	reward_stars()
-	$UI.display_finish(timer)
+	var new_best = false
+	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
+		new_best = true
+	$UI.display_finish(timer, level_name, new_best)
 	$"UI/Timer Grid".visible = false
 	get_tree().paused = true
 	
 	reward_stars()
-	$"UI".reward_stars(stars)
-	update_best_score()
-	Global.save_scores()
-	#print(stars)
-	#print(Global.level_scores)
+	update_best_time_and_stars()
+	Global.save_game_data()
+
 	#print("You completed ", level_name, " in ", timer, " seconds")
 
-func update_best_score():
-	# Check if the level already has a score
-	if level_name in Global.level_scores:
-		# Update only if the new score is better
-		if stars > Global.level_scores[level_name]:
-			Global.level_scores[level_name] = stars
-	else:
-		# If the level has no score yet, set the new score
-		Global.level_scores[level_name] = stars
+func update_best_time_and_stars():
+	# Update time
+	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
+		Global.level_times[level_name] = timer
+	
+	# Update stars
+	var new_stars = reward_stars()  # Assuming reward_stars returns the number of stars
+	if level_name not in Global.level_stars or new_stars > Global.level_stars[level_name]:
+		Global.level_stars[level_name] = new_stars
 
 func reward_stars():
 	if timer <= Gold:
@@ -80,6 +81,7 @@ func reward_stars():
 		stars = 2
 	elif (TwoStar < timer and timer <= OneStar):
 		stars = 1
+	$UI.reward_stars(stars)  # Update UI with star rating
 	return stars
 
 func _on_ui_next_scene():
