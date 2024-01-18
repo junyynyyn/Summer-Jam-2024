@@ -26,7 +26,11 @@ func display_finish(time: float, current_level_name: String, new_best: bool):
 	$FinishScreen.visible = true
 	$FinishScreen/TimeDisplay.text = "%.2f seconds" % time
 
-	var best_time_msg = "Best time: %.2f seconds" % Global.level_times.get(current_level_name)
+	var best_time = Global.level_times.get(current_level_name)
+	var best_time_msg = "Best time: --"
+	if best_time != null:
+		best_time_msg = "Best time: %.2f seconds" % best_time
+
 	if new_best:
 		best_time_msg = "New best!: %.2f seconds" % time
 
