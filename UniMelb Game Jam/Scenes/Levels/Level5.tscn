@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4xqgf0bnadtv"]
+[gd_scene load_steps=8 format=3 uid="uid://4xqgf0bnadtv"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_axq10"]
 [ext_resource type="PackedScene" uid="uid://b82m625ypqhcq" path="res://Scenes/Levels/Level6.tscn" id="2_5jktm"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://catis6onct7ow" path="res://Scenes/Objects/Teleporter.tscn" id="3_qby6k"]
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="4_1ivm4"]
 [ext_resource type="PackedScene" uid="uid://brusfv3prdi2o" path="res://Scenes/Enemies/Teleporting Ghost.tscn" id="5_mqwpw"]
+[ext_resource type="PackedScene" uid="uid://dp51v2otqqe1u" path="res://Scenes/Objects/HookPoint.tscn" id="7_4h86s"]
 
 [node name="Level" groups=["Level5"] instance=ExtResource("1_axq10")]
 level_name = "Level5"
-ghost_quota = 15
+ghost_quota = 10
 next_level = ExtResource("2_5jktm")
 TwoStar = 23.0
 ThreeStar = 20.0
@@ -36,57 +37,57 @@ target_teleporter = NodePath("../TeleportPad4")
 position = Vector2(560, 595)
 target_teleporter = NodePath("../TeleportPad3")
 
+[node name="HookPoint" parent="Objects" index="4" instance=ExtResource("7_4h86s")]
+position = Vector2(845, 274)
+
+[node name="HookPoint2" parent="Objects" index="5" instance=ExtResource("7_4h86s")]
+position = Vector2(792, 467)
+
+[node name="HookPoint3" parent="Objects" index="6" instance=ExtResource("7_4h86s")]
+position = Vector2(560, 270)
+
+[node name="HookPoint4" parent="Objects" index="7" instance=ExtResource("7_4h86s")]
+position = Vector2(562, 847)
+
+[node name="HookPoint5" parent="Objects" index="8" instance=ExtResource("7_4h86s")]
+position = Vector2(1307, 365)
+
 [node name="Running Ghost12" parent="Ghosts" index="0" instance=ExtResource("4_1ivm4")]
 position = Vector2(561, 674)
 
 [node name="Running Ghost" parent="Ghosts" index="1" instance=ExtResource("4_1ivm4")]
 position = Vector2(273, 270)
 
-[node name="Running Ghost2" parent="Ghosts" index="2" instance=ExtResource("4_1ivm4")]
-position = Vector2(816, 271)
-
-[node name="Running Ghost3" parent="Ghosts" index="3" instance=ExtResource("4_1ivm4")]
+[node name="Running Ghost3" parent="Ghosts" index="2" instance=ExtResource("4_1ivm4")]
 position = Vector2(1000, 274)
 
-[node name="Running Ghost4" parent="Ghosts" index="4" instance=ExtResource("4_1ivm4")]
+[node name="Running Ghost4" parent="Ghosts" index="3" instance=ExtResource("4_1ivm4")]
 position = Vector2(1006, 460)
 
-[node name="Running Ghost5" parent="Ghosts" index="5" instance=ExtResource("4_1ivm4")]
-position = Vector2(803, 464)
-
-[node name="Running Ghost6" parent="Ghosts" index="6" instance=ExtResource("4_1ivm4")]
+[node name="Running Ghost6" parent="Ghosts" index="4" instance=ExtResource("4_1ivm4")]
 position = Vector2(559, 466)
 
-[node name="Running Ghost7" parent="Ghosts" index="7" instance=ExtResource("4_1ivm4")]
-position = Vector2(559, 277)
-
-[node name="Running Ghost8" parent="Ghosts" index="8" instance=ExtResource("4_1ivm4")]
+[node name="Running Ghost8" parent="Ghosts" index="5" instance=ExtResource("4_1ivm4")]
 position = Vector2(561, 121)
 
-[node name="Teleporting Ghost" parent="Ghosts" index="9" node_paths=PackedStringArray("teleport_point_1", "teleport_point_2") instance=ExtResource("5_mqwpw")]
+[node name="Teleporting Ghost" parent="Ghosts" index="6" node_paths=PackedStringArray("teleport_point_1", "teleport_point_2") instance=ExtResource("5_mqwpw")]
 position = Vector2(1693, 273)
 teleport_point_1 = NodePath("../Marker2D")
 teleport_point_2 = NodePath("../Marker2D2")
 
-[node name="Marker2D" type="Marker2D" parent="Ghosts" index="10"]
+[node name="Marker2D" type="Marker2D" parent="Ghosts" index="7"]
 position = Vector2(1691, 270)
 
-[node name="Marker2D2" type="Marker2D" parent="Ghosts" index="11"]
+[node name="Marker2D2" type="Marker2D" parent="Ghosts" index="8"]
 position = Vector2(1696, 478)
 
-[node name="Running Ghost9" parent="Ghosts" index="12" instance=ExtResource("4_1ivm4")]
-position = Vector2(563, 847)
-
-[node name="Mirrored Ghost" parent="Ghosts" index="13" instance=ExtResource("3_no5df")]
+[node name="Mirrored Ghost" parent="Ghosts" index="9" instance=ExtResource("3_no5df")]
 position = Vector2(663, 848)
 
-[node name="Mirrored Ghost2" parent="Ghosts" index="14" instance=ExtResource("3_no5df")]
+[node name="Mirrored Ghost2" parent="Ghosts" index="10" instance=ExtResource("3_no5df")]
 position = Vector2(1204, 704)
 
-[node name="Running Ghost10" parent="Ghosts" index="15" instance=ExtResource("4_1ivm4")]
-position = Vector2(1350, 368)
-
-[node name="Running Ghost11" parent="Ghosts" index="16" instance=ExtResource("4_1ivm4")]
+[node name="Running Ghost11" parent="Ghosts" index="11" instance=ExtResource("4_1ivm4")]
 position = Vector2(1541, 371)
 
 [node name="Player" parent="PlayerResources" index="0"]
