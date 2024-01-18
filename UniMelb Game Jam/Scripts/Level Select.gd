@@ -8,12 +8,12 @@ func _ready():
 
 
 func update_progress_bars():
-	for level in Global.level_scores.keys():
+	for level in Global.level_times.keys():
 		if level == "TestLevel2":
 			progressBar = get_node("Button" + level + "/TextureProgressBar")
 		else:
 			progressBar = get_node("GridContainer/Button" + level + "/TextureProgressBar")
-		progressBar.value = Global.level_scores[level]
+		progressBar.value = Global.level_stars[level]
 		if progressBar.value >= 4:
 			progressBar.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
 			

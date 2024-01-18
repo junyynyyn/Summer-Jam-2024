@@ -21,11 +21,20 @@ func update_ghost_count(count: int):
 func update_timer(time: float):
 	%Timer.text = ("%.2f" % time)
 
-func display_finish(time: float):
+func display_finish(time: float, current_level_name: String, new_best: bool):
 	can_pause = false
-	%FinishScreen.visible = true
-	#%FinishScreen/TimeDisplay.text = "Final Time: %.2f seconds" % time
-	%FinishScreen/TimeDisplay.text = "%.2f seconds" % time
+	$FinishScreen.visible = true
+	$FinishScreen/TimeDisplay.text = "%.2f seconds" % time
+
+	var best_time = Global.level_times.get(current_level_name)
+	var best_time_msg = "Best time: --"
+	if best_time != null:
+		best_time_msg = "Best time: %.2f seconds" % best_time
+
+	if new_best:
+		best_time_msg = "New best!: %.2f seconds" % time
+
+	$"FinishScreen/Best Time".text = best_time_msg
 
 
 func _input(event):
