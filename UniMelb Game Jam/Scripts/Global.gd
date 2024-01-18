@@ -18,7 +18,8 @@ func save_game_data():
 	var save_data = {
 		"level_times": level_times,
 		"level_stars": level_stars,  # Include star ratings
-		"username": username
+		"username": username,
+		"can_grapple":can_grapple
 	}
 
 	var save_game = FileAccess.open("user://game_data.json", FileAccess.WRITE)
@@ -49,6 +50,8 @@ func load_game_data():
 		level_stars = save_data["level_stars"]
 	if "username" in save_data:
 		username = save_data["username"]
+	if "can_grapple" in save_data:
+		can_grapple = save_data["can_grapple"]
 
 
 
@@ -56,11 +59,13 @@ func clear_game_data():
 	level_times.clear()
 	level_stars.clear()
 	username = null
+	can_grapple = false
 
 	var save_data = {
 		"level_times": level_times,
 		"level_stars": level_stars,
-		"username": username
+		"username": username,
+		"can_grapple": can_grapple
 	}
 
 	var save_game = FileAccess.open("user://game_data.json", FileAccess.WRITE)
