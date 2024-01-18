@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://w03s8oyae64k"]
+[gd_scene load_steps=8 format=3 uid="uid://w03s8oyae64k"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Hook.gd" id="1_8cx1b"]
 [ext_resource type="Texture2D" uid="uid://b0ptjby3pygr3" path="res://Sprites/Talisman.png" id="2_6qdm7"]
 [ext_resource type="Texture2D" uid="uid://bhnnr6hg3dx32" path="res://Sprites/Light.png" id="3_d0nsb"]
+[ext_resource type="AudioStream" uid="uid://dksnj7mdfhbfb" path="res://Audio/Grapple Throw.mp3" id="4_8t4dr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gr35c"]
 radius = 3.0
@@ -46,6 +47,12 @@ one_shot = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.2
 texture = ExtResource("3_d0nsb")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="GrappleThrowNoise" type="AudioStreamPlayer2D" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("4_8t4dr")
 
 [connection signal="body_entered" from="HookHitbox" to="." method="_on_hook_hitbox_body_entered"]
 [connection signal="body_exited" from="HookHitbox" to="." method="_on_hook_hitbox_body_exited"]

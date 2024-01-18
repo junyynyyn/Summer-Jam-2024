@@ -2,8 +2,6 @@ class_name Ghost extends CharacterBody2D
 
 @onready var sprite = $Sprite2D
 @onready var light = $Sprite2D/PointLight2D
-@onready var player_collection_area = get_node("/root/Level/PlayerResources/Player/GhostCollectionArea")
-@onready var player = get_node("/root/Level/PlayerResources/Player")
 
 enum state {ROAMING, RUNNING, CAPTURED, ESCAPING}
 var ghost_state : state = state.ROAMING

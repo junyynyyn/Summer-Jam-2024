@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var GrappleThrowNoise = get_node("/root/Level/Audio/GrappleThrowNoise")
+@onready var GrappleThrowNoise = $Audio/GrappleThrowNoise
 
 var HOOK_SPEED : float = 500.0
 var GRAPPLE_LENGTH : float = 250.0
