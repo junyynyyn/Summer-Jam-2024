@@ -11,6 +11,7 @@ var grappled_body : PhysicsBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	visible = false
 	Global.hook = self
 	hook_state = state.UNFIRED
 

@@ -14,7 +14,6 @@ var sfx_volume: float
 func _ready():
 	load_game_data()
 
-
 var level_times = {}
 var level_stars = {}  # New dictionary for star ratings
 
