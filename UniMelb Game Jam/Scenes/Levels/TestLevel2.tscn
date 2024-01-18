@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2u7wqp6rd42h"]
+[gd_scene load_steps=12 format=3 uid="uid://b2u7wqp6rd42h"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_48off"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="2_fjgyx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brusfv3prdi2o" path="res://Scenes/Enemies/Teleporting Ghost.tscn" id="7_25adm"]
 [ext_resource type="PackedScene" uid="uid://bn7aq3hr7x3ot" path="res://Scenes/Objects/Slow Torch.tscn" id="7_pnl67"]
 [ext_resource type="PackedScene" uid="uid://bhedtwtxlm6le" path="res://Scenes/Objects/Speed Torch.tscn" id="8_5jwi7"]
+[ext_resource type="PackedScene" uid="uid://dp51v2otqqe1u" path="res://Scenes/Objects/HookPoint.tscn" id="11_0wnqp"]
 
 [node name="Level" instance=ExtResource("1_48off")]
 level_name = "TestLevel2"
@@ -67,3 +68,6 @@ position = Vector2(285, 70)
 [node name="CanvasModulate" parent="." index="9"]
 visible = false
 color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="HookPoint" parent="." index="11" instance=ExtResource("11_0wnqp")]
+position = Vector2(229, 317)

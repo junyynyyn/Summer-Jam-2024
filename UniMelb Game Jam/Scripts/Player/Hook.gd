@@ -7,7 +7,7 @@ var GRAPPLE_LENGTH : float = 250.0
 var fired : bool = false
 enum state {UNFIRED, FIRED, GRAPPLING}
 var hook_state : state
-var grappled_ghost : Ghost
+var grappled_body : PhysicsBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,12 +35,12 @@ func _process(_delta):
 			for body in bodies:
 				if (body.is_in_group("Player")):
 					hook_state = state.UNFIRED
-					grappled_ghost.grappleable = false
-					grappled_ghost = null
+					grappled_body.grappleable = false
+					grappled_body = null
 					Global.player.reverse_yeet()
-			if (grappled_ghost):
-				if (grappled_ghost.grappleable == true):
-					position = grappled_ghost.position
+			if (grappled_body):
+				if (grappled_body.grappleable == true):
+					position = grappled_body.position
 					Global.player.yeet()
 			else:
 				hook_state = state.UNFIRED
@@ -56,11 +56,11 @@ func fire(direction: Vector2):
 
 func _on_hook_hitbox_body_entered(body):
 	if (hook_state == state.FIRED):
-		if (body.is_in_group("Ghost")):
+		if (body.is_in_group("Grappleable")):
 			if (body.grappleable == true):
 				velocity = Vector2.ZERO
 				hook_state = state.GRAPPLING
-				grappled_ghost = body
+				grappled_body = body
 
 func _on_hook_timer_timeout():
 	if (hook_state == state.FIRED):

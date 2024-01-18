@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp51v2otqqe1u"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/HookPoint.gd" id="1_8qauf"]
+[ext_resource type="Texture2D" uid="uid://c3vo882qi1yj0" path="res://Sprites/small beacon.png" id="1_aah51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fbe3w"]
+radius = 16.0312
+
+[node name="HookPoint" type="StaticBody2D" groups=["Grappleable"]]
+collision_layer = 64
+script = ExtResource("1_8qauf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fbe3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aah51")
+
+[node name="HookCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="HookCooldown" to="." method="_on_hook_cooldown_timeout"]

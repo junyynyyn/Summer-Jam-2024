@@ -16,14 +16,14 @@ radius = 9.0
 
 [node name="Hook" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 68
+collision_mask = 4
 script = ExtResource("1_8cx1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gr35c")
 
 [node name="HookHitbox" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HookHitbox"]
 shape = SubResource("CircleShape2D_fgtal")
