@@ -14,7 +14,11 @@ func _ready() -> void:
 	)
 
 func _on_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(
-		bus_index,
-		linear_to_db(value)
-	)
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	if self.name == "Master":
+		Global.master_volume = value
+	if self.name == "Music":
+		Global.music_volume = value
+	if self.name == "Sound Effects":
+		Global.sfx_volume = value
+	Global.save_game_data()

@@ -56,15 +56,20 @@ func _on_scores_pressed():
 
 func _on_scores_reset_pressed():
 	var temp_username = Global.username
+	var able_to_grapple: bool = false
+	if Global.can_grapple:
+		able_to_grapple = true
 	Global.clear_game_data()
 	Global.username = temp_username
+	if able_to_grapple:
+		Global.can_grapple = true
 	#print("Username set to: " + temp_username)
 	$ResetConfirmation.visible = false
 	
 
 
 func _on_everything_reset_pressed():
-	Global.clear_scores()
+	Global.clear_game_data()
 	request_username()
 	$ResetConfirmation.visible = false
 

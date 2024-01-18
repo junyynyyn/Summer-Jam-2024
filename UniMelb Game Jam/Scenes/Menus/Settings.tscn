@@ -70,13 +70,13 @@ text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Master2" parent="." instance=ExtResource("3_nah48")]
+[node name="Music" parent="." instance=ExtResource("3_nah48")]
 layout_mode = 1
 offset_top = 53.5
 offset_bottom = 90.5
 bus_name = "Music"
 
-[node name="Label" type="Label" parent="Master2"]
+[node name="Label" type="Label" parent="Music"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,13 +94,13 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Master3" parent="." instance=ExtResource("3_nah48")]
+[node name="Sound Effects" parent="." instance=ExtResource("3_nah48")]
 layout_mode = 1
 offset_top = 125.5
 offset_bottom = 162.5
 bus_name = "Sound Effects"
 
-[node name="Label" type="Label" parent="Master3"]
+[node name="Label" type="Label" parent="Sound Effects"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,5 +146,8 @@ texture_hover = ExtResource("8_d8eka")
 ignore_texture_size = true
 stretch_mode = 0
 
+[connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
+[connection signal="changed" from="Music" to="." method="_on_music_changed"]
+[connection signal="changed" from="Sound Effects" to="." method="_on_sound_effects_changed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
