@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="2_gey1j"]
 [ext_resource type="PackedScene" uid="uid://1mcxpxt45q80" path="res://Scenes/Levels/Level3.tscn" id="2_h0387"]
 
-[node name="Level" groups=["Level2"] instance=ExtResource("1_2s71c")]
+[node name="Level2" groups=["Level2"] instance=ExtResource("1_2s71c")]
 level_name = "Level2"
 ghost_quota = 4
 next_level = ExtResource("2_h0387")

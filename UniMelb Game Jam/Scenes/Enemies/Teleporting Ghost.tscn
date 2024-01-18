@@ -13,6 +13,7 @@ script = ExtResource("2_ark64")
 [node name="DetectionArea" type="Area2D" parent="." index="4" groups=["Enemy"]]
 visible = false
 collision_layer = 0
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0"]
 shape = SubResource("CircleShape2D_laccb")
