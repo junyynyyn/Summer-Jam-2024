@@ -26,6 +26,7 @@ var stars = 0
 func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
+	$UI/GhostCounter.max_value = ghost_quota
 	$UI.set_ghost_count_max(ghost_total)
 	adjust_star_thresholds()
 

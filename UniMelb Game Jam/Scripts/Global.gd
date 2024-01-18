@@ -61,6 +61,8 @@ func load_game_data():
 		can_grapple = save_data["can_grapple"]
 	if "master_volume" in save_data:
 		AudioServer.set_bus_volume_db(0, linear_to_db(save_data["master_volume"]))
+	if "master_volume" not in save_data:
+		AudioServer.set_bus_volume_db(0, 1)
 	if "music_volume" in save_data:
 		AudioServer.set_bus_volume_db(1, linear_to_db(save_data["music_volume"]))
 	if "sfx_volume" in save_data:
