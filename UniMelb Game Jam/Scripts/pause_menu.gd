@@ -1,7 +1,7 @@
 extends Control
 
 var levelselect: PackedScene = preload("res://Scenes/Menus/Level Select.tscn")
-#var settings: PackedScene = preload("settings")
+var settings: PackedScene = preload("res://Scenes/Menus/Settings.tscn")
 
 @onready var level = get_node("/root/Level")
 @onready var ui = get_node("/root/Level/UI")
@@ -19,13 +19,12 @@ func _on_continue_pressed():
 	ui.unpause_game()
 
 func _on_level_select_pressed():
-	
 	level.get_tree().paused = false
-	get_tree().change_scene_to_packed(levelselect)
+	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 
 func _on_settings_pressed():
-	pass # Replace with function body.
+	SceneTransition.change_scene("res://Scenes/Menus/Settings.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -38,4 +37,4 @@ func _on_restart_pressed():
 
 
 func _on_home_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")
