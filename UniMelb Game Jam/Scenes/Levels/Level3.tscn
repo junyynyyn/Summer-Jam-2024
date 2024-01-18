@@ -28,5 +28,5 @@ position = Vector2(171, 445)
 [node name="Mirrored Ghost" parent="Ghosts" index="3" instance=ExtResource("5_oqogs")]
 position = Vector2(486, 213)
 
-[node name="CanvasModulate" parent="." index="7"]
+[node name="CanvasModulate" parent="." index="8"]
 color = Color(0.709804, 0.6, 0.596078, 1)

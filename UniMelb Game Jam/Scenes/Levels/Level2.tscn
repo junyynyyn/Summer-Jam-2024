@@ -31,5 +31,5 @@ position = Vector2(633, 209)
 [node name="Player" parent="PlayerResources" index="0"]
 position = Vector2(32, 96)
 
-[node name="CanvasModulate" parent="." index="7"]
+[node name="CanvasModulate" parent="." index="8"]
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)

@@ -9,7 +9,7 @@ enum state {ROAMING, RUNNING, CAPTURED, ESCAPING}
 var ghost_state : state = state.ROAMING
 
 # Common values between ghosts
-@export var ROAM_SPEED : float = 20.0
+@export var ROAM_SPEED : float = 10.0
 @export var RUN_SPEED : float = 150.0
 var speed : float
 var direction : Vector2
