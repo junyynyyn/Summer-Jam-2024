@@ -12,9 +12,10 @@ func _on_body_entered(body):
 		teleport(body)
 	
 func teleport(body):
-	body.position = target_teleporter.marker.global_position
-	target_teleporter.teleporter_cooldown = true
-	target_teleporter.timer.start()
+	if (target_teleporter):
+		body.position = target_teleporter.marker.global_position
+		target_teleporter.teleporter_cooldown = true
+		target_teleporter.timer.start()
 
 func _on_teleport_cooldown_timeout():
 	teleporter_cooldown = false

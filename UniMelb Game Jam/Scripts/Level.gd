@@ -96,7 +96,6 @@ func _on_ui_next_scene():
 
 func adjust_star_thresholds():
 	
-	
 	four_star.text = "%.2f" % Gold
 	three_star.text = "%.2f" % ThreeStar
 	two_star.text = "%.2f" % TwoStar
