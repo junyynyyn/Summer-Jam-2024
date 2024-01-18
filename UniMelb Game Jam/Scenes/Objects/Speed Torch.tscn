@@ -45,7 +45,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5n74m"]
-radius = 36.0
+radius = 50.0
 
 [node name="Speed Torch" type="StaticBody2D"]
 modulate = Color(0.129412, 0.509804, 0.866667, 1)
