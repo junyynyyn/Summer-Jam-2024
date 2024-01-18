@@ -61,6 +61,7 @@ texture = ExtResource("3_h0wei")
 shape = SubResource("CircleShape2D_wfkfi")
 
 [node name="Tooltip" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -54.0

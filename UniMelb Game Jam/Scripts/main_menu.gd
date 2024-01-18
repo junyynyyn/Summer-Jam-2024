@@ -1,6 +1,7 @@
 extends Control
 
 var levelselect: PackedScene = preload("res://Scenes/Menus/Level Select.tscn")
+var settings: PackedScene = preload("res://Scenes/Menus/Settings.tscn")
 #var settings: PackedScene = preload("settings")
 var allowed_username = false
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +19,9 @@ func _on_play_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _on_settings_pressed():
+	get_tree().change_scene_to_packed(settings)
 
 
 func _on_reset_pressed():
@@ -67,3 +71,6 @@ func _on_everything_reset_pressed():
 
 func _on_cancel_reset_pressed():
 	$ResetConfirmation.visible = false
+
+
+
