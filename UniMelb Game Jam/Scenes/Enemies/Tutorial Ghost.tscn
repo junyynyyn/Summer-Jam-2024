@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0ennervu7tv"]
+
+[ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_b4m8y"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Tutorial Ghost.gd" id="2_o327g"]
+
+[node name="Tutorial Ghost" instance=ExtResource("1_b4m8y")]
+script = ExtResource("2_o327g")

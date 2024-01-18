@@ -16,32 +16,38 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if hook_state == state.UNFIRED:
-		GrappleThrowNoise.play()
-		visible = false
-		position = Global.player.position
-		Global.player.set_collision_mask_value(6, true)
-	elif hook_state == state.FIRED:
-		visible = true
-		if is_on_wall() or is_on_ceiling() or is_on_floor():
-			hook_state = state.UNFIRED
-		if (position - Global.player.global_position).length() >= GRAPPLE_LENGTH:
-			hook_state = state.UNFIRED
-	elif hook_state == state.GRAPPLING:
-		var bodies = $DetachHitbox.get_overlapping_bodies()
-		for body in bodies:
-			if (body.is_in_group("Player")):
+	if Global.can_grapple:
+		self.modulate = Color(1, 1, 1, 1)
+		$PointLight2D.energy = 0.2
+		if hook_state == state.UNFIRED:
+			GrappleThrowNoise.play()
+			visible = false
+			position = Global.player.position
+			Global.player.set_collision_mask_value(6, true)
+		elif hook_state == state.FIRED:
+			visible = true
+			if is_on_wall() or is_on_ceiling() or is_on_floor():
 				hook_state = state.UNFIRED
-				grappled_ghost.grappleable = false
-				grappled_ghost = null
-				Global.player.reverse_yeet()
-		if (grappled_ghost):
-			if (grappled_ghost.grappleable == true):
-				position = grappled_ghost.position
-				Global.player.yeet()
-		else:
-			hook_state = state.UNFIRED
-	move_and_slide()
+			if (position - Global.player.global_position).length() >= GRAPPLE_LENGTH:
+				hook_state = state.UNFIRED
+		elif hook_state == state.GRAPPLING:
+			var bodies = $DetachHitbox.get_overlapping_bodies()
+			for body in bodies:
+				if (body.is_in_group("Player")):
+					hook_state = state.UNFIRED
+					grappled_ghost.grappleable = false
+					grappled_ghost = null
+					Global.player.reverse_yeet()
+			if (grappled_ghost):
+				if (grappled_ghost.grappleable == true):
+					position = grappled_ghost.position
+					Global.player.yeet()
+			else:
+				hook_state = state.UNFIRED
+		move_and_slide()
+	else:
+		self.modulate = Color(1, 1, 1, 0)
+		$PointLight2D.energy = 0
 	
 func fire(direction: Vector2):
 	rotation = (direction.angle() + PI/2)
