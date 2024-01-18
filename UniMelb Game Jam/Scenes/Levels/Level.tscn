@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dubob17g2sofp"]
+[gd_scene load_steps=9 format=3 uid="uid://dubob17g2sofp"]
 
 [ext_resource type="TileSet" uid="uid://boeyacwn3tnje" path="res://Scenes/Levels/TileSet.tres" id="1_2h1ej"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_hmm30"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bumy4g8cy1waj" path="res://Scenes/Player/Player.tscn" id="4_bkfh1"]
 [ext_resource type="PackedScene" uid="uid://w03s8oyae64k" path="res://Scenes/Player/Hook.tscn" id="5_2tq4v"]
 [ext_resource type="PackedScene" uid="uid://dfi8iany5trnq" path="res://Scenes/Player/grapple_line.tscn" id="6_xetmb"]
+[ext_resource type="AudioStream" uid="uid://dksnj7mdfhbfb" path="res://Audio/Grapple Throw.mp3" id="7_pvjju"]
 
 [sub_resource type="Environment" id="Environment_0oj3i"]
 background_mode = 3
@@ -42,6 +43,12 @@ layer_3/tile_data = PackedInt32Array()
 [node name="Ghosts" type="Node2D" parent="."]
 
 [node name="Lighting" type="Node2D" parent="."]
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="GrappleThrowNoise" type="AudioStreamPlayer2D" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("7_pvjju")
 
 [node name="PlayerResources" type="Node2D" parent="."]
 

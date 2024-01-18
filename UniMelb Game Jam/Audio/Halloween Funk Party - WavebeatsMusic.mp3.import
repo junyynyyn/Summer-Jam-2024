@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgrvlahecy2do"
+path="res://.godot/imported/Halloween Funk Party - WavebeatsMusic.mp3-297ded9ce8f4ec0a07752c2c7017aa8b.mp3str"
+
+[deps]
+
+source_file="res://Audio/Halloween Funk Party - WavebeatsMusic.mp3"
+dest_files=["res://.godot/imported/Halloween Funk Party - WavebeatsMusic.mp3-297ded9ce8f4ec0a07752c2c7017aa8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

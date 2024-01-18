@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var ACCELERATION : float = 25.0
 
 @onready var timer = %ReleaseTimer
-
+#@onready var GrappleThrowNoise = get_node("/root/Level/Audio/GrappleThrowNoise")
 var ghosts_collected = []
 var can_fire_hook = true
 
@@ -30,7 +30,10 @@ func _process(_delta):
 		var mouse_pos = get_global_mouse_position()
 		var mouse_direction = global_position.direction_to(mouse_pos)
 		Global.hook.fire(mouse_direction)
+		#GrappleThrowNoise.play()
 		can_fire_hook = false
+		
+		
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):

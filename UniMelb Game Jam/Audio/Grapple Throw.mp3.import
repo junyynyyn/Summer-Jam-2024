@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dksnj7mdfhbfb"
+path="res://.godot/imported/Grapple Throw.mp3-cfbf30735d5a7c2bc28e316419cc58a9.mp3str"
+
+[deps]
+
+source_file="res://Audio/Grapple Throw.mp3"
+dest_files=["res://.godot/imported/Grapple Throw.mp3-cfbf30735d5a7c2bc28e316419cc58a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

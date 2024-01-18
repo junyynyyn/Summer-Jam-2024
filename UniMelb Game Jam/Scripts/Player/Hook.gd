@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var GrappleThrowNoise = get_node("/root/Level/Audio/GrappleThrowNoise")
+
 var HOOK_SPEED : float = 500.0
 var GRAPPLE_LENGTH : float = 250.0
 var fired : bool = false
@@ -15,6 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if hook_state == state.UNFIRED:
+		GrappleThrowNoise.play()
 		visible = false
 		position = Global.player.position
 		Global.player.set_collision_mask_value(6, true)
