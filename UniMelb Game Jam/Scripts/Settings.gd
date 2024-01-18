@@ -23,7 +23,7 @@ func _process(_delta):
 
 
 func _on_home_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")
 
 
 func _on_back_button_pressed():

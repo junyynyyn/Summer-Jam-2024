@@ -9,4 +9,4 @@ func _ready():
 
 func _on_pressed():
 	if (level_scene):
-		get_tree().change_scene_to_file(base_level_string + level_scene + ".tscn")
+		SceneTransition.change_scene(base_level_string + level_scene + ".tscn")

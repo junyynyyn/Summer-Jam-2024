@@ -15,13 +15,13 @@ func request_username():
 	$Menu.visible = false
 
 func _on_play_pressed():
-	get_tree().change_scene_to_packed(levelselect)
+	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_packed(settings)
+	SceneTransition.change_scene("res://Scenes/Menus/Settings.tscn")
 
 
 func _on_reset_pressed():

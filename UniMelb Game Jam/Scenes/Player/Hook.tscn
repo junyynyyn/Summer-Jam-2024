@@ -16,7 +16,7 @@ radius = 9.0
 
 [node name="Hook" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 4
+collision_mask = 68
 script = ExtResource("1_8cx1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

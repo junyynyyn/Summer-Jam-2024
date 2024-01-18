@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/Global.gd"
 BackgroundMusic="*res://Audio/background_music.tscn"
+SceneTransition="*res://Scenes/Menus/SceneTransition.tscn"
 
 [display]
 
@@ -71,6 +72,7 @@ ResetLevel={
 2d_physics/layer_4="Interactables"
 2d_physics/layer_5="Hook"
 2d_physics/layer_6="Pit"
+2d_physics/layer_7="Hook Points"
 
 [rendering]
 
