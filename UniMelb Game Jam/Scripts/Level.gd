@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @export var level_name = ""
 @export var ghost_quota : int
 @export var next_level : PackedScene
