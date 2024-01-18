@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=28 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/Ghost Bar Background.png" id="3_x4nxy"]
 [ext_resource type="Texture2D" uid="uid://ba6se6q8b8u2b" path="res://Sprites/Ghost Bar Bar.png" id="4_epncs"]
 [ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
 [ext_resource type="FontFile" uid="uid://5jcjgbxbe1ym" path="res://Sprites/UI/Tektur-Regular.ttf" id="6_6gca8"]
+[ext_resource type="Texture2D" uid="uid://d4ftdkg37tluw" path="res://Sprites/UI/3 Golden Stars.png" id="6_lja6r"]
 [ext_resource type="Texture2D" uid="uid://bql70b6duuls4" path="res://Sprites/UI/Big Panel.png" id="6_sf4o1"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="7_8nccg"]
 [ext_resource type="Texture2D" uid="uid://w5mb6ekb46bu" path="res://Sprites/UI/Repeat Default.png" id="7_troe8"]
@@ -96,7 +97,6 @@ texture_progress = ExtResource("4_epncs")
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchor_left = 0.32
 anchor_top = 0.209
@@ -109,6 +109,82 @@ offset_bottom = -460.256
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_d3wue")
+
+[node name="Star Ratings" type="Control" parent="FinishScreen"]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 80.0
+offset_bottom = 16.0
+
+[node name="4 Star" type="TextureProgressBar" parent="FinishScreen/Star Ratings"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 71.0
+offset_right = 112.0
+offset_bottom = 101.0
+max_value = 3.0
+value = 3.0
+allow_greater = true
+nine_patch_stretch = true
+texture_under = ExtResource("14_jbiib")
+texture_progress = ExtResource("6_lja6r")
+
+[node name="4StarText" type="Label" parent="FinishScreen/Star Ratings/4 Star"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 8.0
+offset_right = 231.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+text = "5.0 seconds"
+vertical_alignment = 1
+
+[node name="3 Star" type="TextureProgressBar" parent="FinishScreen/Star Ratings"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 111.0
+offset_right = 112.0
+offset_bottom = 141.0
+max_value = 3.0
+value = 3.0
+allow_greater = true
+nine_patch_stretch = true
+texture_under = ExtResource("14_jbiib")
+texture_progress = ExtResource("15_y0qby")
+
+[node name="3StarText" type="Label" parent="FinishScreen/Star Ratings/3 Star"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 8.0
+offset_right = 231.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+text = "15.0 seconds"
+vertical_alignment = 1
+
+[node name="2 Star" type="TextureProgressBar" parent="FinishScreen/Star Ratings"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 151.0
+offset_right = 112.0
+offset_bottom = 181.0
+max_value = 3.0
+value = 2.0
+allow_greater = true
+nine_patch_stretch = true
+texture_under = ExtResource("14_jbiib")
+texture_progress = ExtResource("15_y0qby")
+
+[node name="2StarText" type="Label" parent="FinishScreen/Star Ratings/2 Star"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 8.0
+offset_right = 231.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+text = "10.0 seconds"
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="FinishScreen"]
 layout_mode = 1
