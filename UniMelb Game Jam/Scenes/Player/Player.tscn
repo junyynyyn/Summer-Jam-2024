@@ -31,7 +31,7 @@ shape = SubResource("CircleShape2D_iv5yw")
 
 [node name="ReleaseTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 3.0
+wait_time = 5.0
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

@@ -57,7 +57,7 @@ bus = &"Sound Effects"
 position = Vector2(277, 270)
 
 [node name="Camera" type="Camera2D" parent="PlayerResources/Player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 
 [node name="GrappleLine" parent="PlayerResources" instance=ExtResource("6_xetmb")]

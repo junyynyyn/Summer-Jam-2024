@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED : float = 100.0
+@export var SPEED : float = 150.0
 @export var GRAPPLE_SPEED : float = 500.0
 @export var DECELERATION : float = 10.0
 @export var ACCELERATION : float = 25.0
@@ -28,12 +28,10 @@ func _process(_delta):
 	
 	if (Input.is_action_just_pressed("fire")):
 		var mouse_pos = get_global_mouse_position()
-		var mouse_direction = global_position.direction_to(mouse_pos)
+		var mouse_direction = Global.hook.global_position.direction_to(mouse_pos)
 		Global.hook.fire(mouse_direction)
 		#GrappleThrowNoise.play()
 		can_fire_hook = false
-		
-		
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
@@ -56,7 +54,7 @@ func yeet():
 	velocity = direction * GRAPPLE_SPEED
 	
 func reverse_yeet():
-	velocity = -velocity.normalized() * 250.0
+	velocity = -velocity.normalized() * 150.0
 
 # Collect ghosts if they enter the collection area
 func _on_ghost_collection_area_body_entered(body):

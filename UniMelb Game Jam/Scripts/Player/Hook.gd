@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var GrappleThrowNoise = $Audio/GrappleThrowNoise
 
-@export var HOOK_SPEED : float = 500.0
+@export var HOOK_SPEED : float = 600.0
 @export var GRAPPLE_LENGTH : float = 250.0
 var fired : bool = false
 enum state {UNFIRED, FIRED, GRAPPLING}
