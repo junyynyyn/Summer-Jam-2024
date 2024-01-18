@@ -49,6 +49,7 @@ layer_3/tile_data = PackedInt32Array()
 [node name="GrappleThrowNoise" type="AudioStreamPlayer2D" parent="Audio"]
 unique_name_in_owner = true
 stream = ExtResource("7_pvjju")
+bus = &"Sound Effects"
 
 [node name="PlayerResources" type="Node2D" parent="."]
 

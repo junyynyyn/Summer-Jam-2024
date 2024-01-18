@@ -364,7 +364,7 @@ vertical_alignment = 1
 
 [connection signal="text_submitted" from="UsernameRequest/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Menu/Settings" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/Exit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="ResetConfirmation/ScoresReset" to="." method="_on_scores_reset_pressed"]

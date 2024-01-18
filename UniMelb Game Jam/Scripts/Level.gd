@@ -9,6 +9,10 @@ var OneStar: float = 99999
 @export var ThreeStar : float = 0
 @export var Gold : float = 0
 
+@onready var four_star = get_node("/root/Level/UI/FinishScreen/Star Ratings/4 Star/4StarText")
+@onready var three_star = get_node("/root/Level/UI/FinishScreen/Star Ratings/3 Star/3StarText")
+@onready var two_star = get_node("/root/Level/UI/FinishScreen/Star Ratings/2 Star/2StarText")
+
 var ghost_total : int
 
 var timer : float = 0.0
@@ -22,6 +26,7 @@ func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
 	$UI.set_ghost_count_max(ghost_total)
+	adjust_star_thresholds()
 
 	#if get_tree().get_current_scene().is_in_group("Level1"):
 		#print("You are on Level 1")
@@ -36,6 +41,7 @@ func _process(delta):
 	# Check if player has hit the ghost collected to finish the level
 	if (Global.player.ghosts_collected.size() >= ghost_quota):
 		complete_level()
+
 
 func reset_timer():
 	timer = 0
@@ -87,3 +93,11 @@ func reward_stars():
 func _on_ui_next_scene():
 	if next_level:
 		get_tree().change_scene_to_packed(next_level)
+
+func adjust_star_thresholds():
+	
+	
+	four_star.text = "%.2f" % Gold
+	three_star.text = "%.2f" % ThreeStar
+	two_star.text = "%.2f" % TwoStar
+

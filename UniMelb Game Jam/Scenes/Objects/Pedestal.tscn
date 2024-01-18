@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://wwgwxru6aw8v"]
+[gd_scene load_steps=11 format=3 uid="uid://wwgwxru6aw8v"]
 
 [ext_resource type="Texture2D" uid="uid://elnwefknnxc5" path="res://Sprites/pedestsal.png" id="1_ydxwk"]
 [ext_resource type="Script" path="res://Scripts/Pedestal.gd" id="2_vweaj"]
 [ext_resource type="Texture2D" uid="uid://b0ptjby3pygr3" path="res://Sprites/Talisman.png" id="3_h0wei"]
 [ext_resource type="Texture2D" uid="uid://h18l58ni77lq" path="res://Sprites/UI/Title-less panel.png" id="3_imn44"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="4_h1dj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g621"]
+size = Vector2(26, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfkfi"]
 radius = 42.0119
@@ -14,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Talisman:position")
+tracks/0/path = NodePath("../Talisman:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +34,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Talisman:position")
+tracks/0/path = NodePath("../Talisman:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,9 +50,16 @@ _data = {
 "TalismanBob": SubResource("Animation_jltvc")
 }
 
-[node name="Pedestal" type="Sprite2D"]
-texture = ExtResource("1_ydxwk")
+[node name="Pedestsal" type="StaticBody2D"]
+collision_layer = 8
 script = ExtResource("2_vweaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1g621")
+
+[node name="Pedestal" type="Sprite2D" parent="."]
+texture = ExtResource("1_ydxwk")
 
 [node name="Talisman" type="Sprite2D" parent="."]
 position = Vector2(0, -24)
@@ -131,10 +141,50 @@ autowrap_mode = 3
 text_overrun_behavior = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Pedestal")
 libraries = {
 "": SubResource("AnimationLibrary_2bsj0")
 }
 autoplay = "TalismanBob"
 
-[connection signal="body_entered" from="LabelDisplayRange" to="." method="_on_label_display_range_body_entered"]
-[connection signal="body_exited" from="LabelDisplayRange" to="." method="_on_label_display_range_body_exited"]
+[node name="LMBtoThrow" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PickupLabel2" type="TextureRect" parent="LMBtoThrow"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -1.0
+offset_right = 50.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_imn44")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="LMBtoThrow"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = 20.0
+offset_right = 66.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("4_h1dj6")
+theme_override_font_sizes/font_size = 9
+text = "Left Click to throw the talisman"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[connection signal="body_entered" from="LabelDisplayRange" to="Pedestal" method="_on_label_display_range_body_entered"]
+[connection signal="body_exited" from="LabelDisplayRange" to="Pedestal" method="_on_label_display_range_body_exited"]
