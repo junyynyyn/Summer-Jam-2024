@@ -74,4 +74,6 @@ material = SubResource("CanvasItemMaterial_ksipx")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0oj3i")
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="next_scene" from="UI" to="." method="_on_ui_next_scene"]
