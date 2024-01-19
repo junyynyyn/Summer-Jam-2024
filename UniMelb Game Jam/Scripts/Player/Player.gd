@@ -69,7 +69,7 @@ func capture_ghost(ghost):
 	if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
 		ghost.capture()
 		ghosts_collected.append(ghost)
-		add_ghost_to_ui(ghost.sprite.texture)  # Assuming the ghost's Texture is accessible via a property 'sprite'
+		#add_ghost_to_ui(ghost.sprite.texture)  # Assuming the ghost's Texture is accessible via a property 'sprite'
 		timer.start()
 
 # When timer is over release all the ghosts
@@ -78,9 +78,9 @@ func _on_release_timer_timeout():
 		ghosts.release()
 	ghosts_collected.clear()
 
-func add_ghost_to_ui(ghost_sprite: Texture):
-	var texture_rect = TextureRect.new()
-	texture_rect.texture = ghost_sprite.texture
-	texture_rect.region_enabled = true
-	texture_rect.region_rect = ghost_sprite.region_rect  # Use the same region as the ghost sprite
-	container.add_child(texture_rect)
+#func add_ghost_to_ui(ghost_sprite: Texture):
+	#var texture_rect = TextureRect.new()
+	#texture_rect.texture = ghost_sprite.texture
+	#texture_rect.region_enabled = true
+	#texture_rect.region_rect = ghost_sprite.region_rect  # Use the same region as the ghost sprite
+	#container.add_child(texture_rect)
