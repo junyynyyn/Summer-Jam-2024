@@ -1,9 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=28 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/UI/Ghost Bar Background.png" id="3_x4nxy"]
 [ext_resource type="Texture2D" uid="uid://ba6se6q8b8u2b" path="res://Sprites/UI/Ghost Bar Bar.png" id="4_epncs"]
-[ext_resource type="Texture2D" uid="uid://vygtmcy68ras" path="res://Sprites/Wisp-export1.png" id="4_lwsuw"]
 [ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
 [ext_resource type="FontFile" uid="uid://5jcjgbxbe1ym" path="res://Sprites/UI/Tektur-Regular.ttf" id="6_6gca8"]
 [ext_resource type="Texture2D" uid="uid://d4ftdkg37tluw" path="res://Sprites/UI/3 Golden Stars.png" id="6_lja6r"]
@@ -97,6 +96,8 @@ texture_under = ExtResource("3_x4nxy")
 texture_progress = ExtResource("4_epncs")
 
 [node name="Container" type="FlowContainer" parent="GhostCounter"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
 layout_direction = 2
 layout_mode = 1
 anchors_preset = -1
@@ -104,52 +105,12 @@ anchor_left = 0.102
 anchor_top = -1.233
 anchor_right = 0.922
 anchor_bottom = -0.062
-offset_left = -0.0560007
+offset_left = -18.056
 offset_top = 117.824
-offset_right = -0.0160065
-offset_bottom = -0.0639997
+offset_right = 9.984
+offset_bottom = -0.0640001
 grow_horizontal = 0
 grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect2" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect3" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect4" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect5" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect6" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect7" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect8" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect9" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
-
-[node name="TextureRect10" type="TextureRect" parent="GhostCounter/Container"]
-layout_mode = 2
-texture = ExtResource("4_lwsuw")
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true

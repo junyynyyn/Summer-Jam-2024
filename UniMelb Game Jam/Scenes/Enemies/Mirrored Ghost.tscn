@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddtqkme5jcwp6"]
+[gd_scene load_steps=9 format=3 uid="uid://ddtqkme5jcwp6"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_hiwya"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Mirrored Ghost.gd" id="2_qaixr"]
-[ext_resource type="Texture2D" uid="uid://bkwcl7wnbb78" path="res://Sprites/WispGreen-sheet.png" id="3_xywwd"]
+[ext_resource type="Texture2D" uid="uid://bkwcl7wnbb78" path="res://Sprites/Ghosts/WispGreen-sheet.png" id="3_4v4t5"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="4_difqy"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="5_3amy3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7yshi"]
 radius = 66.0
 
+[sub_resource type="Animation" id="Animation_j5w5p"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hml0h"]
+_data = {
+"RESET": SubResource("Animation_j5w5p"),
+"Roam": ExtResource("4_difqy"),
+"Run": ExtResource("5_3amy3")
+}
+
 [node name="Mirrored Ghost" instance=ExtResource("1_hiwya")]
 script = ExtResource("2_qaixr")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_xywwd")
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_4v4t5")
 hframes = 5
 vframes = 2
 
@@ -24,6 +36,11 @@ shape = SubResource("CircleShape2D_7yshi")
 
 [node name="RunningTimer" type="Timer" parent="." index="5"]
 one_shot = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_hml0h")
+}
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

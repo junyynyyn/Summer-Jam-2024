@@ -1,17 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://brusfv3prdi2o"]
+[gd_scene load_steps=9 format=3 uid="uid://brusfv3prdi2o"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_8edfu"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Teleporting Ghost.gd" id="2_ark64"]
-[ext_resource type="Texture2D" uid="uid://b4pqvgcs71wtg" path="res://Sprites/WispPurple-sheet.png" id="3_ik7sf"]
+[ext_resource type="Texture2D" uid="uid://b4pqvgcs71wtg" path="res://Sprites/Ghosts/WispPurple-sheet.png" id="3_l0ian"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="4_guciu"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="5_sc0aq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_laccb"]
 radius = 66.0
 
+[sub_resource type="Animation" id="Animation_omy32"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4tet3"]
+_data = {
+"RESET": SubResource("Animation_omy32"),
+"Roam": ExtResource("4_guciu"),
+"Run": ExtResource("5_sc0aq")
+}
+
 [node name="Teleporting Ghost" instance=ExtResource("1_8edfu")]
 script = ExtResource("2_ark64")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_ik7sf")
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_l0ian")
 hframes = 5
 vframes = 2
 
@@ -26,6 +38,11 @@ shape = SubResource("CircleShape2D_laccb")
 [node name="CooldownTimer" type="Timer" parent="." index="5"]
 wait_time = 0.5
 one_shot = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_4tet3")
+}
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

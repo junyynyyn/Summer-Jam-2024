@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5mt56vpwuyk8"
-path="res://.godot/imported/WispBue-sheet.png-5dff8c72bd18c8dfd189a0d178ece655.ctex"
+path="res://.godot/imported/WispBue-sheet.png-acd69c9b01ca827e9f34232892c48eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/WispBue-sheet.png"
-dest_files=["res://.godot/imported/WispBue-sheet.png-5dff8c72bd18c8dfd189a0d178ece655.ctex"]
+source_file="res://Sprites/Ghosts/WispBue-sheet.png"
+dest_files=["res://.godot/imported/WispBue-sheet.png-acd69c9b01ca827e9f34232892c48eb3.ctex"]
 
 [params]
 

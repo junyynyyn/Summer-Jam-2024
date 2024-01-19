@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdrqjrhwbo643"]
+[gd_scene load_steps=8 format=3 uid="uid://cdrqjrhwbo643"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_4e10c"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Vanishing Ghost.gd" id="2_fhwha"]
+[ext_resource type="Texture2D" uid="uid://clug7tcofp3td" path="res://Sprites/Ghosts/WispGrey-sheet.png" id="3_r1f0b"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="4_fqg02"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="5_so0wo"]
+
+[sub_resource type="Animation" id="Animation_vbvqd"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwore"]
+_data = {
+"RESET": SubResource("Animation_vbvqd"),
+"Roam": ExtResource("5_so0wo"),
+"Run": ExtResource("4_fqg02")
+}
 
 [node name="Vanishing Ghost" instance=ExtResource("1_4e10c")]
 script = ExtResource("2_fhwha")
 
 [node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.909804, 0.835294, 0.560784, 1)
+texture = ExtResource("3_r1f0b")
+hframes = 5
+vframes = 2
 
 [node name="InvisibilityDuration" type="Timer" parent="." index="3"]
 wait_time = 6.0
@@ -17,6 +32,11 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_dwore")
+}
 
 [connection signal="timeout" from="InvisibilityDuration" to="." method="_on_invisibility_duration_timeout"]
 [connection signal="timeout" from="VisibilityDuration" to="." method="_on_visibility_duration_timeout"]

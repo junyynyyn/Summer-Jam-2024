@@ -1,19 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://ii8dc3g05ti5"]
+[gd_scene load_steps=9 format=3 uid="uid://ii8dc3g05ti5"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Turning Ghost.gd" id="1_6hgvg"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_w4dml"]
-[ext_resource type="Texture2D" uid="uid://b5mt56vpwuyk8" path="res://Sprites/WispBue-sheet.png" id="3_h7oa5"]
+[ext_resource type="Texture2D" uid="uid://b5mt56vpwuyk8" path="res://Sprites/Ghosts/WispBue-sheet.png" id="3_m5hye"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="4_hardw"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="5_b4th8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86ot8"]
 radius = 66.0
+
+[sub_resource type="Animation" id="Animation_dcrn8"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcjw5"]
+_data = {
+"RESET": SubResource("Animation_dcrn8"),
+"Roam": ExtResource("4_hardw"),
+"Run": ExtResource("5_b4th8")
+}
 
 [node name="Turning Ghost" instance=ExtResource("1_w4dml")]
 script = ExtResource("1_6hgvg")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_h7oa5")
+texture = ExtResource("3_m5hye")
 hframes = 5
 vframes = 2
+frame = 5
 
 [node name="DetectionArea" type="Area2D" parent="." index="3" groups=["Enemy"]]
 visible = false
@@ -24,6 +37,11 @@ shape = SubResource("CircleShape2D_86ot8")
 
 [node name="RunningTimer" type="Timer" parent="." index="4"]
 one_shot = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_vcjw5")
+}
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

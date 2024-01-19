@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwcl7wnbb78"
-path="res://.godot/imported/WispGreen-sheet.png-97b286cb003f2cc59b62db53b8e55e51.ctex"
+uid="uid://ixdg5bwydjbb"
+path="res://.godot/imported/WispRed-sheet.png-d2f88b2cedc7c3eb89f6a73355ff9b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/WispGreen-sheet.png"
-dest_files=["res://.godot/imported/WispGreen-sheet.png-97b286cb003f2cc59b62db53b8e55e51.ctex"]
+source_file="res://Sprites/Ghosts/WispRed-sheet.png"
+dest_files=["res://.godot/imported/WispRed-sheet.png-d2f88b2cedc7c3eb89f6a73355ff9b50.ctex"]
 
 [params]
 

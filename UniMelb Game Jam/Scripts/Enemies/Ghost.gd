@@ -85,7 +85,8 @@ func _on_roam_timer_timeout():
 	var rng = RandomNumberGenerator.new()
 	roam_target.x = position.x + rng.randf_range(-ROAM_AREA, ROAM_AREA)
 	roam_target.y = position.y + rng.randf_range(-ROAM_AREA, ROAM_AREA)
-	
+
+
 func update_sprite_orientation():
 	if (Global.player):
 		if Global.player.global_position.x < global_position.x:
@@ -93,6 +94,7 @@ func update_sprite_orientation():
 		else:
 			sprite.flip_h = false  # Player is to the right, don't flip
 
+
 func edit_speed(multiplier: float):
 	speed_multiplier = multiplier
-	
+

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vygtmcy68ras"
-path="res://.godot/imported/Wisp-export1.png-640d9293067911657f74bf1072c1f899.ctex"
+uid="uid://itrt8g5lnhnb"
+path="res://.godot/imported/WispBlue1stFrame.png-4880eb15b2dd93033555088c60ec02b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Wisp-export1.png"
-dest_files=["res://.godot/imported/Wisp-export1.png-640d9293067911657f74bf1072c1f899.ctex"]
+source_file="res://Sprites/Ghosts/WispBlue1stFrame.png"
+dest_files=["res://.godot/imported/WispBlue1stFrame.png-4880eb15b2dd93033555088c60ec02b1.ctex"]
 
 [params]
 

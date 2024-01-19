@@ -1,16 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cguvwquhnifu3"]
+[gd_scene load_steps=9 format=3 uid="uid://cguvwquhnifu3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Running Ghost.gd" id="1_hagdo"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_ssb10"]
+[ext_resource type="Texture2D" uid="uid://ixdg5bwydjbb" path="res://Sprites/Ghosts/WispRed-sheet.png" id="3_0mh7l"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="4_cn72m"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="5_0c8bm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ey6go"]
 radius = 76.7919
 
+[sub_resource type="Animation" id="Animation_e3v4u"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qgrhg"]
+_data = {
+"RESET": SubResource("Animation_e3v4u"),
+"Roam": ExtResource("4_cn72m"),
+"Run": ExtResource("5_0c8bm")
+}
+
 [node name="Running Ghost" instance=ExtResource("1_ssb10")]
 script = ExtResource("1_hagdo")
 
-[node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.776471, 0.294118, 0.211765, 1)
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_0mh7l")
+hframes = 5
+vframes = 2
 
 [node name="Aggro" type="Node2D" parent="." index="3"]
 visible = false
@@ -30,6 +45,11 @@ autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Node2D" index="1"]
 debug_enabled = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_qgrhg")
+}
 
 [connection signal="area_entered" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_entered"]
 [connection signal="area_exited" from="Aggro/Aggro Range" to="." method="_on_aggro_range_area_exited"]

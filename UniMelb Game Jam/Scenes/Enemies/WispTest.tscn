@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bi13cngh8p2d8"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_g3d04"]
-[ext_resource type="Texture2D" uid="uid://dhqv42jkj6x6g" path="res://Sprites/Wisp.png" id="2_ecumb"]
-[ext_resource type="Texture2D" uid="uid://vygtmcy68ras" path="res://Sprites/Wisp-export1.png" id="3_shxl3"]
+[ext_resource type="Texture2D" uid="uid://dhqv42jkj6x6g" path="res://Sprites/Ghosts/Wisp.png" id="2_ecumb"]
+[ext_resource type="Texture2D" uid="uid://vygtmcy68ras" path="res://Sprites/Ghosts/Wisp-export1.png" id="3_shxl3"]
 
 [node name="Ghost" instance=ExtResource("1_g3d04")]
 
