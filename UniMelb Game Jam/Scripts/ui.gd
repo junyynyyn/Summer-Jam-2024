@@ -106,17 +106,44 @@ func check_scores(level_number):
 		push_error("An error occurred in the HTTP request.")
 
 
-@onready var leaderboard_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/VBoxContainer")
-func _http_request_completed(result, response_code, headers, body):
+@onready var leaderboard_names_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/HBoxContainer/Usernames")
+@onready var leaderboard_times_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/HBoxContainer/Times")
+
+func _http_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	var body_string = body.get_string_from_utf8()
 	var json_result = json.parse(body_string)
 	var json_result2 = json.parse(json.data)
 	var data = json.data
+	
+	#Clear any existing debug entries in the leaderboard
+	for children in leaderboard_names_container.get_children():
+		children.queue_free()
+	for children in leaderboard_times_container.get_children():
+		children.queue_free()
+	
+	#Sort function
+	data.sort_custom(sort_entries)
+	
+	
 	for entry in data:
 		var username = entry["username"]
 		var time = entry["time"]
-		var leaderboard_entry = Label.new()
-		leaderboard_entry.text = "%s             %.2f seconds" % [username, time]
-		leaderboard_container.add_child(leaderboard_entry)
+		var leaderboard_names = Label.new()
+		var leaderboard_times = Label.new()
+		leaderboard_names.text = "%s" % username
+		leaderboard_times.text = "%.2f seconds" % time
+		
+		leaderboard_names.clip_text = true
+		leaderboard_times.clip_text = true
+		
+		leaderboard_names.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		leaderboard_times.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		
+		leaderboard_names_container.add_child(leaderboard_names)
+		leaderboard_times_container.add_child(leaderboard_times)
 
+func sort_entries(a, b):
+	if a["time"] < b["time"]:
+		return true
+	return false

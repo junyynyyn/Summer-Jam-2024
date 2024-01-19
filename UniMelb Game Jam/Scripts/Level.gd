@@ -63,23 +63,24 @@ func complete_level():
 	var new_best = false
 	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
 		new_best = true
+		
 	$UI.display_finish(timer, level_name, new_best)
 	$"UI/Timer Grid".visible = false
-	get_tree().paused = true
 	
+	get_tree().paused = true
 	update_best_time_and_stars()
+	#$UI.check_scores(level_number)
 	Global.save_game_data()
 
-	#print("You completed ", level_name, " in ", timer, " seconds")
 
 func update_best_time_and_stars():
 	# Update time
-	$UI.check_scores(level_number)
+
 	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
 		Global.level_times[level_name] = timer
 		#upload_score(Global.username, level_number, timer)
 		$UI.send_scores(level_number, Global.username, timer)
-		print("Sent data.")
+		$UI.check_scores(level_number)
 	
 	# Update stars
 	var new_stars = reward_stars()  # Assuming reward_stars returns the number of stars

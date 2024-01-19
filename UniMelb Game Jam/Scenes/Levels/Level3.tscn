@@ -37,5 +37,3 @@ position = Vector2(298, 51)
 
 [node name="CanvasModulate" parent="." index="8"]
 color = Color(0.709804, 0.6, 0.596078, 1)
-
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

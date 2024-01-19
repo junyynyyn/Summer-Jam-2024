@@ -374,22 +374,6 @@ grow_vertical = 2
 texture = ExtResource("6_sf4o1")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FinishScreen/Leaderboard"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 0
-offset_left = 929.0
-offset_top = 213.0
-offset_right = 1114.0
-offset_bottom = 477.0
-theme = ExtResource("17_skp2h")
-
-[node name="Label" type="Label" parent="FinishScreen/Leaderboard/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("17_skp2h")
-theme_override_fonts/font = ExtResource("7_8nccg")
-theme_override_font_sizes/font_size = 14
-text = "Ciaran:             3.54 seconds"
-
 [node name="Label" type="Label" parent="FinishScreen/Leaderboard"]
 layout_mode = 2
 offset_left = 962.0
@@ -402,6 +386,73 @@ text = "Global
 Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FinishScreen/Leaderboard"]
+custom_minimum_size = Vector2(0.34, 0)
+layout_mode = 0
+offset_left = 927.0
+offset_top = 208.0
+offset_right = 1131.0
+offset_bottom = 480.0
+
+[node name="Usernames" type="VBoxContainer" parent="FinishScreen/Leaderboard/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 15)
+layout_direction = 2
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+
+[node name="Label" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
+clip_contents = true
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 14
+text = "There was an"
+clip_text = true
+
+[node name="Label2" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 14
+text = "connecting to"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 14
+text = "leaderboard"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Times" type="VBoxContainer" parent="FinishScreen/Leaderboard/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 15)
+layout_direction = 2
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+
+[node name="Label" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Times"]
+clip_contents = true
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 14
+text = "error "
+clip_text = true
+
+[node name="Label2" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Times"]
+layout_mode = 2
+theme = ExtResource("17_skp2h")
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 14
+text = "the"
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="Timer Grid" type="GridContainer" parent="."]
 offset_left = 14.0
