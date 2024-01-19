@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bumy4g8cy1waj"]
+[gd_scene load_steps=9 format=3 uid="uid://bumy4g8cy1waj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_dn86b"]
 [ext_resource type="Texture2D" uid="uid://clygaf5xsfjun" path="res://Sprites/PlayerIdle.png" id="2_o7wg1"]
@@ -8,6 +8,45 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iv5yw"]
 radius = 14.0
+
+[sub_resource type="Animation" id="Animation_8qw5v"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0s1bv"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhox1"]
+_data = {
+"Idle": SubResource("Animation_0s1bv"),
+"RESET": SubResource("Animation_8qw5v")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 44
@@ -20,6 +59,7 @@ shape = SubResource("RectangleShape2D_4a6i0")
 position = Vector2(-0.500002, -0.500001)
 scale = Vector2(0.96875, 0.96875)
 texture = ExtResource("2_o7wg1")
+hframes = 6
 
 [node name="GhostCollectionArea" type="Area2D" parent="."]
 collision_mask = 2
@@ -28,6 +68,10 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_iv5yw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhox1")
+}
+autoplay = "Idle"
 
 [node name="ReleaseTimer" type="Timer" parent="."]
 unique_name_in_owner = true

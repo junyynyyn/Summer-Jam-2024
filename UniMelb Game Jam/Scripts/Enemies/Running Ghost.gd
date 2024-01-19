@@ -21,6 +21,7 @@ func run():
 	var axis = to_local(nav_agent.get_next_path_position()).normalized()
 	var intended_velocity = axis * RUN_SPEED * speed_multiplier
 	velocity = intended_velocity
+	$AnimationPlayer.play("Run")
 
 func update_sprite_orientation():
 	if (Global.player):
