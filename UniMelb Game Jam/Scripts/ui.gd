@@ -100,11 +100,23 @@ func check_scores(level_number):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-	
+
 	var error = http_request.request(("http://3.26.15.67:5000/level/") + level_number)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
+
+@onready var leaderboard_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/VBoxContainer")
 func _http_request_completed(result, response_code, headers, body):
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(json)
+	var json = JSON.new()
+	var body_string = body.get_string_from_utf8()
+	var json_result = json.parse(body_string)
+	var json_result2 = json.parse(json.data)
+	var data = json.data
+	for entry in data:
+		var username = entry["username"]
+		var time = entry["time"]
+		var leaderboard_entry = Label.new()
+		leaderboard_entry.text = "%s             %.2f seconds" % [username, time]
+		leaderboard_container.add_child(leaderboard_entry)
+

@@ -79,7 +79,7 @@ func update_best_time_and_stars():
 		Global.level_times[level_name] = timer
 		#upload_score(Global.username, level_number, timer)
 		$UI.send_scores(level_number, Global.username, timer)
-		print("Sent data.d")
+		print("Sent data.")
 	
 	# Update stars
 	var new_stars = reward_stars()  # Assuming reward_stars returns the number of stars

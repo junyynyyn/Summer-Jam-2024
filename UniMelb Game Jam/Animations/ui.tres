@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://delu8ktxuye4b"]
+
+[ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="1_fu6vt"]
+
+[resource]
+default_font = ExtResource("1_fu6vt")
+default_font_size = 14
