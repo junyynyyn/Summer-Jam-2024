@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ii8dc3g05ti5"]
+[gd_scene load_steps=5 format=3 uid="uid://ii8dc3g05ti5"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Turning Ghost.gd" id="1_6hgvg"]
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_w4dml"]
@@ -6,60 +6,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86ot8"]
 radius = 66.0
-
-[sub_resource type="Animation" id="Animation_mbe8v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_0hfam"]
-resource_name = "Run"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [5, 6, 7, 8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_itxxs"]
-resource_name = "Roam"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_urwsc"]
-_data = {
-"RESET": SubResource("Animation_mbe8v"),
-"Roam": SubResource("Animation_itxxs"),
-"Run": SubResource("Animation_0hfam")
-}
 
 [node name="Turning Ghost" instance=ExtResource("1_w4dml")]
 script = ExtResource("1_6hgvg")
@@ -78,11 +24,6 @@ shape = SubResource("CircleShape2D_86ot8")
 
 [node name="RunningTimer" type="Timer" parent="." index="4"]
 one_shot = true
-
-[node name="AnimationPlayer" parent="." index="6"]
-libraries = {
-"": SubResource("AnimationLibrary_urwsc")
-}
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -22,7 +22,7 @@ TwoStar = 5.2
 ThreeStar = 4.2
 Gold = 3.67
 
-[node name="TextureRect" type="TextureRect" parent="UI" index="4"]
+[node name="TutDisplay" type="TextureRect" parent="UI" index="4"]
 visible = false
 show_behind_parent = true
 z_index = -1
@@ -40,7 +40,7 @@ grow_vertical = 0
 texture = ExtResource("3_uq3vk")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="UI/TextureRect" index="0"]
+[node name="Label" type="Label" parent="UI/TutDisplay" index="0"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 19.0
