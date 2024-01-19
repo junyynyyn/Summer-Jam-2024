@@ -1,7 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://k0ennervu7tv"]
+[gd_scene load_steps=8 format=3 uid="uid://k0ennervu7tv"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_b4m8y"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Tutorial Ghost.gd" id="2_o327g"]
+[ext_resource type="Texture2D" uid="uid://b5mt56vpwuyk8" path="res://Sprites/Ghosts/WispBue-sheet.png" id="3_5hly3"]
+[ext_resource type="Animation" uid="uid://ds54rxlxtrlk6" path="res://Animations/Roam.res" id="4_3xs7m"]
+[ext_resource type="Animation" uid="uid://hpe25jrw3qwj" path="res://Animations/Run.res" id="5_kxxg0"]
+
+[sub_resource type="Animation" id="Animation_icc1q"]
+resource_name = "RESET"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ijpb4"]
+_data = {
+"RESET": SubResource("Animation_icc1q"),
+"Roam": ExtResource("4_3xs7m"),
+"Run": ExtResource("5_kxxg0")
+}
 
 [node name="Tutorial Ghost" instance=ExtResource("1_b4m8y")]
 script = ExtResource("2_o327g")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.901961, 0.521569, 0.439216, 1)
+texture = ExtResource("3_5hly3")
+hframes = 5
+vframes = 2
+frame = 4
+
+[node name="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_ijpb4")
+}

@@ -69,7 +69,7 @@ func capture_ghost(ghost):
 	if (ghost not in ghosts_collected and ghost.capture_cooldown == false):
 		ghost.capture()
 		ghosts_collected.append(ghost)
-		#add_ghost_to_ui(ghost.sprite.texture)  # Assuming the ghost's Texture is accessible via a property 'sprite'
+		add_ghost_to_ui(ghost)  # Assuming the ghost's Texture is accessible via a property 'sprite'
 		timer.start()
 
 # When timer is over release all the ghosts
@@ -77,10 +77,26 @@ func _on_release_timer_timeout():
 	for ghosts in ghosts_collected:
 		ghosts.release()
 	ghosts_collected.clear()
+	for ghosts in container.get_children():
+		ghosts.queue_free()
 
-#func add_ghost_to_ui(ghost_sprite: Texture):
-	#var texture_rect = TextureRect.new()
-	#texture_rect.texture = ghost_sprite.texture
-	#texture_rect.region_enabled = true
-	#texture_rect.region_rect = ghost_sprite.region_rect  # Use the same region as the ghost sprite
-	#container.add_child(texture_rect)
+
+
+func add_ghost_to_ui(ghost):
+	var texture_rect = TextureRect.new()
+	if ghost.name == "Mirrored Ghost":
+		texture_rect.texture = load("res://Sprites/Ghosts/WispGreen1stFrame.png")
+	elif ghost.name == "Turning Ghost":
+		texture_rect.texture = load("res://Sprites/Ghosts/WispBlue1stFrame.png")
+	elif ghost.name == "Running Ghost":
+		texture_rect.texture = load("res://Sprites/Ghosts/WispRed1stFrame.png")
+	elif ghost.name == "Vanishing Ghost":
+		texture_rect.texture = load("res://Sprites/Ghosts/WispGrey1stFrame.png")
+	elif ghost.name == "Teleporting Ghost":
+		texture_rect.texture = load("res://Sprites/Ghosts/WispPurple1stFrame.png")
+	elif ghost.name == "Tutorial Ghost":
+		texture_rect.texture = load("res://Sprites/ghost.png")
+	#else:
+		#print("Missing Ghost Texture")
+	texture_rect.size = Vector2(10, 10)
+	container.add_child(texture_rect)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhqv42jkj6x6g"
-path="res://.godot/imported/Wisp.png-11bc34587c8db29d18973029ac28cae0.ctex"
+path="res://.godot/imported/Wisp.png-15b82d9e50cc9d681c2714479d54e0f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Wisp.png"
-dest_files=["res://.godot/imported/Wisp.png-11bc34587c8db29d18973029ac28cae0.ctex"]
+source_file="res://Sprites/Ghosts/Wisp.png"
+dest_files=["res://.godot/imported/Wisp.png-15b82d9e50cc9d681c2714479d54e0f6.ctex"]
 
 [params]
 

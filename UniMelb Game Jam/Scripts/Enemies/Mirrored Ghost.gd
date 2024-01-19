@@ -13,6 +13,7 @@ func run():
 		#velocity = Vector2.ZERO
 		
 	velocity = Global.player.velocity * speed_multiplier
+	$AnimationPlayer.play("Run")
 	
 func _on_detection_area_body_entered(_body):
 	ghost_state = state.RUNNING
