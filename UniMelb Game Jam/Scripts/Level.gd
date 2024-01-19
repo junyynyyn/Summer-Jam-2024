@@ -2,8 +2,10 @@ extends Node2D
 
 
 @export var level_name = ""
+@export var level_number : String
 @export var ghost_quota : int
 @export var next_level : PackedScene
+
 
 var OneStar: float = 99999
 @export var TwoStar : float = 0 
@@ -32,6 +34,7 @@ func _ready():
 
 	#if get_tree().get_current_scene().is_in_group("Level1"):
 		#print("You are on Level 1")
+
 
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
@@ -64,7 +67,6 @@ func complete_level():
 	$"UI/Timer Grid".visible = false
 	get_tree().paused = true
 	
-	reward_stars()
 	update_best_time_and_stars()
 	Global.save_game_data()
 
@@ -72,8 +74,12 @@ func complete_level():
 
 func update_best_time_and_stars():
 	# Update time
+	$UI.check_scores(level_number)
 	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
 		Global.level_times[level_name] = timer
+		#upload_score(Global.username, level_number, timer)
+		$UI.send_scores(level_number, Global.username, timer)
+		print("Sent data.d")
 	
 	# Update stars
 	var new_stars = reward_stars()  # Assuming reward_stars returns the number of stars
@@ -101,4 +107,22 @@ func adjust_star_thresholds():
 	four_star.text = "%.2f" % Gold
 	three_star.text = "%.2f" % ThreeStar
 	two_star.text = "%.2f" % TwoStar
+
+
+
+#func upload_score(username, level_number, time):
+	#var url = "http://3.26.15.67:5000/level/" + level_number
+	#var request_data = {
+		#"username": username,
+		#"time": time
+	#}
+	#var headers = ["Content-Type: application/json"]
+	#print(url)
+	#
+	## Make sure the HTTPRequest node is set up and in the scene tree
+	#
+	##$HTTPRequest.request(url, [], HTTPClient.METHOD_POST, str(request_data))
+	#$HTTPRequest.request(url)
+
+
 

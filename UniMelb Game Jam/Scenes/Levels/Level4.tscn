@@ -8,6 +8,7 @@
 
 [node name="Level" groups=["Level4"] instance=ExtResource("1_r0gtj")]
 level_name = "Level4"
+level_number = "4"
 ghost_quota = 8
 next_level = ExtResource("2_ood4d")
 TwoStar = 10.0

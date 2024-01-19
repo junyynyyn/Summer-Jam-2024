@@ -84,5 +84,27 @@ func reward_stars(stars):
 		$"FinishScreen/Star Display/StarParticles".emitting = true
 	#print(stars)
 
-func add_ghost_to_bar(ghost_type: String):
-	pass
+
+
+func send_scores(level_number, username, time):
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	var url = "http://3.26.15.67:5000/level/" + level_number
+	var data = {"username": username, "time": time}
+	var json = JSON.stringify(data)
+	var headers = ["Content-Type: application/json"]
+	http_request.request(url, headers, HTTPClient.METHOD_POST, json)
+
+
+func check_scores(level_number):
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
+	
+	var error = http_request.request(("http://3.26.15.67:5000/level/") + level_number)
+	if error != OK:
+		push_error("An error occurred in the HTTP request.")
+
+func _http_request_completed(result, response_code, headers, body):
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json)

@@ -1,6 +1,6 @@
 extends Node2D
-@onready var tutorialtext = get_node("/root/Level/UI/TextureRect/Label")
-@onready var tutorial = get_node("/root/Level/UI/TextureRect")
+@onready var tutorialtext = get_node("/root/Level/UI/TutDisplay/Label")
+@onready var tutorial = get_node("/root/Level/UI/TutDisplay")
 
 
 # Called when the node enters the scene tree for the first time.

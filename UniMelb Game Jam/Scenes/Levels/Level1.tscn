@@ -16,6 +16,7 @@ size = Vector2(245, 52)
 
 [node name="Level" groups=["Level1"] instance=ExtResource("1_jdcf6")]
 level_name = "Level1"
+level_number = "1"
 ghost_quota = 3
 next_level = ExtResource("2_byn5r")
 TwoStar = 5.2

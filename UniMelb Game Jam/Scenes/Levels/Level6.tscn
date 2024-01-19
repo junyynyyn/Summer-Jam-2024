@@ -8,6 +8,7 @@
 
 [node name="Level" groups=["Level6"] instance=ExtResource("1_dkpeg")]
 level_name = "Level6"
+level_number = "6"
 ghost_quota = 15
 
 [node name="TileMap" parent="." index="2"]

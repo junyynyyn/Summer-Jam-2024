@@ -4,3 +4,4 @@
 
 [node name="Level" groups=["Level9"] instance=ExtResource("1_mt6v1")]
 level_name = "Level9"
+level_number = "9"
