@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Ghost.gd" id="1_hnbmp"]
 [ext_resource type="Texture2D" uid="uid://l8xw8lo48f43" path="res://Sprites/ghost.png" id="2_yihjj"]
-[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_sp3pq"]
+[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/Unused/light.webp" id="3_sp3pq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_barfr"]
 radius = 19.0

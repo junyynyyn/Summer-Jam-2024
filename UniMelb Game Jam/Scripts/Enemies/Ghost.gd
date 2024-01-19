@@ -70,10 +70,13 @@ func roam():
 	direction = (position - roam_target).normalized()
 	speed = lerp(speed, ROAM_SPEED, 0.5)
 	velocity = direction * speed * speed_multiplier
+	if $AnimationPlayer.has_animation("Roam"):
+		$AnimationPlayer.play("Roam")
 
 func run():
-	pass
-	$AnimationPlayer.exi
+	if $AnimationPlayer.has_animation("Run"):
+		$AnimationPlayer.play("Run")
+
 
 func _on_roam_timer_timeout():
 	#Reset speed

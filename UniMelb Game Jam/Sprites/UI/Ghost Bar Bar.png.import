@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cidmb0q3ylax1"
-path="res://.godot/imported/Ghost Bar Background.png-b863620b451edfa84229a4d88cd90134.ctex"
+uid="uid://ba6se6q8b8u2b"
+path="res://.godot/imported/Ghost Bar Bar.png-a53ea091c7e5bdb3b90a246ee980eb3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ghost Bar Background.png"
-dest_files=["res://.godot/imported/Ghost Bar Background.png-b863620b451edfa84229a4d88cd90134.ctex"]
+source_file="res://Sprites/UI/Ghost Bar Bar.png"
+dest_files=["res://.godot/imported/Ghost Bar Bar.png-a53ea091c7e5bdb3b90a246ee980eb3e.ctex"]
 
 [params]
 

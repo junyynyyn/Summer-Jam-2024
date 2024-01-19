@@ -83,3 +83,6 @@ func reward_stars(stars):
 		stardisplay.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
 		$"FinishScreen/Star Display/StarParticles".emitting = true
 	#print(stars)
+
+func add_ghost_to_bar(ghost_type: String):
+	pass

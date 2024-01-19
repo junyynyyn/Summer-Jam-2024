@@ -1,16 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddtqkme5jcwp6"]
+[gd_scene load_steps=9 format=3 uid="uid://ddtqkme5jcwp6"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_hiwya"]
 [ext_resource type="Script" path="res://Scripts/Enemies/Mirrored Ghost.gd" id="2_qaixr"]
+[ext_resource type="Texture2D" uid="uid://bkwcl7wnbb78" path="res://Sprites/WispGreen-sheet.png" id="3_xywwd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7yshi"]
 radius = 66.0
+
+[sub_resource type="Animation" id="Animation_f046e"]
+resource_name = "new_animation"
+
+[sub_resource type="Animation" id="Animation_itxxs"]
+resource_name = "Roam"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_0hfam"]
+resource_name = "Run"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yn12j"]
+_data = {
+"Roam": SubResource("Animation_itxxs"),
+"Run": SubResource("Animation_0hfam"),
+"new_animation": SubResource("Animation_f046e")
+}
 
 [node name="Mirrored Ghost" instance=ExtResource("1_hiwya")]
 script = ExtResource("2_qaixr")
 
 [node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.14902, 0.47451, 0.298039, 1)
+texture = ExtResource("3_xywwd")
+hframes = 5
+vframes = 2
 
 [node name="DetectionArea" type="Area2D" parent="." index="4" groups=["Enemy"]]
 visible = false
@@ -21,6 +66,11 @@ shape = SubResource("CircleShape2D_7yshi")
 
 [node name="RunningTimer" type="Timer" parent="." index="5"]
 one_shot = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_yn12j")
+}
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lec0q3st71pw"
-path="res://.godot/imported/TileSheet_DungeonYellow.png-243b60ef67ff940cfd7693a13d60b5a2.ctex"
+uid="uid://b4pqvgcs71wtg"
+path="res://.godot/imported/WispPurple-sheet.png-6c90c1af0b1af88a01975968d50ebc16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TileSheet_DungeonYellow.png"
-dest_files=["res://.godot/imported/TileSheet_DungeonYellow.png-243b60ef67ff940cfd7693a13d60b5a2.ctex"]
+source_file="res://Sprites/WispPurple-sheet.png"
+dest_files=["res://.godot/imported/WispPurple-sheet.png-6c90c1af0b1af88a01975968d50ebc16.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=22 format=3 uid="uid://boeyacwn3tnje"]
 
-[ext_resource type="Texture2D" uid="uid://bw1oab3k6qens" path="res://Sprites/TileSheet_DungeonPink.png" id="1_7oav1"]
+[ext_resource type="Texture2D" uid="uid://bw1oab3k6qens" path="res://Sprites/Unused/TileSheet_DungeonPink.png" id="1_7oav1"]
 [ext_resource type="Texture2D" uid="uid://cjw1wjubvu06y" path="res://Sprites/SPR_Tileset.png" id="2_ixajf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjn56"]

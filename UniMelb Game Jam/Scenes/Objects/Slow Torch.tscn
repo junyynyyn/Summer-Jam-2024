@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bn7aq3hr7x3ot"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/Slow Torch.gd" id="1_ua70t"]
-[ext_resource type="Texture2D" uid="uid://dk6alxuoceu3m" path="res://Sprites/AnimationSheet_Items.png" id="1_vrq3p"]
-[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="2_il80h"]
+[ext_resource type="Texture2D" uid="uid://dk6alxuoceu3m" path="res://Sprites/Unused/AnimationSheet_Items.png" id="1_vrq3p"]
+[ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/Unused/light.webp" id="2_il80h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_202tu"]
 size = Vector2(5, 8)

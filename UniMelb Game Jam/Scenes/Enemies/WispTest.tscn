@@ -1,46 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi13cngh8p2d8"]
+[gd_scene load_steps=4 format=3 uid="uid://bi13cngh8p2d8"]
 
 [ext_resource type="PackedScene" uid="uid://cy1f7nq6lt4d" path="res://Scenes/Enemies/Ghost.tscn" id="1_g3d04"]
 [ext_resource type="Texture2D" uid="uid://dhqv42jkj6x6g" path="res://Sprites/Wisp.png" id="2_ecumb"]
 [ext_resource type="Texture2D" uid="uid://vygtmcy68ras" path="res://Sprites/Wisp-export1.png" id="3_shxl3"]
-
-[sub_resource type="Animation" id="Animation_jy3wf"]
-resource_name = "Idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_r0ivd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ebuh"]
-_data = {
-"Idle": SubResource("Animation_jy3wf"),
-"RESET": SubResource("Animation_r0ivd")
-}
 
 [node name="Ghost" instance=ExtResource("1_g3d04")]
 
@@ -62,9 +24,3 @@ initial_velocity_min = 14.6
 initial_velocity_max = 42.45
 scale_amount_min = 0.05
 scale_amount_max = 0.1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
-libraries = {
-"": SubResource("AnimationLibrary_7ebuh")
-}
-autoplay = "Idle"

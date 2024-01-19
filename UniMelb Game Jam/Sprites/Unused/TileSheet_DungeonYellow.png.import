@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6se6q8b8u2b"
-path="res://.godot/imported/Ghost Bar Bar.png-4dd2515a743e11e1ad7bbe24906eb593.ctex"
+uid="uid://lec0q3st71pw"
+path="res://.godot/imported/TileSheet_DungeonYellow.png-a980e39772fcc666ae1fde12b5bcf349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ghost Bar Bar.png"
-dest_files=["res://.godot/imported/Ghost Bar Bar.png-4dd2515a743e11e1ad7bbe24906eb593.ctex"]
+source_file="res://Sprites/Unused/TileSheet_DungeonYellow.png"
+dest_files=["res://.godot/imported/TileSheet_DungeonYellow.png-a980e39772fcc666ae1fde12b5bcf349.ctex"]
 
 [params]
 
