@@ -73,6 +73,7 @@ func roam():
 
 func run():
 	pass
+	$AnimationPlayer.exi
 
 func _on_roam_timer_timeout():
 	#Reset speed

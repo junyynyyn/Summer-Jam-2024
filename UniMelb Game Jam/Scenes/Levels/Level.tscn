@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dubob17g2sofp"]
+[gd_scene load_steps=10 format=3 uid="uid://dubob17g2sofp"]
 
 [ext_resource type="TileSet" uid="uid://boeyacwn3tnje" path="res://Scenes/Levels/TileSet.tres" id="1_2h1ej"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_hmm30"]
@@ -8,12 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dfi8iany5trnq" path="res://Scenes/Player/grapple_line.tscn" id="6_xetmb"]
 [ext_resource type="AudioStream" uid="uid://dksnj7mdfhbfb" path="res://Audio/Grapple Throw.mp3" id="7_pvjju"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ksipx"]
+blend_mode = 1
+light_mode = 1
+
 [sub_resource type="Environment" id="Environment_0oj3i"]
 background_mode = 3
 glow_enabled = true
 glow_levels/1 = 1.4
 glow_levels/2 = 1.1
-glow_levels/4 = 0.65
+glow_levels/4 = 1.9
 glow_strength = 1.5
 
 [node name="Level" type="Node2D"]
@@ -63,6 +67,7 @@ position_smoothing_enabled = true
 [node name="GrappleLine" parent="PlayerResources" instance=ExtResource("6_xetmb")]
 
 [node name="Hook" parent="PlayerResources" instance=ExtResource("5_2tq4v")]
+material = SubResource("CanvasItemMaterial_ksipx")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 

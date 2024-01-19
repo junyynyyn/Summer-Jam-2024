@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/light.webp" id="3_ysdjt"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="4_gaefc"]
 [ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_mbat5"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/Tutorial Ghost.tscn" id="5_2kt7n"]
+[ext_resource type="PackedScene" uid="uid://k0ennervu7tv" path="res://Scenes/Enemies/Tutorial Ghost.tscn" id="5_2kt7n"]
 [ext_resource type="PackedScene" uid="uid://wwgwxru6aw8v" path="res://Scenes/Objects/Pedestal.tscn" id="7_l2qfa"]
 [ext_resource type="Script" path="res://Scripts/Tutorial Prompts.gd" id="10_8b27o"]
 
