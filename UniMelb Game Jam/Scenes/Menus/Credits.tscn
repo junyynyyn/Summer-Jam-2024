@@ -1,0 +1,277 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0aw7w3e5tmv5"]
+
+[ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_j7ogs"]
+[ext_resource type="Texture2D" uid="uid://h18l58ni77lq" path="res://Sprites/UI/Title-less panel.png" id="2_s0ws2"]
+[ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="3_ulrgg"]
+
+[sub_resource type="Gradient" id="Gradient_yx7dx"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.221649, 0.536082, 0.773196, 1)
+colors = PackedColorArray(0.196, 0.216, 0.255, 1, 0.196078, 0.215686, 0.254902, 1, 0.196078, 0.215686, 0.254902, 0.937255, 0.196078, 0.215686, 0.254902, 0.858824, 0.196078, 0.215686, 0.254902, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ffxtj"]
+gradient = SubResource("Gradient_yx7dx")
+
+[sub_resource type="Gradient" id="Gradient_0n551"]
+interpolation_mode = 1
+colors = PackedColorArray(0.196078, 0.215686, 0.254902, 1, 0.196078, 0.215686, 0.254902, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_koqsb"]
+gradient = SubResource("Gradient_0n551")
+
+[sub_resource type="Animation" id="Animation_iycj8"]
+resource_name = "Scroll Up"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditSequence:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(556, 304), Vector2(556, -384)]
+}
+
+[sub_resource type="Animation" id="Animation_ae1lf"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditSequence:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(556, 304)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0ciq"]
+_data = {
+"RESET": SubResource("Animation_ae1lf"),
+"Scroll Up": SubResource("Animation_iycj8")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7ogs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 1176.0
+offset_bottom = 752.0
+texture = ExtResource("2_s0ws2")
+
+[node name="CreditSequence" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0001
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="CreditSequence"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -44.5
+offset_right = 194.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "Development Team"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditSequence/Label2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 28.5
+offset_right = 78.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Jun (Junyynyyn)
+Ciaran (Kermit)
+Jaxon (Leonados)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditSequence"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = 131.5
+offset_right = 194.0
+offset_bottom = 188.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Art and Assets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditSequence/Label3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 12.5
+offset_right = 78.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Jaxon (Leonados)
+Other people?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="CreditSequence"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = 307.5
+offset_right = 194.0
+offset_bottom = 364.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Music and Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditSequence/Label4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 12.5
+offset_right = 78.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CreditSequence"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = 443.5
+offset_right = 194.0
+offset_bottom = 500.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Special Thanks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CreditSequence/Label5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 12.5
+offset_right = 78.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 19
+text = "Will (IA3047) - For development insight and assistance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fading Grey" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 134.0
+offset_right = 1329.0
+offset_bottom = 1290.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_ffxtj")
+expand_mode = 1
+
+[node name="Solid Grey" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1157.0
+offset_top = -146.0
+offset_right = 1442.0
+offset_bottom = 1010.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_koqsb")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -277.5
+offset_top = -8.0
+offset_right = 285.5
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_ulrgg")
+theme_override_font_sizes/font_size = 116
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u0ciq")
+}
+autoplay = "Scroll Up"
