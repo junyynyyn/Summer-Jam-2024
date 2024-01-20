@@ -5,6 +5,8 @@ var progressBar = null
 
 func _ready():
 	update_progress_bars()
+	update_unlocked_levels()
+
 
 
 func update_progress_bars():
@@ -18,5 +20,18 @@ func update_progress_bars():
 			progressBar.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
 			
 		#print(progressBar.value)
+		
+func update_unlocked_levels():
+	for level in Global.level_times:
+		# Handle current level's lock
+		var current_level_lock_path = "/root/LevelSelect/GridContainer/ButtonLevel" + str(level) + "/LockedLevel" + str(level)
+		var lock = get_node_or_null(current_level_lock_path)
+		if lock:
+			lock.visible = false  # Hide lock if level is in level_times (completed)
 
-
+		# Handle next level's lock
+		var next_level = str(int(level) + 1)
+		var next_level_lock_path = "/root/LevelSelect/GridContainer/ButtonLevel" + next_level + "/LockedLevel" + next_level
+		var next_lock = get_node_or_null(next_level_lock_path)
+		if next_lock:
+			next_lock.visible = false  # Hide next level's lock only if it's completed

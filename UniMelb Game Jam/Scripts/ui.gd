@@ -6,6 +6,7 @@ var can_pause = true
 
 @onready var stardisplay = $"FinishScreen/Star Display"
 signal next_scene
+signal scores_submitted
 
 func _ready():
 	%FinishScreen.visible = false

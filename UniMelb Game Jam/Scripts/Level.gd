@@ -7,6 +7,7 @@ extends Node2D
 @export var next_level : PackedScene
 
 
+
 var OneStar: float = 99999
 @export var TwoStar : float = 0 
 @export var ThreeStar : float = 0
@@ -63,7 +64,8 @@ func complete_level():
 	var new_best = false
 	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
 		new_best = true
-		
+	
+	#Global.unlock_next_level(level_number)
 	$UI.display_finish(timer, level_name, new_best)
 	$"UI/Timer Grid".visible = false
 	
@@ -81,7 +83,8 @@ func update_best_time_and_stars():
 		#upload_score(Global.username, level_number, timer)
 		$UI.send_scores(level_number, Global.username, timer)
 		$UI.check_scores(level_number)
-	
+	else:
+		$UI.check_scores(level_number)
 	# Update stars
 	var new_stars = reward_stars()  # Assuming reward_stars returns the number of stars
 	if level_name not in Global.level_stars or new_stars > Global.level_stars[level_name]:

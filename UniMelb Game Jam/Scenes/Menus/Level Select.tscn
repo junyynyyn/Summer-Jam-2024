@@ -84,9 +84,9 @@ layout_mode = 3
 anchor_top = 1.053
 anchor_right = 0.977
 anchor_bottom = 1.989
-offset_top = -0.219055
+offset_top = -0.218994
 offset_right = 0.495972
-offset_bottom = 0.25293
+offset_bottom = 0.253052
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vom47")
@@ -201,7 +201,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel2" type="TextureButton" parent="GridContainer/ButtonLevel2"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -246,7 +245,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel3" type="TextureButton" parent="GridContainer/ButtonLevel3"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -291,7 +289,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel4" type="TextureButton" parent="GridContainer/ButtonLevel4"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -336,7 +333,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel5" type="TextureButton" parent="GridContainer/ButtonLevel5"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0
@@ -381,7 +377,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LockedLevel6" type="TextureButton" parent="GridContainer/ButtonLevel6"]
-visible = false
 layout_mode = 2
 offset_right = 176.0
 offset_bottom = 176.0

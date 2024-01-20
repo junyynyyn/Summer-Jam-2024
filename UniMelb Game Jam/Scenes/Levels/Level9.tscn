@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyt5pe1twqk5f"]
+[gd_scene load_steps=3 format=3 uid="uid://cyt5pe1twqk5f"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_mt6v1"]
+[ext_resource type="PackedScene" uid="uid://cclnarqbd0g5u" path="res://Scenes/Menus/Level Select.tscn" id="2_ntayi"]
 
 [node name="Level" groups=["Level9"] instance=ExtResource("1_mt6v1")]
 level_name = "Level9"
 level_number = "9"
+next_level = ExtResource("2_ntayi")

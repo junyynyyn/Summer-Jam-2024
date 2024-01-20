@@ -17,6 +17,14 @@ func _ready():
 var level_times = {}
 var level_stars = {}  # New dictionary for star ratings
 
+# Function to unlock the next level
+#func unlock_next_level(current_level):
+	#var next_level = str(int(current_level) + 1)
+	#if next_level not in level_times:
+		#level_times[next_level] = INF  # Or some default value indicating it's unlocked but not completed
+		#save_game_data()  # Save the updated game data
+#
+
 func save_game_data():
 	var save_data = {
 		"level_times": level_times,
