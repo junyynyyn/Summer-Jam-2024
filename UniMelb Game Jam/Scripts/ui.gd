@@ -93,6 +93,8 @@ func send_scores(level_number, username, time):
 	var json = JSON.stringify(data)
 	var headers = ["Content-Type: application/json"]
 	http_request.request(url, headers, HTTPClient.METHOD_POST, json)
+	await http_request.request_completed
+	check_scores(level_number)
 
 func check_scores(level_number):
 	var http_request = HTTPRequest.new()

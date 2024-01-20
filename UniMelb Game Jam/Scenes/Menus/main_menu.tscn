@@ -223,8 +223,8 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 963.0
 offset_top = 458.0
-offset_right = 1139.0
-offset_bottom = 634.0
+offset_right = 1131.0
+offset_bottom = 546.0
 texture_normal = ExtResource("8_pishe")
 
 [node name="Label3" type="Label" parent="Menu/Credits"]

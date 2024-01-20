@@ -80,7 +80,6 @@ func update_best_time_and_stars():
 		Global.level_times[level_name] = timer
 		#upload_score(Global.username, level_number, timer)
 		$UI.send_scores(level_number, Global.username, timer)
-		$UI.check_scores(level_number)
 	else:
 		$UI.check_scores(level_number)
 	# Update stars
