@@ -78,4 +78,5 @@ func _on_cancel_reset_pressed():
 	$ResetConfirmation.visible = false
 
 
-
+func _on_credits_pressed():
+	SceneTransition.change_scene("res://Scenes/Menus/Credits.tscn")

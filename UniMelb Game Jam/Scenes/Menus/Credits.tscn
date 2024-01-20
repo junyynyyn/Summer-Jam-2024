@@ -1,39 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0aw7w3e5tmv5"]
+[gd_scene load_steps=10 format=3 uid="uid://b0aw7w3e5tmv5"]
 
 [ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_j7ogs"]
 [ext_resource type="Texture2D" uid="uid://h18l58ni77lq" path="res://Sprites/UI/Title-less panel.png" id="2_s0ws2"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="3_ulrgg"]
-
-[sub_resource type="Gradient" id="Gradient_yx7dx"]
-interpolation_color_space = 2
-offsets = PackedFloat32Array(0, 0.221649, 0.536082, 0.773196, 1)
-colors = PackedColorArray(0.196, 0.216, 0.255, 1, 0.196078, 0.215686, 0.254902, 1, 0.196078, 0.215686, 0.254902, 0.937255, 0.196078, 0.215686, 0.254902, 0.858824, 0.196078, 0.215686, 0.254902, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ffxtj"]
-gradient = SubResource("Gradient_yx7dx")
-
-[sub_resource type="Gradient" id="Gradient_0n551"]
-interpolation_mode = 1
-colors = PackedColorArray(0.196078, 0.215686, 0.254902, 1, 0.196078, 0.215686, 0.254902, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_koqsb"]
-gradient = SubResource("Gradient_0n551")
-
-[sub_resource type="Animation" id="Animation_iycj8"]
-resource_name = "Scroll Up"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CreditSequence:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 9.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(556, 304), Vector2(556, -384)]
-}
+[ext_resource type="Texture2D" uid="uid://c66fu2ywu4ms2" path="res://Sprites/UI/Home Button.png" id="4_4w6yr"]
+[ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="5_fiu3j"]
+[ext_resource type="Texture2D" uid="uid://so5qanfidkkr" path="res://Sprites/UI/gradient-expor2t.png" id="6_h6ky7"]
 
 [sub_resource type="Animation" id="Animation_ae1lf"]
 resource_name = "RESET"
@@ -49,6 +21,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(556, 304)]
+}
+
+[sub_resource type="Animation" id="Animation_iycj8"]
+resource_name = "Scroll Up"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditSequence:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(556, 304), Vector2(556, -384)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0ciq"]
@@ -235,24 +223,15 @@ text = "Will (IA3047) - For development insight and assistance"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fading Grey" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1160.0
-offset_top = 134.0
-offset_right = 1329.0
-offset_bottom = 1290.0
-rotation = 1.5708
-texture = SubResource("GradientTexture1D_ffxtj")
-expand_mode = 1
-
 [node name="Solid Grey" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1157.0
-offset_top = -146.0
-offset_right = 1442.0
-offset_bottom = 1010.0
+offset_left = 1249.0
+offset_top = -45.0
+offset_right = 1424.0
+offset_bottom = 1264.0
 rotation = 1.5708
-texture = SubResource("GradientTexture1D_koqsb")
+texture = ExtResource("2_s0ws2")
+expand_mode = 1
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -275,3 +254,25 @@ libraries = {
 "": SubResource("AnimationLibrary_u0ciq")
 }
 autoplay = "Scroll Up"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 529.0
+offset_right = 114.0
+offset_bottom = 614.0
+texture_normal = ExtResource("4_4w6yr")
+texture_hover = ExtResource("5_fiu3j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 129.0
+offset_right = 1153.0
+offset_bottom = 463.0
+texture = ExtResource("6_h6ky7")
+expand_mode = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
