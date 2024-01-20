@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bumy4g8cy1waj"]
+[gd_scene load_steps=11 format=3 uid="uid://bumy4g8cy1waj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_dn86b"]
 [ext_resource type="Texture2D" uid="uid://clygaf5xsfjun" path="res://Sprites/PlayerIdle.png" id="2_o7wg1"]
 [ext_resource type="Texture2D" uid="uid://bhnnr6hg3dx32" path="res://Sprites/Light.png" id="3_vmks6"]
+[ext_resource type="Shader" path="res://Shader/Glow.gdshader" id="4_b8y0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6i0"]
 
@@ -48,6 +49,15 @@ _data = {
 "RESET": SubResource("Animation_8qw5v")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h43va"]
+shader = ExtResource("4_b8y0r")
+shader_parameter/color1 = Color(0.905882, 0.713726, 0.176471, 1)
+shader_parameter/color2 = Color(0.905882, 0.713726, 0.176471, 1)
+shader_parameter/threshold = 0.0
+shader_parameter/intensity = 5.0
+shader_parameter/opacity = 1.0
+shader_parameter/glow_color = Color(0.905882, 0.713726, 0.176471, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 44
 script = ExtResource("1_dn86b")
@@ -83,6 +93,40 @@ color = Color(0.772549, 0.611765, 0.364706, 1)
 energy = 0.1
 texture = ExtResource("3_vmks6")
 texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("3_vmks6")
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="EruptionParticles" type="CPUParticles2D" parent="Particles"]
+scale = Vector2(4, 4)
+emitting = false
+amount = 32
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 0)
+radial_accel_min = 40.0
+radial_accel_max = 80.0
+color = Color(0.905882, 0.713726, 0.176471, 1)
+
+[node name="DrawingParticles" type="CPUParticles2D" parent="Particles"]
+modulate = Color(2, 2, 2, 1)
+material = SubResource("ShaderMaterial_h43va")
+scale = Vector2(2, 2)
+emitting = false
+one_shot = true
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+radial_accel_min = -100.0
+radial_accel_max = -80.0
+color = Color(0.905882, 0.713726, 0.176471, 1)
 
 [connection signal="body_entered" from="GhostCollectionArea" to="." method="_on_ghost_collection_area_body_entered"]
 [connection signal="timeout" from="ReleaseTimer" to="." method="_on_release_timer_timeout"]

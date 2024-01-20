@@ -42,8 +42,11 @@ func _process(_delta):
 		
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
+		$Particles/DrawingParticles.emitting = true
 		for ghosts in ghosts_collected:
 			ghosts.position = position
+	else:
+		$Particles/DrawingParticles.emitting = false
 			
 	if ($GhostCollectionArea.has_overlapping_bodies()):
 		for ghost in $GhostCollectionArea.get_overlapping_bodies():
@@ -79,6 +82,7 @@ func capture_ghost(ghost):
 
 # When timer is over release all the ghosts
 func _on_release_timer_timeout():
+	$Particles/EruptionParticles.emitting = true
 	for ghosts in ghosts_collected:
 		ghosts.release()
 	ghosts_collected.clear()
