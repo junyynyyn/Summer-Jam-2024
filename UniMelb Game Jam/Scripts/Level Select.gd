@@ -7,8 +7,6 @@ func _ready():
 	update_progress_bars()
 	update_unlocked_levels()
 
-
-
 func update_progress_bars():
 	for level in Global.level_times.keys():
 		if level == "TestLevel2":

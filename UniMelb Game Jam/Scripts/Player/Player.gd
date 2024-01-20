@@ -20,6 +20,11 @@ func _process(_delta):
 	# Movement Code
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
+	if (velocity.length() <= 10.0):
+		var cell = Global.tilemap.local_to_map(position)
+		var data = Global.tilemap.get_cell_tile_data(0, cell)
+		if (data.get_custom_data("Pit")):
+			get_tree().reload_current_scene()
 	
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)

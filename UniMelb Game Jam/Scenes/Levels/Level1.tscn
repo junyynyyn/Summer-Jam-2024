@@ -79,9 +79,6 @@ texture_scale = 0.5
 [node name="Player" parent="PlayerResources" index="0"]
 position = Vector2(115, 585)
 
-[node name="CanvasModulate" parent="." index="8"]
-color = Color(0.0862745, 0.0862745, 0.0862745, 1)
-
 [node name="Pedestal" parent="." index="10" instance=ExtResource("7_l2qfa")]
 position = Vector2(112, 110)
 

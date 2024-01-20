@@ -3,6 +3,7 @@ extends Node
 var player
 var hook
 var line
+var tilemap
 var can_grapple = false
 # For registering username to upload scores 
 var username = null

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq5u3limjb855"]
+[gd_scene load_steps=5 format=3 uid="uid://dq5u3limjb855"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_2s71c"]
 [ext_resource type="PackedScene" uid="uid://cguvwquhnifu3" path="res://Scenes/Enemies/Running Ghost.tscn" id="2_gey1j"]
 [ext_resource type="PackedScene" uid="uid://1mcxpxt45q80" path="res://Scenes/Levels/Level3.tscn" id="2_h0387"]
+[ext_resource type="Texture2D" uid="uid://bhnnr6hg3dx32" path="res://Sprites/Light.png" id="4_2ails"]
 
 [node name="Level" groups=["Level2"] instance=ExtResource("1_2s71c")]
 level_name = "Level2"
@@ -12,6 +13,9 @@ next_level = ExtResource("2_h0387")
 TwoStar = 3.5
 ThreeStar = 3.2
 Gold = 2.7
+
+[node name="DirectionalLight2D" parent="." index="0"]
+visible = false
 
 [node name="TileMap" parent="." index="2"]
 layer_0/tile_data = PackedInt32Array(65536, 65540, 1, 65537, 65540, 1, 131073, 65540, 1, 131072, 65540, 1, 196608, 65540, 1, 196609, 65540, 1, 65546, 65540, 1, 131082, 65540, 1, 196618, 65540, 1, 65547, 65540, 1, 131083, 65540, 1, 196619, 65540, 1, 262158, 65540, 1, 327694, 65540, 1, 393230, 65540, 1, 458766, 65540, 1, 262159, 65540, 1, 327695, 65540, 1, 393231, 65540, 1, 458767, 65540, 1, 262160, 65540, 1, 327696, 65540, 1, 393232, 65540, 1, 458768, 65540, 1, 65548, 65540, 1, 131084, 65540, 1, 196620, 65540, 1, 65549, 65540, 1, 131085, 65540, 1, 196621, 65540, 1, 65550, 65540, 1, 131086, 65540, 1, 196622, 65540, 1, 65551, 65540, 1, 131087, 65540, 1, 196623, 65540, 1, 65552, 65540, 1, 131088, 65540, 1, 196624, 65540, 1, 327697, 65540, 1, 393233, 65540, 1, 458769, 65540, 1, 327698, 65540, 1, 393234, 65540, 1, 458770, 65540, 1, 327699, 65540, 1, 393235, 65540, 1, 458771, 65540, 1, 327700, 65540, 1, 393236, 65540, 1, 458772, 65540, 1, 327701, 65540, 1, 393237, 65540, 1, 458773, 65540, 1, 65540, 327684, 3, 131076, 327684, 4, 196612, 327684, 4, 65541, 327684, 3, 131077, 327684, 4, 196613, 327684, 4, 65538, 65540, 1, 131074, 65540, 1, 196610, 65540, 1, 65539, 65540, 1, 131075, 65540, 1, 196611, 65540, 1, 65542, 327684, 3, 131078, 327684, 4, 196614, 327684, 4, 65543, 65540, 1, 131079, 65540, 1, 196615, 65540, 1, 65544, 65540, 1, 131080, 65540, 1, 196616, 65540, 1, 65545, 65540, 1, 131081, 65540, 1, 196617, 65540, 1)
@@ -29,8 +33,11 @@ position = Vector2(416, 81)
 [node name="Running Ghost4" parent="Ghosts" index="3" instance=ExtResource("2_gey1j")]
 position = Vector2(633, 209)
 
+[node name="PointLight2D" type="PointLight2D" parent="Lighting" index="0"]
+position = Vector2(82, 75)
+energy = 0.1
+texture = ExtResource("4_2ails")
+texture_scale = 2.0
+
 [node name="Player" parent="PlayerResources" index="0"]
 position = Vector2(32, 96)
-
-[node name="CanvasModulate" parent="." index="8"]
-color = Color(0.0862745, 0.0862745, 0.0862745, 1)

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @export var level_name = ""
 @export var level_number : String
 @export var ghost_quota : int
@@ -32,10 +31,10 @@ func _ready():
 	$UI/GhostCounter.max_value = ghost_quota
 	$UI.set_ghost_count_max(ghost_total)
 	adjust_star_thresholds()
+	Global.tilemap = $TileMap
 
 	#if get_tree().get_current_scene().is_in_group("Level1"):
 		#print("You are on Level 1")
-
 
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
@@ -47,7 +46,6 @@ func _process(delta):
 	# Check if player has hit the ghost collected to finish the level
 	if (Global.player.ghosts_collected.size() >= ghost_quota):
 		complete_level()
-
 
 func reset_timer():
 	timer = 0

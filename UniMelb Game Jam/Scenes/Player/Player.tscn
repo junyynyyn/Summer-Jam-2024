@@ -79,8 +79,10 @@ wait_time = 5.0
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.772549, 0.611765, 0.364706, 1)
 energy = 0.1
 texture = ExtResource("3_vmks6")
+texture_scale = 3.0
 
 [connection signal="body_entered" from="GhostCollectionArea" to="." method="_on_ghost_collection_area_body_entered"]
 [connection signal="timeout" from="ReleaseTimer" to="." method="_on_release_timer_timeout"]
