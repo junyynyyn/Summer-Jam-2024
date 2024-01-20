@@ -48,6 +48,9 @@ position = Vector2(-16, -3277)
 [node name="HookPoint8" parent="Objects" index="9" instance=ExtResource("2_img6x")]
 position = Vector2(-15, -2580)
 
+[node name="HookPoint11" parent="Objects" index="10" instance=ExtResource("2_img6x")]
+position = Vector2(114, -3063)
+
 [node name="Running Ghost" parent="Ghosts" index="0" instance=ExtResource("3_jy03n")]
 position = Vector2(-15, -626)
 
@@ -75,7 +78,7 @@ position = Vector2(112, -1616)
 position = Vector2(112, -2897)
 
 [node name="Marker2D4" type="Marker2D" parent="Ghosts" index="8"]
-position = Vector2(113, -3150)
+position = Vector2(113, -3209)
 
 [node name="Mirrored Ghost" parent="Ghosts" index="9" instance=ExtResource("5_s5gux")]
 position = Vector2(112, -1943)

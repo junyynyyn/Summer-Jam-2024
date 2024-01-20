@@ -85,8 +85,6 @@ func reward_stars(stars):
 		$"FinishScreen/Star Display/StarParticles".emitting = true
 	#print(stars)
 
-
-
 func send_scores(level_number, username, time):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -95,7 +93,6 @@ func send_scores(level_number, username, time):
 	var json = JSON.stringify(data)
 	var headers = ["Content-Type: application/json"]
 	http_request.request(url, headers, HTTPClient.METHOD_POST, json)
-
 
 func check_scores(level_number):
 	var http_request = HTTPRequest.new()
@@ -113,8 +110,8 @@ func check_scores(level_number):
 func _http_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	var body_string = body.get_string_from_utf8()
-	var json_result = json.parse(body_string)
-	var json_result2 = json.parse(json.data)
+	var _json_result = json.parse(body_string)
+	var _json_result2 = json.parse(json.data)
 	var data = json.data
 	
 	#Clear any existing debug entries in the leaderboard
@@ -125,7 +122,6 @@ func _http_request_completed(_result, _response_code, _headers, body):
 	
 	#Sort function
 	data.sort_custom(sort_entries)
-	
 	
 	for entry in data:
 		var username = entry["username"]
