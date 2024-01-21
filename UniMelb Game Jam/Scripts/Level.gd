@@ -5,8 +5,6 @@ extends Node2D
 @export var ghost_quota : int
 @export var next_level : PackedScene
 
-
-
 var OneStar: float = 99999
 @export var TwoStar : float = 0 
 @export var ThreeStar : float = 0
@@ -16,7 +14,7 @@ var OneStar: float = 99999
 @onready var three_star = get_node("/root/Level/UI/FinishScreen/Star Ratings/3 Star/3StarText")
 @onready var two_star = get_node("/root/Level/UI/FinishScreen/Star Ratings/2 Star/2StarText")
 
-var ghost_total : int
+@export var ghost_total : int
 
 var timer : float = 0.0
 var timer_active : bool = true
@@ -29,7 +27,7 @@ func _ready():
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
 	$UI/GhostCounter.max_value = ghost_quota
-	$UI.set_ghost_count_max(ghost_total)
+	$UI.set_ghost_count_max(ghost_quota)
 	adjust_star_thresholds()
 	Global.tilemap = $TileMap
 

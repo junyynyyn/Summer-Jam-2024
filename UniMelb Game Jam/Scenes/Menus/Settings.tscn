@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6sqfe2iy3t3"]
+[gd_scene load_steps=9 format=3 uid="uid://b6sqfe2iy3t3"]
 
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_1upta"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_ww6k2"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="3_7se7m"]
 [ext_resource type="PackedScene" uid="uid://b8mnu874wf7pu" path="res://Scenes/Levels/Volume Slider.tscn" id="3_nah48"]
 [ext_resource type="Texture2D" uid="uid://b2o4hsfmm4ml0" path="res://Sprites/UI/Left Arrow.png" id="7_rycjf"]
-[ext_resource type="Texture2D" uid="uid://cg2rjopnmdyqq" path="res://Sprites/UI/mouse sprite.png" id="8_tre6s"]
-[ext_resource type="Texture2D" uid="uid://diudomc0dvoxx" path="res://Sprites/UI/Empty Button.png" id="9_0oigb"]
+[ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="8_d8eka"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -49,49 +48,11 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Home" type="TextureButton" parent="."]
+[node name="Master" parent="." instance=ExtResource("3_nah48")]
 layout_mode = 1
-offset_left = 37.0
-offset_top = 536.0
-offset_right = 116.0
-offset_bottom = 615.0
-texture_normal = ExtResource("2_h3rpq")
-texture_hover = ExtResource("3_7se7m")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 169.0
-offset_top = -152.0
-offset_right = 482.0
-offset_bottom = -105.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 46
-text = "Sound Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 712.0
-offset_top = 297.0
-offset_right = 1092.0
-offset_bottom = 465.0
-theme_override_constants/separation = 40
-
-[node name="Master" parent="VBoxContainer" instance=ExtResource("3_nah48")]
-layout_mode = 2
 bus_name = "Master"
 
-[node name="Label" type="Label" parent="VBoxContainer/Master"]
+[node name="Label" type="Label" parent="Master"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,11 +70,13 @@ text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" parent="VBoxContainer" instance=ExtResource("3_nah48")]
-layout_mode = 2
+[node name="Music" parent="." instance=ExtResource("3_nah48")]
+layout_mode = 1
+offset_top = 53.5
+offset_bottom = 90.5
 bus_name = "Music"
 
-[node name="Label" type="Label" parent="VBoxContainer/Music"]
+[node name="Label" type="Label" parent="Music"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,11 +94,13 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sound Effects" parent="VBoxContainer" instance=ExtResource("3_nah48")]
-layout_mode = 2
+[node name="Sound Effects" parent="." instance=ExtResource("3_nah48")]
+layout_mode = 1
+offset_top = 125.5
+offset_bottom = 162.5
 bus_name = "Sound Effects"
 
-[node name="Label" type="Label" parent="VBoxContainer/Sound Effects"]
+[node name="Label" type="Label" parent="Sound Effects"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,237 +118,36 @@ text = "Sound Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Controls" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 4.0
-offset_top = -49.0
-offset_right = 44.0
-offset_bottom = -9.0
-
-[node name="Arrow Keys" type="Control" parent="Controls"]
-anchors_preset = 0
-offset_left = 98.0
-offset_top = 10.0
-offset_right = 138.0
-offset_bottom = 50.0
-
-[node name="TextureRect" type="TextureRect" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 316.0
-offset_right = 164.0
-offset_bottom = 360.0
-texture = ExtResource("7_rycjf")
-expand_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 272.0
-offset_right = 248.0
-offset_bottom = 316.0
-rotation = 1.57079
-texture = ExtResource("7_rycjf")
-expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 356.0
-offset_right = 292.0
-offset_bottom = 400.0
-rotation = 3.14159
-texture = ExtResource("7_rycjf")
-expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 358.0
-offset_right = 208.0
-offset_bottom = 402.0
-rotation = 4.71238
-texture = ExtResource("7_rycjf")
-expand_mode = 1
-
-[node name="Label2" type="Label" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 321.0
-offset_right = 296.0
-offset_bottom = 352.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "or"
-
-[node name="Label3" type="Label" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = -55.0
-offset_top = 323.0
-offset_right = 116.0
-offset_bottom = 354.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "Movement - "
-
-[node name="Label4" type="Label" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = -55.0
-offset_top = 411.0
-offset_right = 116.0
-offset_bottom = 442.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "Throw Grapple - "
-
-[node name="TextureRect" type="TextureRect" parent="Controls/Arrow Keys/Label4"]
-layout_mode = 0
-offset_left = 236.0
-offset_top = -36.0
-offset_right = 297.0
-offset_bottom = 64.0
-texture = ExtResource("8_tre6s")
-
-[node name="Label5" type="Label" parent="Controls/Arrow Keys"]
-layout_mode = 0
-offset_left = -54.0
-offset_top = 502.0
-offset_right = 175.0
-offset_bottom = 533.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "Reset Level - "
-
-[node name="Arrow Keys2" type="Control" parent="Controls"]
-anchors_preset = 0
-offset_left = 267.0
-offset_top = 9.0
-offset_right = 307.0
-offset_bottom = 49.0
-
-[node name="TextureRect" type="TextureRect" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 316.0
-offset_right = 164.0
-offset_bottom = 360.0
-texture = ExtResource("9_0oigb")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="Controls/Arrow Keys2/TextureRect"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 7.0
-offset_right = 51.0
-offset_bottom = 38.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "A"
-
-[node name="TextureRect3" type="TextureRect" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 272.0
-offset_right = 248.0
-offset_bottom = 316.0
-rotation = 1.57079
-texture = ExtResource("9_0oigb")
-expand_mode = 1
-
-[node name="Label2" type="Label" parent="Controls/Arrow Keys2/TextureRect3"]
-layout_mode = 0
-offset_left = 9.99993
-offset_top = 35.0
-offset_right = 49.9999
-offset_bottom = 66.0
-rotation = -1.57079
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "W"
-
-[node name="TextureRect4" type="TextureRect" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 356.0
-offset_right = 292.0
-offset_bottom = 400.0
-rotation = 3.14159
-texture = ExtResource("9_0oigb")
-expand_mode = 1
-
-[node name="Label3" type="Label" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = 214.0
-offset_top = 324.0
-offset_right = 254.0
-offset_bottom = 355.0
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "D"
-
-[node name="TextureRect5" type="TextureRect" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 358.0
-offset_right = 208.0
-offset_bottom = 402.0
-rotation = 4.71238
-texture = ExtResource("9_0oigb")
-expand_mode = 1
-
-[node name="Label4" type="Label" parent="Controls/Arrow Keys2/TextureRect5"]
-layout_mode = 0
-offset_left = 34.9999
-offset_top = 11.0002
-offset_right = 74.9999
-offset_bottom = 42.0002
-rotation = 1.57079
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "S"
-
-[node name="TextureRect6" type="TextureRect" parent="Controls/Arrow Keys2"]
-layout_mode = 0
-offset_left = -34.0
-offset_top = 538.0
-offset_right = 10.0
-offset_bottom = 582.0
-rotation = 4.71238
-texture = ExtResource("9_0oigb")
-expand_mode = 1
-
-[node name="Label4" type="Label" parent="Controls/Arrow Keys2/TextureRect6"]
-layout_mode = 0
-offset_left = 33.9999
-offset_top = 9.00023
-offset_right = 73.9999
-offset_bottom = 40.0002
-rotation = 1.57079
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 30
-text = "R
-"
-
-[node name="Label3" type="Label" parent="Controls"]
+[node name="Home" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 102.0
-offset_top = 199.0
-offset_right = 415.0
-offset_bottom = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_1xxn7")
-theme_override_font_sizes/font_size = 46
-text = "Controls"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 40.0
+offset_top = 512.0
+offset_right = 119.0
+offset_bottom = 591.0
+texture_normal = ExtResource("2_h3rpq")
+texture_hover = ExtResource("3_7se7m")
+ignore_texture_size = true
+stretch_mode = 0
 
+[node name="Back Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.06
+anchor_right = 0.116
+anchor_bottom = 0.938
+offset_left = 87.68
+offset_top = 473.12
+offset_right = 73.368
+offset_bottom = -16.824
+grow_vertical = 0
+texture_normal = ExtResource("7_rycjf")
+texture_hover = ExtResource("8_d8eka")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
+[connection signal="changed" from="Music" to="." method="_on_music_changed"]
+[connection signal="changed" from="Sound Effects" to="." method="_on_sound_effects_changed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
-[connection signal="value_changed" from="VBoxContainer/Master" to="." method="_on_master_value_changed"]
-[connection signal="changed" from="VBoxContainer/Music" to="." method="_on_music_changed"]
-[connection signal="changed" from="VBoxContainer/Sound Effects" to="." method="_on_sound_effects_changed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

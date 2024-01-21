@@ -19,7 +19,6 @@ func update_volume_sliders():
 func _process(_delta):
 	pass
 
-
 func _on_home_pressed():
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")
 

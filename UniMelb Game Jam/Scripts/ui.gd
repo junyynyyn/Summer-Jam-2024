@@ -88,7 +88,7 @@ func reward_stars(stars):
 func send_scores(level_number, username, time):
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
-	var url = "http://3.26.15.67:5000/level/" + level_number
+	var url = "https://phantomsnatcher.zematoxic.dev/level/" + level_number
 	var data = {"username": username, "time": time}
 	var json = JSON.stringify(data)
 	var headers = ["Content-Type: application/json"]
@@ -101,7 +101,7 @@ func check_scores(level_number):
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 
-	var error = http_request.request(("http://3.26.15.67:5000/level/") + level_number)
+	var error = http_request.request(("https://phantomsnatcher.zematoxic.dev/level/") + level_number)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
