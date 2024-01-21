@@ -208,9 +208,18 @@ offset_bottom = -0.0640001
 grow_horizontal = 0
 grow_vertical = 0
 
+[node name="Label" type="Label" parent="GhostCounter"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 53.0
+offset_right = 84.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("7_8nccg")
+theme_override_font_sizes/font_size = 26
+text = "0/5"
+
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchor_left = 0.32
 anchor_top = 0.209
@@ -481,6 +490,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FinishScreen/Leaderboard"]
+clip_contents = true
 custom_minimum_size = Vector2(0.34, 0)
 layout_mode = 0
 offset_left = 927.0
@@ -518,6 +528,7 @@ layout_mode = 2
 theme = ExtResource("17_skp2h")
 
 [node name="Timer Grid" type="GridContainer" parent="."]
+visible = false
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 103.0

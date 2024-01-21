@@ -22,7 +22,7 @@ _data = {
 [node name="Turning Ghost" instance=ExtResource("1_w4dml")]
 script = ExtResource("1_6hgvg")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_m5hye")
 hframes = 5
 vframes = 2

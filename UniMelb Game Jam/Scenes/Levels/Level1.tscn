@@ -20,7 +20,7 @@ ghost_quota = 3
 next_level = ExtResource("2_byn5r")
 TwoStar = 5.2
 ThreeStar = 4.2
-Gold = 3.67
+Gold = 3.13
 
 [node name="TutDisplay" type="TextureRect" parent="UI" index="4"]
 visible = false

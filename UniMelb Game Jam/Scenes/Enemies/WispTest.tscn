@@ -6,7 +6,7 @@
 
 [node name="Ghost" instance=ExtResource("1_g3d04")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_ecumb")
 hframes = 5
 region_enabled = true

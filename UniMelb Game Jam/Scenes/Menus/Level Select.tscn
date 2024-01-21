@@ -84,9 +84,9 @@ layout_mode = 3
 anchor_top = 1.053
 anchor_right = 0.977
 anchor_bottom = 1.989
-offset_top = 682.125
-offset_right = 1126.0
-offset_bottom = 1289.13
+offset_top = -0.218994
+offset_right = 0.495972
+offset_bottom = 0.253052
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vom47")
@@ -519,45 +519,6 @@ texture_hover = ExtResource("4_ewbqh")
 stretch_mode = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="GridContainer/ButtonLevel9"]
-layout_mode = 0
-offset_left = -4.28571
-offset_top = 162.857
-offset_right = 176.714
-offset_bottom = 221.857
-mouse_filter = 2
-max_value = 3.0
-allow_greater = true
-nine_patch_stretch = true
-texture_under = ExtResource("5_lmmvt")
-texture_progress = ExtResource("6_hwob2")
-
-[node name="ButtonTestLevel2" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 89.0
-offset_top = 260.0
-offset_right = 265.0
-offset_bottom = 436.0
-scale = Vector2(0.7, 0.7)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_sgbkr")
-texture_hover = ExtResource("3_4ebgy")
-script = ExtResource("4_iv863")
-level_scene = "TestLevel2"
-
-[node name="Label" type="Label" parent="ButtonTestLevel2"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 173.0
-offset_bottom = 182.0
-theme_override_fonts/font = ExtResource("7_5q08h")
-theme_override_font_sizes/font_size = 51
-text = "Test
-Level"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="ButtonTestLevel2"]
 layout_mode = 0
 offset_left = -4.28571
 offset_top = 162.857

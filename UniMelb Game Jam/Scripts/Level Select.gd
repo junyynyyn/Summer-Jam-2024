@@ -6,6 +6,9 @@ var progressBar = null
 func _ready():
 	update_progress_bars()
 	update_unlocked_levels()
+	$StarCount.text = "%d/27" % [starcounttotal]
+
+var starcounttotal: int
 
 func update_progress_bars():
 	for level in Global.level_times.keys():
@@ -16,7 +19,7 @@ func update_progress_bars():
 		progressBar.value = Global.level_stars[level]
 		if progressBar.value >= 4:
 			progressBar.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
-			
+		starcounttotal += Global.level_stars[level]
 		#print(progressBar.value)
 		
 func update_unlocked_levels():

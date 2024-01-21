@@ -11,7 +11,6 @@ signal scores_submitted
 func _ready():
 	%FinishScreen.visible = false
 	%"FinishScreen/Star Display/StarParticles".emitting = false
-	update_ghost_count(0)
 
 func set_ghost_count_max(count: int):
 	%GhostCounter.max_value = count
@@ -37,6 +36,10 @@ func display_finish(time: float, current_level_name: String, new_best: bool, lev
 		best_time_msg = "New best!: %.2f seconds" % time
 
 	$"FinishScreen/Best Time".text = best_time_msg
+
+func update_ghost_counter(ghost_quota):
+	var size = Global.player.ghosts_collected.size()
+	$GhostCounter/Label.text = "%d/%d" % [size, ghost_quota]
 
 
 func _input(event):
@@ -127,7 +130,7 @@ func _http_request_completed(_result, _response_code, _headers, body):
 	
 	#Sort function
 	data.sort_custom(sort_entries)
-	
+	data = data.slice(0, 14)
 	for entry in data:
 		var username = entry["username"]
 		var time = entry["time"]

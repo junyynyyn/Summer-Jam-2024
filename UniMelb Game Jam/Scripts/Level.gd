@@ -24,6 +24,7 @@ var can_teleport = true
 var stars = 0
 
 func _ready():
+	$UI.update_ghost_counter(ghost_quota)
 	#Get total ghost count and send to UI
 	ghost_total = $Ghosts.get_child_count()
 	$UI/GhostCounter.max_value = ghost_quota
@@ -37,6 +38,7 @@ func _ready():
 func _process(delta):
 	# Get current ghost count from player and send to UI, also update timer 
 	$UI.update_ghost_count(Global.player.ghosts_collected.size())
+	$UI.update_ghost_counter(ghost_quota)
 	if (timer_active):
 		timer += delta
 	$UI.update_timer(timer)
