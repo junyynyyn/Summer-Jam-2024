@@ -64,7 +64,7 @@ func yeet():
 	var hook_position = Global.hook.global_position
 	var direction = position.direction_to(hook_position)
 	velocity = direction * GRAPPLE_SPEED
-	
+
 func reverse_yeet():
 	velocity = -velocity.normalized() * 150.0
 
@@ -90,8 +90,6 @@ func _on_release_timer_timeout():
 	ghosts_collected.clear()
 	for ghosts in container.get_children():
 		ghosts.queue_free()
-
-
 
 func add_ghost_to_ui(ghost):
 	var texture_rect = TextureRect.new()

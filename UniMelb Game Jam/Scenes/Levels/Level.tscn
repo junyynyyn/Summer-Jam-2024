@@ -70,7 +70,7 @@ position_smoothing_enabled = true
 material = SubResource("CanvasItemMaterial_ksipx")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.164706, 0.164706, 0.164706, 1)
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0oj3i")
