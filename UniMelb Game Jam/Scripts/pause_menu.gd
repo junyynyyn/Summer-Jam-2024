@@ -23,9 +23,6 @@ func _on_level_select_pressed():
 	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 
-func _on_settings_pressed():
-	SceneTransition.change_scene("res://Scenes/Menus/Settings.tscn")
-
 func _on_quit_pressed():
 	get_tree().quit()
 

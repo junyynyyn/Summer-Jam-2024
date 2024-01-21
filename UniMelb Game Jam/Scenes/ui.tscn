@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c0m7tia4eab3p" path="res://Sprites/UI/3 stars.png" id="15_y0qby"]
 [ext_resource type="Texture2D" uid="uid://bv8m2ojx42n2q" path="res://Sprites/UI/single gold star.png" id="16_eglw8"]
 [ext_resource type="PackedScene" uid="uid://c15ai7m52mkbj" path="res://Scenes/Menus/pause_menu.tscn" id="16_xwc3m"]
-[ext_resource type="Theme" path="res://Animations/ui.tres" id="17_skp2h"]
+[ext_resource type="Theme" uid="uid://delu8ktxuye4b" path="res://Animations/ui.tres" id="17_skp2h"]
 
 [sub_resource type="Curve" id="Curve_ss43x"]
 _data = [Vector2(0.0028169, 1), 0.0, 0.0, 0, 0, Vector2(0.639437, 0.564764), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

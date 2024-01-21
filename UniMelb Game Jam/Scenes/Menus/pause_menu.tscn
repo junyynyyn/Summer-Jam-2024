@@ -14,8 +14,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
+offset_top = 12.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -27,10 +27,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 391.0
+offset_left = 412.0
 offset_top = 151.0
-offset_right = -269.0
-offset_bottom = 19.0
+offset_right = -309.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
@@ -63,10 +63,10 @@ vertical_alignment = 1
 
 [node name="Restart" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 401.0
-offset_top = 159.0
-offset_right = 463.0
-offset_bottom = 221.0
+offset_left = 422.0
+offset_top = 158.0
+offset_right = 473.0
+offset_bottom = 209.0
 texture_normal = ExtResource("4_nr443")
 texture_hover = ExtResource("5_ua0qb")
 ignore_texture_size = true
@@ -74,10 +74,10 @@ stretch_mode = 4
 
 [node name="Home" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 689.0
+offset_left = 674.0
 offset_top = 159.0
-offset_right = 751.0
-offset_bottom = 221.0
+offset_right = 725.0
+offset_bottom = 210.0
 texture_normal = ExtResource("6_qf21i")
 texture_hover = ExtResource("7_k5xbh")
 ignore_texture_size = true
@@ -141,32 +141,6 @@ text = "Level Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="GridContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_nsh44")
-
-[node name="Label3" type="Label" parent="GridContainer/Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -36.0
-offset_right = 147.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.764706, 0.231373, 0.352941, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4mm67")
-theme_override_font_sizes/font_size = 45
-text = "Settings
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Quit" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_nsh44")
@@ -197,5 +171,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="GridContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GridContainer/Level Select" to="." method="_on_level_select_pressed"]
-[connection signal="pressed" from="GridContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/Quit" to="." method="_on_quit_pressed"]
