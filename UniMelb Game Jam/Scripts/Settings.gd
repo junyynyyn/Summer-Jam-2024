@@ -10,8 +10,6 @@ func _ready():
 	Global.load_game_data()
 	update_volume_sliders()
 
-
-
 func update_volume_sliders():
 	master_slider.value = Global.master_volume
 	music_slider.value = Global.music_volume

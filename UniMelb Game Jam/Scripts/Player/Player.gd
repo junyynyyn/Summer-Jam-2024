@@ -21,12 +21,17 @@ func _process(_delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	if (velocity.length() <= 10.0):
+		$Particles/DashParticles.emitting = false
 		var cell = Global.tilemap.local_to_map(position)
 		var data = Global.tilemap.get_cell_tile_data(0, cell)
 		if (data.get_custom_data("Pit")):
 			get_tree().reload_current_scene()
+	else:
+		$Particles/DashParticles.emitting = true
 	
 	if direction:
+		if (velocity.x): 
+			$Sprite2D.flip_h = velocity.x < 0
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
 		velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
 	else:
@@ -37,7 +42,6 @@ func _process(_delta):
 		var mouse_pos = get_global_mouse_position()
 		var mouse_direction = Global.hook.global_position.direction_to(mouse_pos)
 		Global.hook.fire(mouse_direction)
-		#GrappleThrowNoise.play()
 		can_fire_hook = false
 		
 	# If ghosts are collected then drag them along with the player

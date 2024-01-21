@@ -8,9 +8,9 @@ var can_grapple = false
 # For registering username to upload scores 
 var username = null
 
-var master_volume:float
-var music_volume: float
-var sfx_volume: float
+var master_volume: float = 1.0
+var music_volume: float = 0.2
+var sfx_volume: float = 1.0
 
 func _ready():
 	load_game_data()
@@ -41,7 +41,6 @@ func save_game_data():
 	var json_string = JSON.stringify(save_data)
 	save_game.store_string(json_string)
 	save_game.close()
-
 
 func load_game_data():
 	if not FileAccess.file_exists("user://game_data.json"):
