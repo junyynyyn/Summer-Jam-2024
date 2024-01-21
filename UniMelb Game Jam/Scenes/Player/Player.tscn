@@ -121,7 +121,8 @@ texture = ExtResource("3_vmks6")
 [node name="EruptionParticles" type="CPUParticles2D" parent="Particles"]
 scale = Vector2(4, 4)
 emitting = false
-amount = 32
+amount = 40
+lifetime = 0.2
 one_shot = true
 emission_shape = 1
 emission_sphere_radius = 5.0
@@ -129,6 +130,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 radial_accel_min = 40.0
 radial_accel_max = 80.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color = Color(0.905882, 0.713726, 0.176471, 1)
 
 [node name="DrawingParticles" type="CPUParticles2D" parent="Particles"]

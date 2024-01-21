@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp51v2otqqe1u"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/HookPoint.gd" id="1_8qauf"]
-[ext_resource type="Texture2D" uid="uid://c3vo882qi1yj0" path="res://Sprites/small beacon.png" id="1_aah51"]
+[ext_resource type="Texture2D" uid="uid://bv0e0aoybw27c" path="res://Sprites/Lamp.png" id="2_lor0a"]
 [ext_resource type="Texture2D" uid="uid://bhnnr6hg3dx32" path="res://Sprites/Light.png" id="3_aoxd2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbe3w"]
@@ -16,7 +16,7 @@ shape = SubResource("CircleShape2D_fbe3w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_aah51")
+texture = ExtResource("2_lor0a")
 
 [node name="HookCooldown" type="Timer" parent="."]
 wait_time = 0.5
