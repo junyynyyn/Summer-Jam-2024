@@ -116,7 +116,7 @@ func _http_request_completed(_result, _response_code, _headers, body):
 	var _json_result = json.parse(body_string)
 	var _json_result2 = json.parse(json.data)
 	var data = json.data
-	
+	print(data)
 	#Clear any existing debug entries in the leaderboard
 	for children in leaderboard_names_container.get_children():
 		children.queue_free()
