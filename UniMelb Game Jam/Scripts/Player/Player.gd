@@ -27,6 +27,7 @@ func _process(_delta):
 			get_tree().reload_current_scene()
 	
 	if direction:
+		$AnimationPlayer.play("Run")
 		if (velocity.x): 
 			$Sprite2D.flip_h = velocity.x < 0
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
