@@ -56,6 +56,6 @@ position_smoothing_enabled = true
 material = SubResource("CanvasItemMaterial_ksipx")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 
 [connection signal="next_scene" from="UI" to="." method="_on_ui_next_scene"]

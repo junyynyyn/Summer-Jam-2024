@@ -45,8 +45,9 @@ wait_time = 0.3
 one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.2
+energy = 0.8
 texture = ExtResource("3_d0nsb")
+texture_scale = 2.0
 
 [node name="Audio" type="Node2D" parent="."]
 

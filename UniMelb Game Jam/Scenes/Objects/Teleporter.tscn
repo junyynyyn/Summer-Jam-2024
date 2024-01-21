@@ -25,8 +25,8 @@ shape = SubResource("CapsuleShape2D_e12sd")
 wait_time = 2.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.25
 texture = ExtResource("3_jv7iu")
+texture_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TeleportCooldown" to="." method="_on_teleport_cooldown_timeout"]
