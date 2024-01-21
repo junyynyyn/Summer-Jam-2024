@@ -9,4 +9,5 @@ func _ready():
 
 func _on_pressed():
 	if (level_scene):
+		UiSounds.play()
 		SceneTransition.change_scene(base_level_string + level_scene + ".tscn")

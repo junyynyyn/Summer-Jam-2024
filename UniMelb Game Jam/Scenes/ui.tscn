@@ -505,7 +505,7 @@ clip_text = true
 position = Vector2(72, 8)
 scale = Vector2(0.0683595, 0.0683595)
 sprite_frames = SubResource("SpriteFrames_kkhyn")
-frame_progress = 0.860491
+frame_progress = 0.961858
 
 [node name="Times" type="VBoxContainer" parent="FinishScreen/Leaderboard/HBoxContainer"]
 clip_contents = true

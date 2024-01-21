@@ -6,4 +6,5 @@ func _ready():
 	self.connect("pressed", _on_pressed)
 
 func _on_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")

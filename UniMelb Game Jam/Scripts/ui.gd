@@ -66,18 +66,20 @@ func unpause_game():
 		$"Pause Menu".visible = false
 
 func _on_replay_button_pressed():
+	UiSounds.play()
 	get_tree().paused = false
 	%FinishScreen.visible = false
 	get_tree().reload_current_scene()
 
 func _on_next_level_button_pressed():
+	UiSounds.play()
 	get_tree().paused = false
 	%FinishScreen.visible = false
 	emit_signal("next_scene")
 
 func _on_level_select_button_pressed():
 	get_tree().paused = false
-	UiSounds.play()
+	#UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 func reward_stars(stars):
