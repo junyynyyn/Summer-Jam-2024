@@ -16,22 +16,27 @@ func _process(_delta):
 
 
 func _on_continue_pressed():
+	UiSounds.play()
 	ui.unpause_game()
 
 func _on_level_select_pressed():
 	level.get_tree().paused = false
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 
 func _on_quit_pressed():
+	UiSounds.play()
 	get_tree().quit()
 
 
 func _on_restart_pressed():
+	UiSounds.play()
 	get_tree().paused = false
 	%FinishScreen.visible = false
 	get_tree().reload_current_scene()
 
 
 func _on_home_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")

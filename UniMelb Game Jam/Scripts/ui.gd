@@ -77,7 +77,8 @@ func _on_next_level_button_pressed():
 
 func _on_level_select_button_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file(level_select_screen)
+	UiSounds.play()
+	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 func reward_stars(stars):
 	stardisplay.value = stars
@@ -105,6 +106,7 @@ func check_scores(level_number):
 	var error = http_request.request(("https://phantomsnatcher.zematoxic.dev/level/") + level_number)
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
+
 
 
 @onready var leaderboard_names_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/HBoxContainer/Usernames")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=43 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/UI/Ghost Bar Background.png" id="3_x4nxy"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bv8m2ojx42n2q" path="res://Sprites/UI/single gold star.png" id="16_eglw8"]
 [ext_resource type="PackedScene" uid="uid://c15ai7m52mkbj" path="res://Scenes/Menus/pause_menu.tscn" id="16_xwc3m"]
 [ext_resource type="Theme" uid="uid://delu8ktxuye4b" path="res://Animations/ui.tres" id="17_skp2h"]
+[ext_resource type="Texture2D" uid="uid://dl1bm6vo0ox5c" path="res://Sprites/ZZ5H.png" id="18_chx8y"]
 
 [sub_resource type="Curve" id="Curve_ss43x"]
 _data = [Vector2(0.0028169, 1), 0.0, 0.0, 0, 0, Vector2(0.639437, 0.564764), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -80,6 +81,98 @@ scale_over_velocity_curve = SubResource("CurveXYZTexture_2ujsy")
 alpha_curve = SubResource("CurveTexture_476cr")
 hue_variation_min = 0.2
 hue_variation_max = 0.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb6p2"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eejr3"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s56f"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ydsq"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahrsv"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtx52"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(2560, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7w5s"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(3072, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fkdw"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(3584, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ce11"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(4096, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1upr"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(4608, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3lqk"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(5120, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twssm"]
+atlas = ExtResource("18_chx8y")
+region = Rect2(5632, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkhyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mb6p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eejr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s56f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ydsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahrsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtx52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7w5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fkdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ce11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1upr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3lqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twssm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -221,17 +314,14 @@ expand_mode = 1
 
 [node name="LevelCompleteText" type="Label" parent="FinishScreen"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 407.0
-offset_top = 100.0
-offset_right = 739.0
-offset_bottom = 200.0
+offset_left = 417.0
+offset_top = 129.0
+offset_right = 749.0
+offset_bottom = 229.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_8nccg")
 theme_override_font_sizes/font_size = 26
 text = "Level Complete
@@ -408,26 +498,14 @@ layout_mode = 2
 theme = ExtResource("17_skp2h")
 theme_override_fonts/font = ExtResource("7_8nccg")
 theme_override_font_sizes/font_size = 14
-text = "There was an"
+text = "Loading.."
 clip_text = true
 
-[node name="Label2" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
-layout_mode = 2
-theme = ExtResource("17_skp2h")
-theme_override_fonts/font = ExtResource("7_8nccg")
-theme_override_font_sizes/font_size = 14
-text = "connecting to"
-clip_text = true
-text_overrun_behavior = 3
-
-[node name="Label3" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
-layout_mode = 2
-theme = ExtResource("17_skp2h")
-theme_override_fonts/font = ExtResource("7_8nccg")
-theme_override_font_sizes/font_size = 14
-text = "leaderboard"
-clip_text = true
-text_overrun_behavior = 3
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FinishScreen/Leaderboard/HBoxContainer/Usernames"]
+position = Vector2(72, 8)
+scale = Vector2(0.0683595, 0.0683595)
+sprite_frames = SubResource("SpriteFrames_kkhyn")
+frame_progress = 0.860491
 
 [node name="Times" type="VBoxContainer" parent="FinishScreen/Leaderboard/HBoxContainer"]
 clip_contents = true
@@ -435,24 +513,6 @@ custom_minimum_size = Vector2(100, 15)
 layout_direction = 2
 layout_mode = 2
 theme = ExtResource("17_skp2h")
-
-[node name="Label" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Times"]
-clip_contents = true
-layout_mode = 2
-theme = ExtResource("17_skp2h")
-theme_override_fonts/font = ExtResource("7_8nccg")
-theme_override_font_sizes/font_size = 14
-text = "error "
-clip_text = true
-
-[node name="Label2" type="Label" parent="FinishScreen/Leaderboard/HBoxContainer/Times"]
-layout_mode = 2
-theme = ExtResource("17_skp2h")
-theme_override_fonts/font = ExtResource("7_8nccg")
-theme_override_font_sizes/font_size = 14
-text = "the"
-clip_text = true
-text_overrun_behavior = 3
 
 [node name="Timer Grid" type="GridContainer" parent="."]
 offset_left = 14.0

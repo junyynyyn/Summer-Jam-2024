@@ -15,19 +15,24 @@ func request_username():
 	$Menu.visible = false
 
 func _on_play_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
 
 func _on_quit_pressed():
+	UiSounds.play()
 	get_tree().quit()
 
 func _on_settings_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/Settings.tscn")
 
 
 func _on_reset_pressed():
+	UiSounds.play()
 	prompt_reset_name()
 
 func prompt_reset_name():
+	UiSounds.play()
 	$ResetConfirmation.visible = true
 
 
@@ -50,11 +55,9 @@ func _on_line_edit_text_submitted(new_text):
 		Global.save_game_data()
 
 
-func _on_scores_pressed():
-	pass # Replace with function body.
-
 
 func _on_scores_reset_pressed():
+	UiSounds.play()
 	var temp_username = Global.username
 	var able_to_grapple: bool = false
 	if Global.can_grapple:
@@ -69,14 +72,17 @@ func _on_scores_reset_pressed():
 
 
 func _on_everything_reset_pressed():
+	UiSounds.play()
 	Global.clear_game_data()
 	request_username()
 	$ResetConfirmation.visible = false
 
 
 func _on_cancel_reset_pressed():
+	UiSounds.play()
 	$ResetConfirmation.visible = false
 
 
 func _on_credits_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/Credits.tscn")
