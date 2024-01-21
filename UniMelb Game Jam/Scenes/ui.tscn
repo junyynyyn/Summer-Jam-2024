@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=45 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/UI/Ghost Bar Background.png" id="3_x4nxy"]
@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c15ai7m52mkbj" path="res://Scenes/Menus/pause_menu.tscn" id="16_xwc3m"]
 [ext_resource type="Theme" uid="uid://delu8ktxuye4b" path="res://Animations/ui.tres" id="17_skp2h"]
 [ext_resource type="Texture2D" uid="uid://dl1bm6vo0ox5c" path="res://Sprites/ZZ5H.png" id="18_chx8y"]
+[ext_resource type="Texture2D" uid="uid://dkce7v7hxoocr" path="res://Sprites/UI/Default.png" id="21_homnm"]
+[ext_resource type="Texture2D" uid="uid://bqtscy6k62uy7" path="res://Sprites/UI/Hover.png" id="22_rdgm1"]
 
 [sub_resource type="Curve" id="Curve_ss43x"]
 _data = [Vector2(0.0028169, 1), 0.0, 0.0, 0, 0, Vector2(0.639437, 0.564764), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -208,6 +210,7 @@ grow_vertical = 0
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchor_left = 0.32
 anchor_top = 0.209
@@ -537,6 +540,17 @@ vertical_alignment = 1
 [node name="Pause Menu" parent="." instance=ExtResource("16_xwc3m")]
 visible = false
 
+[node name="PauseButton" type="TextureButton" parent="."]
+offset_left = 1059.0
+offset_top = 560.0
+offset_right = 1129.0
+offset_bottom = 630.0
+texture_normal = ExtResource("21_homnm")
+texture_hover = ExtResource("22_rdgm1")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="FinishScreen/GridContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="FinishScreen/GridContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="FinishScreen/GridContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

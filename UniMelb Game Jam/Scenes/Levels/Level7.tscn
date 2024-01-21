@@ -64,10 +64,10 @@ position = Vector2(11, 383)
 position = Vector2(375, 620)
 
 [node name="HookPoint" parent="Ghosts" index="9" instance=ExtResource("3_wayfx")]
-position = Vector2(18, 624)
+position = Vector2(16, 624)
 
 [node name="HookPoint2" parent="Ghosts" index="10" instance=ExtResource("3_wayfx")]
-position = Vector2(749, 625)
+position = Vector2(752, 624)
 
 [node name="Running Ghost" parent="Ghosts" index="11" instance=ExtResource("5_udbc6")]
 position = Vector2(639, 178)

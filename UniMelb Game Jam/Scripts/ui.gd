@@ -149,3 +149,6 @@ func sort_entries(a, b):
 	if a["time"] < b["time"]:
 		return true
 	return false
+
+func _on_pause_button_pressed():
+	pause_game()
