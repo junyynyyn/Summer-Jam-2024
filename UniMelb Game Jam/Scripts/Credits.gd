@@ -8,4 +8,5 @@ func _input(event):
 
 
 func _on_texture_button_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn") # Replace with function body.

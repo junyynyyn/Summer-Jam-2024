@@ -60,9 +60,8 @@ func complete_level():
 	var new_best = false
 	if level_name not in Global.level_times or timer < Global.level_times[level_name]:
 		new_best = true
-	
 	#Global.unlock_next_level(level_number)
-	$UI.display_finish(timer, level_name, new_best)
+	$UI.display_finish(timer, level_name, new_best, level_number)
 	$"UI/Timer Grid".visible = false
 	
 	get_tree().paused = true

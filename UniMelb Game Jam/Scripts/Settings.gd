@@ -20,11 +20,9 @@ func _process(_delta):
 	pass
 
 func _on_home_pressed():
+	UiSounds.play()
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")
 
-
-func _on_back_button_pressed():
-	print("I need a back button to be implemented")
 
 
 func _on_master_value_changed(value: float) -> void:
@@ -39,5 +37,6 @@ func _on_music_changed(value: float) -> void:
 
 
 func _on_sound_effects_changed(value: float) -> void:
+	UiSounds.play()
 	Global.sfx_volume = value
 	Global.save_game_data()
