@@ -10,7 +10,7 @@
 [node name="Level" groups=["Level8"] instance=ExtResource("1_o5ccu")]
 level_name = "Level8"
 level_number = "8"
-ghost_quota = 9
+ghost_quota = 10
 next_level = ExtResource("2_k0gji")
 
 [node name="TileMap" parent="." index="2"]

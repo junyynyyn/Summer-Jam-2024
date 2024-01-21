@@ -10,7 +10,7 @@ level_name = "Level2"
 level_number = "2"
 ghost_quota = 4
 next_level = ExtResource("2_h0387")
-TwoStar = 3.5
+TwoStar = 5.0
 ThreeStar = 3.2
 Gold = 2.7
 
