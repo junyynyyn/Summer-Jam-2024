@@ -123,9 +123,10 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Menu"]
 layout_mode = 0
-offset_top = -664.0
-offset_right = 1171.0
-offset_bottom = 680.0
+offset_left = -262.0
+offset_top = -683.155
+offset_right = 1224.0
+offset_bottom = 660.845
 texture = ExtResource("4_hw16i")
 expand_mode = 1
 
