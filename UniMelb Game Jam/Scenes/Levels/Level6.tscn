@@ -12,8 +12,8 @@ level_name = "Level6"
 level_number = "6"
 ghost_quota = 15
 next_level = ExtResource("2_gn7ut")
-TwoStar = 28.0
-ThreeStar = 25.0
+TwoStar = 25.0
+ThreeStar = 23.0
 Gold = 20.0
 
 [node name="TileMap" parent="." index="1"]

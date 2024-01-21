@@ -25,7 +25,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_iycj8"]
 resource_name = "Scroll Up"
-length = 10.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,7 +36,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 9.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(556, 304), Vector2(556, -384)]
+"values": [Vector2(556, 304), Vector2(556, -425.265)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(14.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_texture_button_pressed"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0ciq"]
@@ -147,7 +161,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
 text = "Jaxon (Leonados)
-Silent GUI Assets - @Prinbles on Itch.io"
+Silent GUI Assets - @Prinbles on Itch.io
+Mouse Icon - @Ruthenium on Itch.io"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -183,7 +198,8 @@ offset_bottom = 91.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
-text = "Main Theme - @WavebeatsMusic"
+text = "Main Theme - @WavebeatsMusic
+UI sounds  - @KennyNL on Twitter"
 horizontal_alignment = 1
 vertical_alignment = 1
 

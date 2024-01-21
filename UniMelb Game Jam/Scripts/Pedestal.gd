@@ -3,12 +3,16 @@ var is_in_range = false
 var item_already_grabbed = false
 var teaching_player
 
+func _ready():
+	if Global.can_grapple:
+		$Talisman.visible = false
+		$Tooltip.visible = false
+
 func _on_label_display_range_body_entered(body):
 	if body.is_in_group("Player"):
 		if not item_already_grabbed:
 			is_in_range = true
 			$Tooltip.visible = true
-
 
 func _on_label_display_range_body_exited(body):
 	if body.is_in_group("Player"):
