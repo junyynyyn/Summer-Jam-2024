@@ -44,17 +44,20 @@ position = Vector2(1233, 655)
 [node name="HookPoint6" parent="Objects" index="7" instance=ExtResource("3_p7722")]
 position = Vector2(1996, 175)
 
-[node name="HookPoint3" parent="Objects" index="8" instance=ExtResource("3_p7722")]
+[node name="HookPoint10" parent="Objects" index="8" instance=ExtResource("3_p7722")]
+position = Vector2(2136, 175)
+
+[node name="HookPoint3" parent="Objects" index="9" instance=ExtResource("3_p7722")]
 position = Vector2(524, 177)
 
-[node name="TeleportPad" parent="Objects" index="9" node_paths=PackedStringArray("target_teleporter") instance=ExtResource("4_70ly7")]
+[node name="TeleportPad" parent="Objects" index="10" node_paths=PackedStringArray("target_teleporter") instance=ExtResource("4_70ly7")]
 position = Vector2(1703, 176)
 target_teleporter = NodePath("../TeleportPad2")
 
-[node name="TeleportPad2" parent="Objects" index="10" instance=ExtResource("4_70ly7")]
+[node name="TeleportPad2" parent="Objects" index="11" instance=ExtResource("4_70ly7")]
 position = Vector2(1708, 564)
 
-[node name="TeleportPad3" parent="Objects" index="11" node_paths=PackedStringArray("target_teleporter") instance=ExtResource("4_70ly7")]
+[node name="TeleportPad3" parent="Objects" index="12" node_paths=PackedStringArray("target_teleporter") instance=ExtResource("4_70ly7")]
 position = Vector2(2192, 175)
 target_teleporter = NodePath("../TeleportPad2")
 
@@ -86,21 +89,18 @@ position = Vector2(1361, 655)
 position = Vector2(1232, 555)
 
 [node name="Running Ghost8" parent="Ghosts" index="9" instance=ExtResource("4_i68eu")]
-position = Vector2(2096, 174)
+position = Vector2(2066, 173)
 
-[node name="Running Ghost9" parent="Ghosts" index="10" instance=ExtResource("4_i68eu")]
-position = Vector2(2096, 174)
-
-[node name="Teleporting Ghost" parent="Ghosts" index="11" node_paths=PackedStringArray("teleport_point_1", "teleport_point_2") instance=ExtResource("6_6d0dg")]
+[node name="Teleporting Ghost" parent="Ghosts" index="10" node_paths=PackedStringArray("teleport_point_1", "teleport_point_2") instance=ExtResource("6_6d0dg")]
 position = Vector2(1550, 79)
 teleport_point_1 = NodePath("../Marker2D")
 teleport_point_2 = NodePath("../Marker2D2")
 
-[node name="Mirrored Ghost" parent="Ghosts" index="12" instance=ExtResource("7_iv3yp")]
+[node name="Mirrored Ghost" parent="Ghosts" index="11" instance=ExtResource("7_iv3yp")]
 position = Vector2(1905, 460)
 
-[node name="Marker2D" type="Marker2D" parent="Ghosts" index="13"]
+[node name="Marker2D" type="Marker2D" parent="Ghosts" index="12"]
 position = Vector2(1549, 78)
 
-[node name="Marker2D2" type="Marker2D" parent="Ghosts" index="14"]
+[node name="Marker2D2" type="Marker2D" parent="Ghosts" index="13"]
 position = Vector2(1646, 176)
