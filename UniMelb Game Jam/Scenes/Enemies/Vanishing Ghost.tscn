@@ -19,10 +19,13 @@ _data = {
 [node name="Vanishing Ghost" instance=ExtResource("1_4e10c")]
 script = ExtResource("2_fhwha")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_r1f0b")
 hframes = 5
 vframes = 2
+
+[node name="PointLight2D" parent="Sprite2D" index="0"]
+color = Color(0.380392, 0.380392, 0.380392, 1)
 
 [node name="InvisibilityDuration" type="Timer" parent="." index="3"]
 wait_time = 6.0

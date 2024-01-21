@@ -21,13 +21,10 @@ func _process(_delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	if (velocity.length() <= 10.0):
-		$Particles/DashParticles.emitting = false
 		var cell = Global.tilemap.local_to_map(position)
 		var data = Global.tilemap.get_cell_tile_data(0, cell)
 		if (data.get_custom_data("Pit")):
 			get_tree().reload_current_scene()
-	else:
-		$Particles/DashParticles.emitting = true
 	
 	if direction:
 		if (velocity.x): 
@@ -47,6 +44,7 @@ func _process(_delta):
 	# If ghosts are collected then drag them along with the player
 	if (ghosts_collected):
 		$Particles/DrawingParticles.emitting = true
+		$Particles/DrawingParticles.speed_scale = $ReleaseTimer.wait_time - $ReleaseTimer.time_left
 		for ghosts in ghosts_collected:
 			ghosts.position = position
 	else:
@@ -98,17 +96,17 @@ func _on_release_timer_timeout():
 func add_ghost_to_ui(ghost):
 	var texture_rect = TextureRect.new()
 	if ghost.name == "Mirrored Ghost":
-		texture_rect.texture = load("res://Sprites/Ghosts/WispGreen1stFrame.png")
+		texture_rect.texture = load("res://Sprites/Ghosts/WispRed1stFrame.png")
 	elif ghost.name == "Turning Ghost":
 		texture_rect.texture = load("res://Sprites/Ghosts/WispBlue1stFrame.png")
 	elif ghost.name == "Running Ghost":
-		texture_rect.texture = load("res://Sprites/Ghosts/WispRed1stFrame.png")
+		texture_rect.texture = load("res://Sprites/Ghosts/WispBlue1stFrame.png")
 	elif ghost.name == "Vanishing Ghost":
 		texture_rect.texture = load("res://Sprites/Ghosts/WispGrey1stFrame.png")
 	elif ghost.name == "Teleporting Ghost":
 		texture_rect.texture = load("res://Sprites/Ghosts/WispPurple1stFrame.png")
 	elif ghost.name == "Tutorial Ghost":
-		texture_rect.texture = load("res://Sprites/ghost.png")
+		texture_rect.texture = load("res://Sprites/Ghosts/WispBlue1stFrame.png")
 	#else:
 		#print("Missing Ghost Texture")
 	texture_rect.size = Vector2(10, 10)
