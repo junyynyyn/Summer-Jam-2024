@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmjbjdvhvqpls"]
+[gd_scene load_steps=11 format=3 uid="uid://cmjbjdvhvqpls"]
 
 [ext_resource type="PackedScene" uid="uid://dubob17g2sofp" path="res://Scenes/Levels/Level.tscn" id="1_jdcf6"]
 [ext_resource type="PackedScene" uid="uid://dq5u3limjb855" path="res://Scenes/Levels/Level2.tscn" id="2_byn5r"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://h18l58ni77lq" path="res://Sprites/UI/Title-less panel.png" id="3_uq3vk"]
 [ext_resource type="Texture2D" uid="uid://d04a2mgrajs6r" path="res://Sprites/Unused/light.webp" id="3_ysdjt"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="4_gaefc"]
-[ext_resource type="PackedScene" uid="uid://ii8dc3g05ti5" path="res://Scenes/Enemies/Turning Ghost.tscn" id="4_mbat5"]
 [ext_resource type="PackedScene" uid="uid://k0ennervu7tv" path="res://Scenes/Enemies/Tutorial Ghost.tscn" id="5_2kt7n"]
 [ext_resource type="PackedScene" uid="uid://wwgwxru6aw8v" path="res://Scenes/Objects/Pedestal.tscn" id="7_l2qfa"]
 [ext_resource type="Script" path="res://Scripts/Tutorial Prompts.gd" id="10_8b27o"]
@@ -62,8 +61,8 @@ layer_1/tile_data = PackedInt32Array(-262137, 131076, 1, -196601, 131076, 1, -13
 [node name="Running Ghost" parent="Ghosts" index="0" instance=ExtResource("2_lvkg5")]
 position = Vector2(111, 177)
 
-[node name="Turning Ghost" parent="Ghosts" index="1" instance=ExtResource("4_mbat5")]
-position = Vector2(110, 468)
+[node name="Running Ghost2" parent="Ghosts" index="1" instance=ExtResource("2_lvkg5")]
+position = Vector2(114, 480)
 
 [node name="Tutorial Ghost" parent="Ghosts" index="2" instance=ExtResource("5_2kt7n")]
 position = Vector2(112, -28)
