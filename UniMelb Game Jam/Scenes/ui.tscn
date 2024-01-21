@@ -209,13 +209,15 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="GhostCounter"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 38.0
 offset_top = 53.0
-offset_right = 84.0
+offset_right = 92.0
 offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("7_8nccg")
 theme_override_font_sizes/font_size = 26
 text = "0/5"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FinishScreen" type="Control" parent="."]
 unique_name_in_owner = true

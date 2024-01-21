@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbq25uwlplk1x"]
+[gd_scene load_steps=3 format=3 uid="uid://bbq25uwlplk1x"]
 
 [ext_resource type="AudioStream" uid="uid://cgrvlahecy2do" path="res://Audio/Halloween Funk Party - WavebeatsMusic.mp3" id="1_p1tv3"]
+[ext_resource type="Script" path="res://Audio/background_music.gd" id="2_iwm5p"]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_p1tv3")
 autoplay = true
 bus = &"Music"
+script = ExtResource("2_iwm5p")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

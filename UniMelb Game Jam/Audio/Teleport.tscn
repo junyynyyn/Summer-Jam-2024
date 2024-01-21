@@ -4,4 +4,5 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_hq01k")
+volume_db = -20.085
 bus = &"Sound Effects"
