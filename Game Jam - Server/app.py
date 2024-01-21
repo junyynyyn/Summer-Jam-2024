@@ -1,6 +1,8 @@
 from flask import Flask, request
 from flask_restful import Resource, Api, reqparse, fields, marshal_with
 from pymongo import MongoClient
+import json
+from bson.json_util import dumps
 
 app = Flask(__name__)
 api = Api(app)
@@ -35,7 +37,8 @@ def update_timing(level_id, username, time):
 
 def get_timings(level_id):
     collection = times_db.times
-    data = collection.find({"level": level_id})
+    data = dumps(list(collection.find({"level": level_id})))
+    print(type(data))
     return data
 
 def get_timing(level_id, username):
@@ -49,7 +52,7 @@ class Level(Resource):
     def get(self, level_id):
         data = get_timings(level_id)
         print(data)
-        return {}
+        return data
     
     def post(self, level_id):
         args = level_post_args.parse_args()
@@ -65,4 +68,5 @@ class Level(Resource):
 api.add_resource(Level, "/level/<int:level_id>")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host="0.0.0.0", ssl_context='adhoc'
+)
