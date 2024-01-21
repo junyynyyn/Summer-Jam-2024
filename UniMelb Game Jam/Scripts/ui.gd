@@ -109,6 +109,7 @@ func check_scores(level_number):
 @onready var leaderboard_names_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/HBoxContainer/Usernames")
 @onready var leaderboard_times_container = get_node("/root/Level/UI/FinishScreen/Leaderboard/HBoxContainer/Times")
 
+
 func _http_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	var body_string = body.get_string_from_utf8()
