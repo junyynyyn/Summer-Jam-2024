@@ -22,9 +22,10 @@ func update_ghost_count(count: int):
 func update_timer(time: float):
 	%Timer.text = ("%.2f" % time)
 
-func display_finish(time: float, current_level_name: String, new_best: bool):
+func display_finish(time: float, current_level_name: String, new_best: bool, level_number: String):
 	can_pause = false
 	$FinishScreen.visible = true
+	$FinishScreen/LevelCompleteText.text = "You completed level " + level_number + "!"
 	$FinishScreen/TimeDisplay.text = "%.2f seconds" % time
 
 	var best_time = Global.level_times.get(current_level_name)
@@ -116,7 +117,7 @@ func _http_request_completed(_result, _response_code, _headers, body):
 	var _json_result = json.parse(body_string)
 	var _json_result2 = json.parse(json.data)
 	var data = json.data
-	print(data)
+	#print(data)
 	#Clear any existing debug entries in the leaderboard
 	for children in leaderboard_names_container.get_children():
 		children.queue_free()
