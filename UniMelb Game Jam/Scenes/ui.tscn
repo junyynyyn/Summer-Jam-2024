@@ -1,10 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://dk8igy0qx447g"]
+[gd_scene load_steps=44 format=3 uid="uid://dk8igy0qx447g"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_fexbs"]
 [ext_resource type="Texture2D" uid="uid://cidmb0q3ylax1" path="res://Sprites/UI/Ghost Bar Background.png" id="3_x4nxy"]
 [ext_resource type="Texture2D" uid="uid://ba6se6q8b8u2b" path="res://Sprites/UI/Ghost Bar Bar.png" id="4_epncs"]
 [ext_resource type="Theme" uid="uid://brfue4ywyoga4" path="res://Sprites/UI/kenneyUI.tres" id="5_d3wue"]
-[ext_resource type="FontFile" uid="uid://5jcjgbxbe1ym" path="res://Sprites/UI/Tektur-Regular.ttf" id="6_6gca8"]
 [ext_resource type="Texture2D" uid="uid://d4ftdkg37tluw" path="res://Sprites/UI/3 Golden Stars.png" id="6_lja6r"]
 [ext_resource type="Texture2D" uid="uid://bql70b6duuls4" path="res://Sprites/UI/Big Panel.png" id="6_sf4o1"]
 [ext_resource type="FontFile" uid="uid://b6pvaw02h3ynf" path="res://Sprites/UI/JosefinSans-Regular.ttf" id="7_8nccg"]
@@ -469,7 +468,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 881.0
 offset_top = 117.0
-offset_right = 1081.0
+offset_right = 1095.0
 offset_bottom = 474.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -528,22 +527,26 @@ layout_mode = 2
 theme = ExtResource("17_skp2h")
 
 [node name="Timer Grid" type="GridContainer" parent="."]
-visible = false
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 103.0
-offset_bottom = 51.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 16.0
+offset_right = 44.5
+offset_bottom = 56.0
+grow_horizontal = 2
 columns = 2
 
 [node name="Label" type="Label" parent="Timer Grid"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_6gca8")
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_8nccg")
 text = "Time:"
 
 [node name="Timer" type="Label" parent="Timer Grid"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_6gca8")
+theme_override_fonts/font = ExtResource("7_8nccg")
 text = "Timer"
 horizontal_alignment = 1
 vertical_alignment = 1

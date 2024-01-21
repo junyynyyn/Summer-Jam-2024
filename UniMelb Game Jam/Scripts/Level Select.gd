@@ -20,6 +20,8 @@ func update_progress_bars():
 		if progressBar.value >= 4:
 			progressBar.texture_progress=ResourceLoader.load("res://Sprites/UI/3 Golden Stars.png")
 		starcounttotal += Global.level_stars[level]
+		if starcounttotal >= 28:
+			$StarCount/TextureRect.texture = ResourceLoader.load("res://Sprites/UI/single gold star.png")
 		#print(progressBar.value)
 		
 func update_unlocked_levels():

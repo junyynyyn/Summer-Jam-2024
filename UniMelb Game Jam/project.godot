@@ -21,6 +21,7 @@ Global="*res://Scripts/Global.gd"
 BackgroundMusic="*res://Audio/background_music.tscn"
 SceneTransition="*res://Scenes/Menus/SceneTransition.tscn"
 UiSounds="*res://Audio/UI Sounds.tscn"
+TeleportNoise="*res://Audio/Teleport.tscn"
 
 [display]
 

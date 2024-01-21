@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://by0ueq21ye0tl"]
+
+[ext_resource type="AudioStream" uid="uid://rxybq70jc67" path="res://Audio/teleport-14639.mp3" id="1_hq01k"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_hq01k")
+bus = &"Sound Effects"

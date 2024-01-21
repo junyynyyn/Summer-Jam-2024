@@ -39,6 +39,11 @@ func prompt_reset_name():
 func _on_line_edit_text_submitted(new_text):
 	var allowed_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 	var is_valid = true
+	
+	if new_text == "":
+		$UsernameRequest/CharacterError.visible = true
+		is_valid = false
+		return
 
 	for chars in new_text:
 		if chars not in allowed_chars:

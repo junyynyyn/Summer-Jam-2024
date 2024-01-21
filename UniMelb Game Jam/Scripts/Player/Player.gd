@@ -55,7 +55,6 @@ func _process(_delta):
 	if ($GhostCollectionArea.has_overlapping_bodies()):
 		for ghost in $GhostCollectionArea.get_overlapping_bodies():
 			capture_ghost(ghost)
-	
 	move_and_slide()
 	
 func set_hook_fire():
