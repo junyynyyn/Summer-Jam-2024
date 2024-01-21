@@ -20,9 +20,8 @@ debug_color = Color(0, 0.6, 0.701961, 0.0705882)
 texture = ExtResource("2_yihjj")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
-energy = 0.25
 texture = ExtResource("3_sp3pq")
-texture_scale = 0.2
+texture_scale = 0.5
 
 [node name="CaptureCooldownTimer" type="Timer" parent="."]
 one_shot = true

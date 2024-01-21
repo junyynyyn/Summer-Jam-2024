@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dubob17g2sofp"]
+[gd_scene load_steps=9 format=3 uid="uid://dubob17g2sofp"]
 
 [ext_resource type="TileSet" uid="uid://boeyacwn3tnje" path="res://Scenes/Levels/TileSet.tres" id="1_2h1ej"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_hmm30"]
@@ -12,22 +12,8 @@
 blend_mode = 1
 light_mode = 1
 
-[sub_resource type="Environment" id="Environment_0oj3i"]
-background_mode = 3
-glow_enabled = true
-glow_levels/1 = 1.4
-glow_levels/2 = 1.1
-glow_levels/4 = 1.9
-glow_strength = 1.5
-
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hmm30")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0, 0, 0, 1)
-energy = 0.6
-blend_mode = 2
-height = 1.0
 
 [node name="UI" parent="." instance=ExtResource("3_ch5gh")]
 
@@ -71,8 +57,5 @@ material = SubResource("CanvasItemMaterial_ksipx")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0196078, 0.0196078, 0.0196078, 1)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_0oj3i")
 
 [connection signal="next_scene" from="UI" to="." method="_on_ui_next_scene"]
