@@ -33,6 +33,7 @@ func _process(_delta):
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
 		velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
 	else:
+		$AnimationPlayer.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, DECELERATION)
 		velocity.y = move_toward(velocity.y, 0, DECELERATION)
 	
