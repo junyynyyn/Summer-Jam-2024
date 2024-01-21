@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6sqfe2iy3t3"]
+[gd_scene load_steps=7 format=3 uid="uid://b6sqfe2iy3t3"]
 
 [ext_resource type="Texture2D" uid="uid://dyc4bjvxl8ag8" path="res://Sprites/UI/Big@3x.png" id="1_1upta"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_ww6k2"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c66fu2ywu4ms2" path="res://Sprites/UI/Home Button.png" id="2_h3rpq"]
 [ext_resource type="Texture2D" uid="uid://cl5vgo46f5wj3" path="res://Sprites/UI/Home Button Hover.png" id="3_7se7m"]
 [ext_resource type="PackedScene" uid="uid://b8mnu874wf7pu" path="res://Scenes/Levels/Volume Slider.tscn" id="3_nah48"]
-[ext_resource type="Texture2D" uid="uid://b2o4hsfmm4ml0" path="res://Sprites/UI/Left Arrow.png" id="7_rycjf"]
-[ext_resource type="Texture2D" uid="uid://rfk0hubvp62g" path="res://Sprites/UI/Left Arrow Hover.png" id="8_d8eka"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -129,25 +127,7 @@ texture_hover = ExtResource("3_7se7m")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Back Button" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.035
-anchor_top = 0.06
-anchor_right = 0.116
-anchor_bottom = 0.938
-offset_left = 87.68
-offset_top = 473.12
-offset_right = 73.368
-offset_bottom = -16.824
-grow_vertical = 0
-texture_normal = ExtResource("7_rycjf")
-texture_hover = ExtResource("8_d8eka")
-ignore_texture_size = true
-stretch_mode = 0
-
 [connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
 [connection signal="changed" from="Music" to="." method="_on_music_changed"]
 [connection signal="changed" from="Sound Effects" to="." method="_on_sound_effects_changed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
-[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

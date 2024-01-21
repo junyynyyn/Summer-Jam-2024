@@ -24,7 +24,6 @@ func _on_home_pressed():
 	SceneTransition.change_scene("res://Scenes/Menus/main_menu.tscn")
 
 
-
 func _on_master_value_changed(value: float) -> void:
 	# Set the master volume in the audio server and save the setting
 	Global.master_volume = value

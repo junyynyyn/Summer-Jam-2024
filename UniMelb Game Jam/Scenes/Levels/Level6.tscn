@@ -22,28 +22,28 @@ layer_1/tile_data = PackedInt32Array(131064, 327684, 0, 131065, 65540, 0, 131066
 layer_2/tile_data = PackedInt32Array(458738, 131076, 1, 458740, 4, 1)
 
 [node name="HookPoint" parent="Objects" index="0" instance=ExtResource("2_r7eox")]
-position = Vector2(-495, 111)
+position = Vector2(-496, 112)
 
 [node name="HookPoint3" parent="Objects" index="1" instance=ExtResource("2_r7eox")]
-position = Vector2(-302, 311)
+position = Vector2(-304, 304)
 
 [node name="HookPoint2" parent="Objects" index="2" instance=ExtResource("2_r7eox")]
-position = Vector2(-303, 13)
+position = Vector2(-304, 16)
 
 [node name="HookPoint4" parent="Objects" index="3" instance=ExtResource("2_r7eox")]
-position = Vector2(-306, -498)
+position = Vector2(-304, -496)
 
 [node name="HookPoint5" parent="Objects" index="4" instance=ExtResource("2_r7eox")]
-position = Vector2(562, -758)
+position = Vector2(560, -752)
 
 [node name="HookPoint6" parent="Objects" index="5" instance=ExtResource("2_r7eox")]
-position = Vector2(178, -926)
+position = Vector2(176, -912)
 
 [node name="HookPoint7" parent="Objects" index="6" instance=ExtResource("2_r7eox")]
-position = Vector2(556, -901)
+position = Vector2(560, -912)
 
 [node name="HookPoint8" parent="Objects" index="7" instance=ExtResource("2_r7eox")]
-position = Vector2(939, -910)
+position = Vector2(944, -912)
 
 [node name="Running Ghost" parent="Ghosts" index="0" instance=ExtResource("4_c8dil")]
 position = Vector2(-303, 196)
@@ -96,7 +96,7 @@ position = Vector2(176, -807)
 position = Vector2(172, -230)
 
 [node name="Mirrored Ghost4" parent="Ghosts" index="16" instance=ExtResource("4_gmou5")]
-position = Vector2(944, -848)
+position = Vector2(944, -832)
 
 [node name="Mirrored Ghost5" parent="Ghosts" index="17" instance=ExtResource("4_gmou5")]
 position = Vector2(841, -77)
