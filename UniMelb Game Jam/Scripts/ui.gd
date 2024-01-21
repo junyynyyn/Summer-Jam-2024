@@ -80,7 +80,7 @@ func _on_next_level_button_pressed():
 func _on_level_select_button_pressed():
 	get_tree().paused = false
 	#UiSounds.play()
-	SceneTransition.change_scene("res://Scenes/Menus/Level Select.tscn")
+	get_tree().change_scene_to_file(level_select_screen)
 
 func reward_stars(stars):
 	stardisplay.value = stars
