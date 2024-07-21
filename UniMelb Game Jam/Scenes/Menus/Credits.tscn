@@ -153,16 +153,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.5
-offset_top = 12.5
-offset_right = 78.5
-offset_bottom = 99.5
+offset_left = -175.0
+offset_top = 12.0
+offset_right = 177.0
+offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 19
 text = "Jaxon (Leonados)
 Silent GUI Assets - @Prinbles on Itch.io
-Mouse Icon - @Ruthenium on Itch.io"
+Mouse Icon - @Ruthenium on Itch.io
+Portal - @pixelthen on Itch.io"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -173,10 +174,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = 307.5
-offset_right = 194.0
-offset_bottom = 364.5
+offset_left = -193.0
+offset_top = 322.0
+offset_right = 195.0
+offset_bottom = 379.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 34
@@ -210,10 +211,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = 443.5
-offset_right = 194.0
-offset_bottom = 500.5
+offset_left = -193.0
+offset_top = 458.0
+offset_right = 195.0
+offset_bottom = 515.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 34

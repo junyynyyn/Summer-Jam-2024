@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 func change_scene(target: String) -> void:
 	#var current_scene = get_node("/root/")
 	$AnimationPlayer.play('dissolve')

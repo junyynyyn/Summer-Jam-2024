@@ -68,7 +68,7 @@ func complete_level():
 	
 	get_tree().paused = true
 	update_best_time_and_stars()
-	#$UI.check_scores(level_number)
+	$UI.check_scores(level_number)
 	Global.save_game_data()
 
 
@@ -107,8 +107,6 @@ func adjust_star_thresholds():
 	four_star.text = "%.2f" % Gold
 	three_star.text = "%.2f" % ThreeStar
 	two_star.text = "%.2f" % TwoStar
-
-
 
 #func upload_score(username, level_number, time):
 	#var url = "http://3.26.15.67:5000/level/" + level_number
